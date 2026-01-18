@@ -3,6 +3,9 @@
 	"mcpServers": {
 		"svelte": {
 			"url": "https://mcp.svelte.dev/mcp"
+		},
+		"figma": {
+			"url": "https://mcp.figma.com/mcp"
 		}
 	}
 }
