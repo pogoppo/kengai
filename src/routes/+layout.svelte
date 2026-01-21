@@ -1,18 +1,46 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { locales, localizeHref } from '$lib/paraglide/runtime';
+	import { setLocale } from '$lib/paraglide/runtime';
+	setLocale('ja');
+
+	import 'kiso.css';
+
+	import { config } from '@fortawesome/fontawesome-svg-core';
+	import '@fortawesome/fontawesome-svg-core/styles.css';
+	config.autoAddCss = false;
+
+	import '@fontsource/zen-kaku-gothic-new/300.css';
+	import '@fontsource/zen-kaku-gothic-new/400.css';
+	import '@fontsource/zen-kaku-gothic-new/500.css';
+	import '@fontsource/zen-kaku-gothic-new/700.css';
+	import '@fontsource/zen-kaku-gothic-new/900.css';
+
+	import '$lib/styles/variables.css';
+	import '$lib/styles/global.css';
 	import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
 
-{@render children()}
-<div style="display:none">
-	{#each locales as locale}
-		<a href={localizeHref(page.url.pathname, { locale })}>
-			{locale}
-		</a>
-	{/each}
+<div class="app-root">
+	{@render children()}
 </div>
+
+<style>
+	.app-root {
+		display: flow-root;
+		box-sizing: border-box;
+		max-width: var(--container-max-width);
+		margin-inline: auto;
+		background-color: var(--local-background-color, var(--color-bg-secondary));
+		font-family: 'Zen Kaku Gothic New', sans-serif;
+		font-weight: 500;
+
+		/* フロートの<GlobalNavigation>を考慮し、余白の遊びを確保 */
+		min-height: calc(100lvh + var(--scroll-free-play));
+		padding-bottom: var(--global-navigation-height);
+	}
+</style>

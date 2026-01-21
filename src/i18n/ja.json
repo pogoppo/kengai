@@ -1,0 +1,21 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app.name": "KENGAI",
+
+	"category.tarp.label": "タープ",
+	"category.tent.label": "テント",
+	"category.rope-work.label": "ロープワーク",
+	"category.moto-trouble.label": "バイクトラブル",
+	"category.car-trouble.label": "自動車トラブル",
+
+	"group.moto.label": "バイクノウハウ",
+	"group.moto.description": "トラブルの対応やメンテナンスなど",
+	"group.camp.label": "キャンプノウハウ",
+	"group.camp.description": "ロープワークやタープの張り方、焚き火など",
+	"group.car.label": "自動車ノウハウ",
+	"group.car.description": "トラブルの対応やメンテナンス、車中泊など",
+	"group.mountain.label": "登山ノウハウ",
+	"group.mountain.description": "ロープワークやトラブルの対応、図鑑など",
+	"group.ocean.label": "釣り・船上ノウハウ",
+	"group.ocean.description": "ロープワークやトラブルの対応、魚についてなど"
+}

@@ -30,8 +30,8 @@ Run tests with:
 - `npm test` - All tests
 
 ### File Extensions & Preprocessors
-- Supports `.svelte` and `.svx` (MDsveX for markdown) files
-- Uses `vitePreprocess()` and `mdsvex()` preprocessors ([svelte.config.js](svelte.config.js))
+- Uses `vitePreprocess()` preprocessor ([svelte.config.js](svelte.config.js))
+- Article content is managed in Markdown files with frontmatter, processed via `gray-matter`
 
 ### Deployment
 - Configured for **Vercel** via `@sveltejs/adapter-vercel`
@@ -54,6 +54,12 @@ npm run prepare          # Sync SvelteKit types (runs automatically)
 - **TypeScript**: Strict mode enabled, uses SvelteKit's generated tsconfig
 - `no-undef` rule disabled for TypeScript (per typescript-eslint recommendations)
 - Prettier integrated with both ESLint and Svelte configs
+
+### CSS Conventions
+- **Use native CSS nesting**: This project uses standard CSS nesting syntax (supported natively in modern browsers)
+- Prefer `>` child combinator for direct descendants (e.g., `> li`, `> a`)
+- Use `&` for pseudo-classes, pseudo-elements, and modifier selectors (e.g., `&:hover`, `&::before`, `&[data-current="true"]`)
+- Nest related selectors to maintain clear hierarchy and avoid repetitive class names
 
 ## Svelte 5 Specific Conventions
 

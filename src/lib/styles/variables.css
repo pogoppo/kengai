@@ -1,0 +1,20 @@
+:root {
+	/* Colors */
+	--color-primary: #5482b7;
+	--color-fg-primary: #0d1b2a;
+	--color-fg-reverse: #ffffff;
+	--color-bg-primary: #ffffff;
+	--color-bg-secondary: #e0e1dd;
+	--color-bg-tertiary: var(--color-primary);
+	--color-bg-reverse: #1b263b;
+	--color-accent-primary: #a7ceff;
+	--color-link: var(--color-primary);
+	--color-danger: #dd4444;
+
+	/* Layout */
+	--container-max-width: 560px;
+	--container-min-width: 375px;
+	--global-header-height: 56px;
+	--global-navigation-height: 56px;
+	--scroll-free-play: 8px;
+}
