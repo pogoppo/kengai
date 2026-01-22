@@ -3,10 +3,9 @@ import { articles } from '$lib/data/articles/ja';
 import type { Article } from '$lib/types/article';
 
 export class ArticleRepository {
-  // Fuse.jsインスタンス
+  // Fuse.jsインスタンス（遅延初期化）
   private _fuse: Fuse<Article> | null = null;
   private get fuse(): Fuse<Article> {
-    // 遅延初期化
     if (!this._fuse) {
       this._fuse = new Fuse(this.articles, {
         keys: [
@@ -25,9 +24,35 @@ export class ArticleRepository {
   }
 
   private articles: Article[];
+  private slugIndex: Map<string, Article>;
+  private categoryIndex: Map<string, Article[]>;
+  private tagIndex: Map<string, Article[]>;
 
   constructor(articles: Article[]) {
     this.articles = articles;
+
+    // slugインデックスを構築
+    this.slugIndex = new Map(articles.map((article) => [article.slug, article]));
+
+    // categoryインデックスを構築
+    this.categoryIndex = new Map();
+    for (const article of articles) {
+      if (!this.categoryIndex.has(article.category)) {
+        this.categoryIndex.set(article.category, []);
+      }
+      this.categoryIndex.get(article.category)!.push(article);
+    }
+
+    // tagインデックスを構築
+    this.tagIndex = new Map();
+    for (const article of articles) {
+      for (const tag of article.tags) {
+        if (!this.tagIndex.has(tag)) {
+          this.tagIndex.set(tag, []);
+        }
+        this.tagIndex.get(tag)!.push(article);
+      }
+    }
   }
 
   /**
@@ -38,31 +63,45 @@ export class ArticleRepository {
   }
 
   /**
+   * slugで記事を取得
+   */
+  findBySlug(slug: string): Article | undefined {
+    return this.slugIndex.get(slug);
+  }
+
+  /**
+   * 複数のslugで記事を取得
+   */
+  findBySlugs(slugs: string[]): Article[] {
+    return slugs.map((slug) => this.slugIndex.get(slug)).filter((article): article is Article => article !== undefined);
+  }
+
+  /**
    * カテゴリで記事を絞り込む
    */
   findByCategory(category: string): Article[] {
-    return this.articles.filter((article) => article.category === category);
+    return this.categoryIndex.get(category) || [];
   }
 
   /**
    * タグで記事を絞り込む
    */
   findByTag(tag: string): Article[] {
-    return this.articles.filter((article) => article.tags?.includes(tag));
+    return this.tagIndex.get(tag) || [];
   }
 
   /**
    * 全カテゴリのリストを取得
    */
   getAllCategories(): string[] {
-    return [...new Set(this.articles.map((article) => article.category).filter(Boolean))];
+    return [...this.categoryIndex.keys()];
   }
 
   /**
    * 全タグのリストを取得
    */
   getAllTags(): string[] {
-    return [...new Set(this.articles.flatMap((article) => article.tags || []))];
+    return [...this.tagIndex.keys()];
   }
 
   /**

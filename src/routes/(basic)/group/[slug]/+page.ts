@@ -1,8 +1,9 @@
 import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import groups from '$lib/data/groups.json';
+import { articleRepository } from '$lib/repositories/article';
 
-export const load: PageLoad = async ({ params }) => {
+export const load: PageLoad = ({ params }) => {
   const slug = params.slug;
   const groupData = groups.find((group) => group.slug === slug);
 
@@ -12,8 +13,20 @@ export const load: PageLoad = async ({ params }) => {
     });
   }
 
+  // 記事一覧のslugを実際の記事データに変換
+  const sectionsWithArticles = groupData.sections.map((section) => {
+    const slugs = section.articles.map((articleRef) => articleRef.slug);
+    return {
+      category: section.category,
+      articles: articleRepository.findBySlugs(slugs)
+    };
+  });
+
   return {
     slug,
-    groupData
+    groupData: {
+      ...groupData,
+      sections: sectionsWithArticles
+    }
   };
 };
