@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages.js';
 	import { categoryIcon, categoryLabel } from '$lib/utils/category';
-	import { fetchAllCategories } from '$lib/utils/article';
+	import { articleRepository } from '$lib/repositories/article';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SearchBar from '$lib/components/contents/SearchBar.svelte';
 	import LinkCard from '$lib/components/contents/LinkCard.svelte';
@@ -9,7 +9,7 @@
 
 	let { data } = $props();
 
-	const categories = fetchAllCategories();
+	const categories = articleRepository.getAllCategories();
 
 	function handleSearch(query: string) {
 		// 検索処理
