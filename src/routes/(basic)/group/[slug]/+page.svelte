@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 	import { categoryLabel, categoryIcon } from '$lib/utils/category';
 	import ArticleList from '$lib/components/contents/ArticleList.svelte';
 	import { groupDescription, groupLabel } from '$lib/utils/group';
+	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
+	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 
 	const { data } = $props();
 </script>
@@ -11,6 +14,8 @@
 <svelte:head>
 	<title>{groupLabel(data.slug)} - KENGAI</title>
 </svelte:head>
+
+<Breadcrumbs items={[{ label: groupLabel(data.slug) }]} />
 
 <main class="group">
 	<header class="group-header">
@@ -23,10 +28,15 @@
 
 	{#each data.groupData.sections as section}
 		<SectionBasic continuously={true}>
-			<h2>
-				<FontAwesomeIcon icon={categoryIcon(section.category)} />
-				{categoryLabel(section.category)}
-			</h2>
+			<header class="group-section-header">
+				<SectionBasicHeading icon={categoryIcon(section.category)}>
+					{categoryLabel(section.category)}
+				</SectionBasicHeading>
+				<a href={`/category/${section.category}`} class="group-section-more">
+					全項目
+					<FontAwesomeIcon icon={faCircleChevronRight} />
+				</a>
+			</header>
 			<ArticleList articles={section.articles} />
 		</SectionBasic>
 	{/each}
@@ -41,7 +51,7 @@
 		grid-template-columns: 50% 1fr;
 		gap: 0.25rem 0.5rem;
 		margin-bottom: 1rem;
-		padding: 0.5rem;
+		padding: 1rem 0.5rem;
 		background-color: var(--color-bg-primary);
 	}
 	.group-image {
@@ -67,5 +77,19 @@
 		grid-area: description;
 		align-self: flex-start;
 		font-size: 0.9rem;
+	}
+	.group-section-header {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.group-section-more {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		margin-bottom: 1rem;
+		font-size: 0.9rem;
+		color: var(--color-link);
 	}
 </style>

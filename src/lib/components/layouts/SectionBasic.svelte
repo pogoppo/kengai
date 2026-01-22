@@ -12,6 +12,7 @@
 
 <style>
 	.section-basic {
+		display: flow-root;
 		padding-block: var(--local-padding-block, 1rem);
 		padding-inline: var(--local-padding-inline, 1rem);
 		background-color: var(--local-background-color, transparent);

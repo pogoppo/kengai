@@ -32,6 +32,7 @@
 <style>
 	.app-root {
 		display: flow-root;
+		position: relative;
 		box-sizing: border-box;
 		max-width: var(--container-max-width);
 		margin-inline: auto;
