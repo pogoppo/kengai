@@ -41,6 +41,7 @@
 		padding: 0.5rem 1rem;
 		background-color: var(--color-bg-reverse);
 		color: var(--color-fg-reverse);
+		font-size: 0.8rem;
 		white-space: nowrap;
 		> li {
 			display: flex;

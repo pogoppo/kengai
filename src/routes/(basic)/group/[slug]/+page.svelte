@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+	import { m } from '$lib/paraglide/messages.js';
 	import { categoryLabel, categoryIcon } from '$lib/utils/category';
-	import ArticleList from '$lib/components/contents/ArticleList.svelte';
 	import { groupDescription, groupLabel } from '$lib/utils/group';
+	import ArticleList from '$lib/components/contents/ArticleList.svelte';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
@@ -12,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>{groupLabel(data.slug)} - KENGAI</title>
+	<title>{groupLabel(data.slug)} - {m['app.name']()}</title>
 </svelte:head>
 
 <Breadcrumbs items={[{ label: groupLabel(data.slug) }]} />

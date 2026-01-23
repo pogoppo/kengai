@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages.js';
 	import { categoryLabel, categoryIcon } from '$lib/utils/category';
 	import ArticleList from '$lib/components/contents/ArticleList.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
@@ -9,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>{categoryLabel(data.category)} - KENGAI</title>
+	<title>{categoryLabel(data.category)} - {m['app.name']()}</title>
 </svelte:head>
 
 <Breadcrumbs items={[{ label: categoryLabel(data.category) }]} />

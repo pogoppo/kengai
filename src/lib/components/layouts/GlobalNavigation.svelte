@@ -10,6 +10,8 @@
 	} from '@fortawesome/free-solid-svg-icons';
 	import { backToTop } from '$lib/utils/navigation';
 
+	const isArticlePage = /article\/[^/]+\/[^/]+$/.test(page.url.pathname);
+
 	const mainNavigation = [
 		{ href: '/', label: 'ホーム', icon: faHome },
 		{ href: '/favorite', label: 'お気に入り', icon: faStar },
@@ -20,6 +22,13 @@
 		{ action: actionSearchArticles, label: '記事検索', icon: faMagnifyingGlass },
 		{ action: actionBackToTop, label: 'トップへ戻る', icon: faChevronUp }
 	];
+	if (isArticlePage) {
+		subNavigation.unshift({ action: actionAddFavorite, label: 'お気に入りに追加', icon: faStar });
+	}
+
+	function actionAddFavorite() {
+		console.log('お気に入りに追加 clicked');
+	}
 
 	function actionBackToTop() {
 		backToTop();
@@ -30,7 +39,7 @@
 	}
 </script>
 
-<nav class="global-navigation">
+<nav class="global-navigation" aria-label="グローバルナビゲーション">
 	<ul class="main-navigation">
 		{#each mainNavigation as item}
 			<li>
@@ -46,7 +55,7 @@
 	<ul class="sub-navigation">
 		{#each subNavigation as item}
 			<li>
-				<button on:click={item.action} aria-label={item.label}>
+				<button onclick={item.action} aria-label={item.label}>
 					<FontAwesomeIcon icon={item.icon} />
 				</button>
 			</li>
@@ -108,7 +117,7 @@
 		position: absolute;
 		bottom: 100%;
 		right: 0;
-		padding: 0.5rem 1rem;
+		padding: 0.5rem 0.75rem;
 
 		/* ページの一番下までスクロールで非表示に */
 		pointer-events: none;
@@ -129,7 +138,7 @@
 			border: none;
 			border-radius: 999px;
 			color: var(--color-fg-primary);
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 
 			/* ビジュアルの調整として背景を重ねている */
 			background-color: var(--color-bg-secondary);

@@ -8,6 +8,8 @@ published: true
 この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
 この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
 
+----
+
 この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
 
 ![代替テキスト](https://dummyimage.com/600x400/000/fff)
@@ -16,7 +18,61 @@ published: true
 
 この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
 この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+
+<figure>
+  <img src="https://dummyimage.com/800x600/000/fff" alt="代替テキスト">
+  <figcaption>図のキャプション例</figcaption>
+</figure>
+
+<figure>
+  <img src="https://dummyimage.com/800x600/000/fff" alt="代替テキスト">
+</figure>
 
 [この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。](https://example.com)
 
 この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+
+## 見出しレベル2
+
+### 見出しレベル3
+
+#### 見出しレベル4
+
+この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+
+* 箇条書きの例1
+* 箇条書きの例2
+* 箇条書きの例3
+  * 入れ子の箇条書き1
+  * 入れ子の箇条書き2
+* 箇条書きの例4
+
+1. 番号付きリストの例1
+2. 番号付きリストの例2
+3. 番号付きリストの例3
+   1. 入れ子の番号付きリスト1
+   2. 入れ子の番号付きリスト2
+4. 番号付きリストの例4
+
+> これは引用ブロックの例です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+> この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+
+```javascript
+// これはコードブロックの例です
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+}
+greet('World');
+```
+
+## 動画の埋め込み例
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen data-youtube></iframe>
+
+### オフライン
+
+<iframe width="560" height="315" src="https://youtube.invalid" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen data-youtube></iframe>
