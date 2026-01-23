@@ -17,7 +17,7 @@
 
 <main class="category">
 	<SectionBasic>
-		<SectionBasicHeading icon={categoryIcon(data.category)}>
+		<SectionBasicHeading level={1} icon={categoryIcon(data.category)}>
 			{categoryLabel(data.category)}
 		</SectionBasicHeading>
 		<ArticleList articles={data.articles} />

@@ -30,7 +30,7 @@
 	{#each data.groupData.sections as section}
 		<SectionBasic continuously={true}>
 			<header class="group-section-header">
-				<SectionBasicHeading icon={categoryIcon(section.category)}>
+				<SectionBasicHeading level={2} icon={categoryIcon(section.category)}>
 					{categoryLabel(section.category)}
 				</SectionBasicHeading>
 				<a href={`/category/${section.category}`} class="group-section-more">

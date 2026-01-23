@@ -1,15 +1,19 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
-	let { icon, children }: { icon: FontAwesomeIcon['icon']; children: Snippet } = $props();
+	let {
+		level,
+		icon,
+		children
+	}: { level: 1 | 2 | 3 | 4 | 5 | 6; icon: FontAwesomeIcon['icon']; children: Snippet } = $props();
 </script>
 
-<h2 class="section-basic-heading">
+<svelte:element this={`h${level}`} class="section-basic-heading">
 	<heading-icon>
 		<FontAwesomeIcon {icon} />
 	</heading-icon>
 	{@render children()}
-</h2>
+</svelte:element>
 
 <style>
 	.section-basic-heading {
