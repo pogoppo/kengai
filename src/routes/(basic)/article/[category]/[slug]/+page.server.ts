@@ -6,8 +6,6 @@ import { readFile } from 'fs/promises';
 import { join } from 'path';
 import type { PageServerLoad, EntryGenerator } from './$types';
 
-export const prerender = true;
-
 export const entries: EntryGenerator = () => {
   // 全記事のパラメータを返してプリレンダリング対象にする
   return articleRepository.findAll().map((article) => {

@@ -1,0 +1,53 @@
+{
+  "name": "KENGAI",
+  "short_name": "KENGAI",
+  "description": "圏外でも使える野外ノウハウアプリ",
+  "theme_color": "#1b263b",
+  "background_color": "#111111",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "ja",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/images/app/app-icon-192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/app/app-icon-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/app/app-icon-192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/app/app-icon-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/app/screenshot-wide.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "ホーム画面"
+    },
+    {
+      "src": "/images/app/screenshot-mobile.webp",
+      "sizes": "540x720",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "モバイル画面"
+    }
+  ]
+}

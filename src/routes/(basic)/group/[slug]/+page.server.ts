@@ -1,7 +1,11 @@
-import type { PageServerLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import groups from '$lib/data/groups.json';
 import { articleRepository } from '$lib/repositories/article';
+
+export const entries: EntryGenerator = () => {
+  return groups.map((group) => ({ slug: group.slug }));
+};
 
 export const load: PageServerLoad = ({ params }) => {
   const slug = params.slug;

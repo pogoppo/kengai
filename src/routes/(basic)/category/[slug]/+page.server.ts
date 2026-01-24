@@ -1,6 +1,11 @@
-import type { PageServerLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { articleRepository } from '$lib/repositories/article';
+
+export const entries: EntryGenerator = () => {
+  const categories = articleRepository.getAllCategories();
+  return categories.map((category) => ({ slug: category }));
+};
 
 export const load: PageServerLoad = ({ params }) => {
   const category = params.slug;

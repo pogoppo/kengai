@@ -29,7 +29,7 @@
 			<ul class="article-tags">
 				{#each data.article.tags as tag}
 					<li>
-						<a href={`/search?q=#${tag}`}>#{tag}</a>
+						<a href={`/search?q=${encodeURIComponent(`#${tag}`)}`}>#{tag}</a>
 					</li>
 				{/each}
 			</ul>
