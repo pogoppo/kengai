@@ -1,6 +1,9 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"app.name": "KENGAI",
+	"faq.page.title": "よくある質問",
+	"favorite.page.title": "お気に入り",
+	"search.page.title": "記事検索",
 
 	"category.tarp.label": "タープ",
 	"category.tent.label": "テント",

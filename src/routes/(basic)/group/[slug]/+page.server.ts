@@ -1,9 +1,9 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import groups from '$lib/data/groups.json';
 import { articleRepository } from '$lib/repositories/article';
 
-export const load: PageLoad = ({ params }) => {
+export const load: PageServerLoad = ({ params }) => {
   const slug = params.slug;
   const groupData = groups.find((group) => group.slug === slug);
 
