@@ -15,5 +15,5 @@ export const groups: Group[] = indexData.map((group) => ({
   label: groupLabel(group.slug),
   description: groupDescription(group.slug),
   image: group.image,
-  sections: group.sections as Group['sections']
+  sections: group.sections
 }));
