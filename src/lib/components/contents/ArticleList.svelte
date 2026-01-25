@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Article } from '$lib/types/article.js';
+	import type { ArticleSummary } from '$lib/types/article.js';
 
-	let { articles }: { articles: Article[] } = $props();
+	let { articles }: { articles: ArticleSummary[] } = $props();
 
 	function articlePath(slug: string): string {
 		return `/article/${slug}`;

@@ -3,7 +3,6 @@
 	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 	import { m } from '$lib/paraglide/messages.js';
 	import { categoryLabel, categoryIcon } from '$lib/utils/category';
-	import { groupDescription, groupLabel } from '$lib/utils/group';
 	import ArticleList from '$lib/components/contents/ArticleList.svelte';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
@@ -13,18 +12,18 @@
 </script>
 
 <svelte:head>
-	<title>{groupLabel(data.slug)} - {m['app.name']()}</title>
+	<title>{data.groupData.label} - {m['app.name']()}</title>
 </svelte:head>
 
-<Breadcrumbs items={[{ label: groupLabel(data.slug) }]} />
+<Breadcrumbs items={[{ label: data.groupData.label }]} />
 
 <main class="group">
 	<header class="group-header">
 		<picture class="group-image">
-			<img src={data.groupData.image} alt={groupLabel(data.slug)} />
+			<img src={data.groupData.image} alt={data.groupData.label} />
 		</picture>
-		<h1 class="group-label">{groupLabel(data.slug)}</h1>
-		<p class="group-description">{groupDescription(data.slug)}</p>
+		<h1 class="group-label">{data.groupData.label}</h1>
+		<p class="group-description">{data.groupData.description}</p>
 	</header>
 
 	{#each data.groupData.sections as section}

@@ -1,4 +1,4 @@
-export interface Article {
+export interface ArticleSummary {
   slug: string;
   title: string;
   description: string;

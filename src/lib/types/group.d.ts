@@ -1,15 +1,19 @@
-import type { Article } from './article';
+import type { ArticleSummary } from './article';
 
-export interface GroupSummary {
+export interface Group {
   slug: string;
   label: string;
   description: string;
   image: string;
-}
-
-export interface GroupDetail extends GroupSummary {
   sections: Array<{
     category: string;
-    articles: Article[];
+    articles: { slug: string }[];
+  }>;
+}
+
+export interface GroupWithArticles extends Omit<Group, 'sections'> {
+  sections: Array<{
+    category: string;
+    articles: ArticleSummary[];
   }>;
 }

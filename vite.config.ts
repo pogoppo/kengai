@@ -6,6 +6,9 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { articleIndexPlugin } from './vite/plugins/article-index';
 
 export default defineConfig({
+	optimizeDeps: {
+		include: ['@fortawesome/svelte-fontawesome', '@fortawesome/free-solid-svg-icons', 'fuse.js']
+	},
 	plugins: [
 		articleIndexPlugin(),
 		sveltekit(),

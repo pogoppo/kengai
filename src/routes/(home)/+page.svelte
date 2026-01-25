@@ -1,15 +1,12 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages.js';
 	import { categoryIcon, categoryLabel } from '$lib/utils/category';
-	import { articleRepository } from '$lib/repositories/article';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SearchBar from '$lib/components/contents/SearchBar.svelte';
 	import LinkCard from '$lib/components/contents/LinkCard.svelte';
 	import Chip from '$lib/components/contents/Chip.svelte';
 
 	let { data } = $props();
-
-	const categories = articleRepository.getAllCategories();
 
 	function handleSearch(query: string) {
 		// 検索処理
@@ -52,7 +49,7 @@
 
 	<SectionBasic continuously={true} --local-padding-inline="0.5rem">
 		<ul class="categories">
-			{#each categories as category}
+			{#each data.categories as category}
 				<li>
 					<Chip
 						href={`/category/${category}`}

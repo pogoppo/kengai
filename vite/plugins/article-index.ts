@@ -59,7 +59,7 @@ export async function buildArticleIndex(): Promise<void> {
   if (!fs.existsSync(articlesDir)) {
     fs.mkdirSync(articlesDir, { recursive: true });
     fs.writeFileSync(outputPath, JSON.stringify([], null, 2));
-    console.log('⚠ Articles directory not found, created empty index');
+    console.warn('⚠ Articles directory not found, created empty index');
     return;
   }
 
@@ -88,7 +88,9 @@ export async function buildArticleIndex(): Promise<void> {
   }
 
   fs.writeFileSync(outputPath, JSON.stringify(articles, null, 2));
-  console.log(`✓ Generated index for ${articles.length} articles`);
+  if (!process.env.VITEST) {
+    console.log(`✓ Generated index for ${articles.length} articles`);
+  }
 }
 
 /**

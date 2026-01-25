@@ -1,11 +1,11 @@
 import Fuse from 'fuse.js';
 import { articles } from '$lib/data/articles/ja';
-import type { Article } from '$lib/types/article';
+import type { ArticleSummary } from '$lib/types/article';
 
 export class ArticleRepository {
   // Fuse.jsインスタンス（遅延初期化）
-  private _fuse: Fuse<Article> | null = null;
-  private get fuse(): Fuse<Article> {
+  private _fuse: Fuse<ArticleSummary> | null = null;
+  private get fuse(): Fuse<ArticleSummary> {
     if (!this._fuse) {
       this._fuse = new Fuse(this.articles, {
         keys: [
@@ -23,12 +23,12 @@ export class ArticleRepository {
     return this._fuse;
   }
 
-  private articles: Article[];
-  private slugIndex: Map<string, Article>;
-  private categoryIndex: Map<string, Article[]>;
-  private tagIndex: Map<string, Article[]>;
+  private articles: ArticleSummary[];
+  private slugIndex: Map<string, ArticleSummary>;
+  private categoryIndex: Map<string, ArticleSummary[]>;
+  private tagIndex: Map<string, ArticleSummary[]>;
 
-  constructor(articles: Article[]) {
+  constructor(articles: ArticleSummary[]) {
     this.articles = articles;
 
     // slugインデックスを構築
@@ -58,35 +58,35 @@ export class ArticleRepository {
   /**
    * 全記事を取得
    */
-  findAll(): Article[] {
+  findAll(): ArticleSummary[] {
     return this.articles;
   }
 
   /**
    * slugで記事を取得
    */
-  findBySlug(slug: string): Article | undefined {
+  findBySlug(slug: string): ArticleSummary | undefined {
     return this.slugIndex.get(slug);
   }
 
   /**
    * 複数のslugで記事を取得
    */
-  findBySlugs(slugs: string[]): Article[] {
-    return slugs.map((slug) => this.slugIndex.get(slug)).filter((article): article is Article => article !== undefined);
+  findBySlugs(slugs: string[]): ArticleSummary[] {
+    return slugs.map((slug) => this.slugIndex.get(slug)).filter((article): article is ArticleSummary => article !== undefined);
   }
 
   /**
    * カテゴリで記事を絞り込む
    */
-  findByCategory(category: string): Article[] {
+  findByCategory(category: string): ArticleSummary[] {
     return this.categoryIndex.get(category) || [];
   }
 
   /**
    * タグで記事を絞り込む
    */
-  findByTag(tag: string): Article[] {
+  findByTag(tag: string): ArticleSummary[] {
     return this.tagIndex.get(tag) || [];
   }
 
@@ -107,7 +107,7 @@ export class ArticleRepository {
   /**
    * キーワードであいまい検索
    */
-  search(query: string): Article[] {
+  search(query: string): ArticleSummary[] {
     if (!query.trim()) return this.articles;
 
     return this.fuse
@@ -118,7 +118,7 @@ export class ArticleRepository {
   /**
    * 複数の条件で記事を検索・絞り込む
    */
-  filter(filters: { query?: string; category?: string; tags?: string[] }): Article[] {
+  filter(filters: { query?: string; category?: string; tags?: string[] }): ArticleSummary[] {
     let results = filters.query ? this.search(filters.query) : this.articles;
 
     if (filters.category) {

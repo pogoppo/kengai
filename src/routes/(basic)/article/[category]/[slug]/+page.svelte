@@ -7,13 +7,16 @@
 </script>
 
 <svelte:head>
-	<title>{data.article.title} - {m['app.name']()}</title>
+	<title>{data.articleSummary.title} - {m['app.name']()}</title>
 </svelte:head>
 
 <Breadcrumbs
 	items={[
-		{ href: `/category/${data.article.category}`, label: categoryLabel(data.article.category) },
-		{ label: data.article.title }
+		{
+			href: `/category/${data.articleSummary.category}`,
+			label: categoryLabel(data.articleSummary.category)
+		},
+		{ label: data.articleSummary.title }
 	]}
 />
 
@@ -21,13 +24,13 @@
 	<article class="article">
 		<header class="article-header">
 			<div class="article-category">
-				<a href={`/category/${data.article.category}`}>
-					{categoryLabel(data.article.category)}
+				<a href={`/category/${data.articleSummary.category}`}>
+					{categoryLabel(data.articleSummary.category)}
 				</a>
 			</div>
-			<h1 class="article-title">{data.article.title}</h1>
+			<h1 class="article-title">{data.articleSummary.title}</h1>
 			<ul class="article-tags">
-				{#each data.article.tags as tag}
+				{#each data.articleSummary.tags as tag}
 					<li>
 						<a href={`/search?q=${encodeURIComponent(`#${tag}`)}`}>#{tag}</a>
 					</li>
