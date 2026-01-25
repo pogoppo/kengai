@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { getArticle, ArticleServiceError } from './article';
+import { getArticle, ArticleServiceError } from './article.server';
 import { articleRepository } from '$lib/repositories/article';
 import { readFile } from 'fs/promises';
 import { marked } from 'marked';

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { getGroupWithArticles, GroupServiceError } from './group';
+import { getGroupWithArticles, GroupServiceError } from './group.server';
 import type { ArticleSummary } from '$lib/types/article';
 import { articleRepository } from '$lib/repositories/article';
 
