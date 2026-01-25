@@ -15,13 +15,13 @@
 </script>
 
 <svelte:head>
-	<title>圏外でも使える野外ノウハウアプリ {m['app.name']()}</title>
+	<title>{m['home.page.title']()} - {m['app.name']()}</title>
 </svelte:head>
 
 <main class="home">
 	<section class="concept">
-		<h2 class="concept-text">
-			圏外でも使える<br />野外ノウハウアプリ
+		<h2 class="concept-text" style="white-space: pre-line;">
+			{m['home.concept']()}
 		</h2>
 		<picture>
 			<img class="concept-image" src="/images/app/mog-front-basic.webp" alt="" />
@@ -29,7 +29,7 @@
 	</section>
 
 	<SectionBasic>
-		<SearchBar onSearch={handleSearch} placeholder="ノウハウを検索 (例: タープ)" />
+		<SearchBar onSearch={handleSearch} placeholder={m['home.search.placeholder']()} />
 	</SectionBasic>
 
 	<SectionBasic continuously={true} --local-padding-inline="0.5rem">

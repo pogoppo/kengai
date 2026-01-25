@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+	import { m } from '$lib/paraglide/messages';
 
 	let {
 		onSearch,
@@ -25,7 +26,11 @@
 		bind:value={searchQuery}
 		onkeydown={(e) => e.key === 'Enter' && handleSearch()}
 	/>
-	<button class="search-button" onclick={handleSearch} aria-label="検索">
+	<button
+		class="search-button"
+		onclick={handleSearch}
+		aria-label={m['component.search-bar.button.aria-label']()}
+	>
 		<FontAwesomeIcon icon={faMagnifyingGlass} />
 	</button>
 </div>

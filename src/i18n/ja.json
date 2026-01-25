@@ -1,15 +1,37 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"app.name": "KENGAI",
+
+	"component.breadcrumbs.aria-label": "パンくずナビゲーション",
+	"component.global-navigation.aria-label": "グローバルナビゲーション",
+	"component.main-navigation.home.label": "ホーム",
+	"component.main-navigation.favorite.label": "お気に入り",
+	"component.main-navigation.faq.label": "FAQ",
+	"component.sub-navigation.search.label": "記事検索",
+	"component.sub-navigation.back-to-top.label": "トップへ戻る",
+	"component.sub-navigation.add-favorite.label": "お気に入りに追加",
+	"component.search-bar.button.aria-label": "検索",
+
+	"common.back-to-home": "ホームに戻る",
+
 	"faq.page.title": "よくある質問",
 	"favorite.page.title": "お気に入り",
 	"search.page.title": "記事検索",
+
+	"error.page.title": "404 Not Found",
+	"error.page.description": "お探しのページは見つかりませんでした。",
+
+	"home.page.title": "圏外でも使える野外ノウハウアプリ",
+	"home.concept": "圏外でも使える\n野外ノウハウアプリ",
+	"home.search.placeholder": "ノウハウを検索 (例: タープ)",
 
 	"category.tarp.label": "タープ",
 	"category.tent.label": "テント",
 	"category.rope-work.label": "ロープワーク",
 	"category.moto-trouble.label": "バイクトラブル",
 	"category.car-trouble.label": "自動車トラブル",
+
+	"group.section.more": "全項目",
 
 	"group.moto.label": "バイクノウハウ",
 	"group.moto.description": "トラブルの対応やメンテナンスなど",

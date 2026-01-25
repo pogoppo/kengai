@@ -13,7 +13,7 @@
 	const breadcrumbsItems = $derived([{ label: m['app.name'](), href: '/' }, ...items]);
 </script>
 
-<nav aria-label="パンくずナビゲーション">
+<nav aria-label={m['component.breadcrumbs.aria-label']()}>
 	<ol class="breadcrumbs">
 		{#each breadcrumbsItems as item, index}
 			<li>

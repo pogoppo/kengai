@@ -33,7 +33,7 @@
 					{categoryLabel(section.category)}
 				</SectionBasicHeading>
 				<a href={`/category/${section.category}`} class="group-section-more">
-					全項目
+					{m['group.section.more']()}
 					<FontAwesomeIcon icon={faCircleChevronRight} />
 				</a>
 			</header>

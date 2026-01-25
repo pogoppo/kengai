@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { m } from '$lib/paraglide/messages';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import {
 		faHome,
@@ -13,17 +14,29 @@
 	const isArticlePage = /article\/[^/]+\/[^/]+$/.test(page.url.pathname);
 
 	const mainNavigation = [
-		{ href: '/', label: 'ホーム', icon: faHome },
-		{ href: '/favorite', label: 'お気に入り', icon: faStar },
-		{ href: '/faq', label: 'FAQ', icon: faCircleQuestion }
+		{ href: '/', label: m['component.main-navigation.home.label'](), icon: faHome },
+		{ href: '/favorite', label: m['component.main-navigation.favorite.label'](), icon: faStar },
+		{ href: '/faq', label: m['component.main-navigation.faq.label'](), icon: faCircleQuestion }
 	];
 
 	const subNavigation = [
-		{ action: actionSearchArticles, label: '記事検索', icon: faMagnifyingGlass },
-		{ action: actionBackToTop, label: 'トップへ戻る', icon: faChevronUp }
+		{
+			action: actionSearchArticles,
+			label: m['component.sub-navigation.search.label'](),
+			icon: faMagnifyingGlass
+		},
+		{
+			action: actionBackToTop,
+			label: m['component.sub-navigation.back-to-top.label'](),
+			icon: faChevronUp
+		}
 	];
 	if (isArticlePage) {
-		subNavigation.unshift({ action: actionAddFavorite, label: 'お気に入りに追加', icon: faStar });
+		subNavigation.unshift({
+			action: actionAddFavorite,
+			label: m['component.sub-navigation.add-favorite.label'](),
+			icon: faStar
+		});
 	}
 
 	function actionAddFavorite() {
@@ -39,7 +52,7 @@
 	}
 </script>
 
-<nav class="global-navigation" aria-label="グローバルナビゲーション">
+<nav class="global-navigation" aria-label={m['component.global-navigation.aria-label']()}>
 	<ul class="main-navigation">
 		{#each mainNavigation as item}
 			<li>

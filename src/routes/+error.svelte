@@ -1,23 +1,23 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages.js';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
-	import { m } from '$lib/paraglide/messages.js';
 	import GlobalHeader from '$lib/components/layouts/GlobalHeader.svelte';
 </script>
 
 <svelte:head>
-	<title>{m['app.name']()} - 404 Not Found</title>
+	<title>{m['error.page.title']()} - {m['app.name']()}</title>
 </svelte:head>
 
 <div class="float-header">
 	<GlobalHeader />
 </div>
 <main class="error">
-	<h1>404 Not Found</h1>
-	<p>お探しのページは見つかりませんでした。</p>
+	<h1>{m['error.page.title']()}</h1>
+	<p>{m['error.page.description']()}</p>
 	<p>
 		<a href="/">
-			ホームに戻る<FontAwesomeIcon icon={faCircleChevronRight} />
+			{m['common.back-to-home']()}<FontAwesomeIcon icon={faCircleChevronRight} />
 		</a>
 	</p>
 </main>
