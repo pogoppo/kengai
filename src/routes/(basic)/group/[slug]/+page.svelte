@@ -8,7 +8,7 @@
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 
-	const { data } = $props();
+	let { data } = $props();
 </script>
 
 <svelte:head>

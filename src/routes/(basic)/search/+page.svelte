@@ -9,8 +9,8 @@
 	import ArticleList from '$lib/components/contents/ArticleList.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 
-	const query = $derived((page.url.searchParams.get('q') ?? '').trim());
-	const results = $derived(query ? articleRepository.filter({ query }) : []);
+	let query = $derived((page.url.searchParams.get('q') ?? '').trim());
+	let results = $derived(query ? articleRepository.filter({ query }) : []);
 
 	function handleSearch(query: string) {
 		const uri = createSearchURL(query);

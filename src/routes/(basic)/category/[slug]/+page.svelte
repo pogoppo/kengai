@@ -6,7 +6,7 @@
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 
-	const { data } = $props();
+	let { data } = $props();
 </script>
 
 <svelte:head>

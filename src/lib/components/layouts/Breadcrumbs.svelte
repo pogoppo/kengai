@@ -10,7 +10,7 @@
 
 	let { items }: { items: BreadcrumbsItem[] } = $props();
 
-	const breadcrumbsItems = $derived([{ label: m['app.name'](), href: '/' }, ...items]);
+	let breadcrumbsItems = $derived([{ label: m['app.name'](), href: '/' }, ...items]);
 </script>
 
 <nav aria-label={m['component.breadcrumbs.aria-label']()}>

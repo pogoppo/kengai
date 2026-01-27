@@ -3,7 +3,7 @@
 	import { m } from '$lib/paraglide/messages';
 	import { categoryLabel } from '$lib/utils/category.js';
 
-	const { data } = $props();
+	let { data } = $props();
 </script>
 
 <svelte:head>
