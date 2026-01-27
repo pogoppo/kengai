@@ -1,9 +1,16 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import { m } from '$lib/paraglide/messages';
 	import { categoryLabel } from '$lib/utils/category.js';
 
 	let { data } = $props();
+
+	if (browser && !customElements.get('youtube-embed')) {
+		import('$lib/utils/youtube-embed.js').then(({ YoutubeEmbed }) => {
+			customElements.define('youtube-embed', YoutubeEmbed);
+		});
+	}
 </script>
 
 <svelte:head>
@@ -93,7 +100,8 @@
 		> :global(ol),
 		> :global(blockquote),
 		> :global(pre),
-		> :global(figure) {
+		> :global(figure),
+		:global(youtube-embed) {
 			margin-block: 1rem;
 		}
 
@@ -181,15 +189,16 @@
 			border-radius: 0.5rem;
 			font-size: 0.9rem;
 		}
-		:global(iframe[data-youtube]) {
-			display: block;
+		:global(youtube-embed) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			aspect-ratio: 16 / 9;
-			max-inline-size: 100cqw;
 			width: 100cqw;
 			height: auto;
 			margin-inline-start: calc((100% - 100cqw) / 2);
 			background-color: var(--color-bg-secondary);
-			border: none;
+			color: color-mix(in srgb, var(--color-fg-primary) 50%, transparent 50%);
 		}
 	}
 </style>
