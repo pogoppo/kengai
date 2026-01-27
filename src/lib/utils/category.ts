@@ -1,8 +1,9 @@
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faRibbon, faCampground, faCarSide, faMotorcycle, faTent } from '@fortawesome/free-solid-svg-icons';
+import { faRibbon, faCampground, faCarSide, faMotorcycle, faTent, faGear } from '@fortawesome/free-solid-svg-icons';
 import { unsafeMessages } from './i18n';
 
 const CATEGORY_ICONS: Record<string, IconProp> = {
+  _mock: faGear,
   tarp: faCampground,
   tent: faTent,
   'rope-work': faRibbon,

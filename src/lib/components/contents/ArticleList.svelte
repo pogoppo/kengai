@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import type { ArticleSummary } from '$lib/types/article';
+	import DashedBorderBox from './DashedBorderBox.svelte';
 
 	let { articles }: { articles: ArticleSummary[] } = $props();
 
@@ -10,9 +11,9 @@
 </script>
 
 {#if articles.length === 0}
-	<div class="no-articles">
-		{m['component.article-list.no-articles']()}
-	</div>
+	<DashedBorderBox>
+		<p class="no-articles">{m['component.article-list.no-articles']()}</p>
+	</DashedBorderBox>
 {:else}
 	<ul class="article-list">
 		{#each articles as article}
@@ -32,13 +33,6 @@
 {/if}
 
 <style>
-	.no-articles {
-		padding: 3rem 1rem;
-		background-color: color-mix(in srgb, var(--color-bg-primary) 50%, transparent 50%);
-		border: 1px dashed var(--color-bg-reverse);
-		border-radius: 0.5rem;
-		text-align: center;
-	}
 	.article-list {
 		padding: 0.75rem 1rem;
 		background-color: var(--color-bg-primary);

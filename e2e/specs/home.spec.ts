@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
+import { SearchPage } from '../pages/SearchPage';
 
 test.describe('ホームページ', () => {
     test('重要な要素が表示されること', async ({ page }) => {
@@ -19,11 +20,18 @@ test.describe('ホームページ', () => {
         await expect(homePage.categoryChips.first()).toBeVisible();
     });
 
-    test('検索入力が機能すること', async ({ page }) => {
+    test('検索できること', async ({ page }) => {
         const homePage = new HomePage(page);
-        await homePage.goto('/');
+        const searchPage = new SearchPage(page);
 
-        await homePage.search('#タグ');
-        await expect(page).toHaveURL(/search/)
+        await homePage.goto('/');
+        await homePage.search('記事タイトル1');
+
+        // URL遷移確認 (URLエンコードされた文字列を含むか)
+        await expect(page).toHaveURL(/search\?q=/);
+
+        // 検索結果が表示されること
+        await expect(searchPage.resultsHeading).toContainText('記事タイトル1');
+        await expect(searchPage.articleItems.first()).toBeVisible();
     });
 });

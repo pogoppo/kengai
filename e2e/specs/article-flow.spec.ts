@@ -3,8 +3,8 @@ import { HomePage } from '../pages/HomePage';
 import { GroupPage } from '../pages/GroupPage';
 import { ArticlePage } from '../pages/ArticlePage';
 
-test.describe('記事閲覧フロー (User Journey)', () => {
-    test('トップページからカテゴリを辿って記事詳細を閲覧し、戻ることができる', async ({ page }) => {
+test.describe('記事閲覧フロー', () => {
+    test('トップページからグループを辿って記事詳細を閲覧し、戻ることができる', async ({ page }) => {
         const homePage = new HomePage(page);
         const groupPage = new GroupPage(page);
         const articlePage = new ArticlePage(page);
@@ -12,28 +12,22 @@ test.describe('記事閲覧フロー (User Journey)', () => {
         // 1. トップページへアクセス
         await homePage.goto('/');
 
-        // 2. 「釣り・船上ノウハウ」 (Ocean) グループへ遷移
-        // hrefに /group/ocean を含むリンクをクリック
-        await homePage.clickGroupBySlug('ocean');
+        // 2. 開発用グループへ遷移
+        await homePage.clickGroupBySlug('_mock');
 
         // URL確認
-        await expect(page).toHaveURL(/\/group\/ocean/);
+        await expect(page).toHaveURL(/\/group\/_mock/);
 
-        // 3. 記事リスト（「ロープワーク」セクション）から記事をクリック
-        // rope-work カテゴリの最初の記事をクリック
-        await groupPage.clickArticle('rope-work', 0);
+        // 3. 記事リストから記事をクリック
+        await groupPage.clickArticle('_mock', 0);
 
         // 4. 記事詳細ページの表示確認
-        // 記事タイトルが表示されているか
         await expect(articlePage.articleTitle).toBeVisible();
 
-        // 5. パンくずリストで戻る
-        // パンくずリストの「ホーム」をクリックしてトップに戻る動作を確認
+        // 5. パンくずリストでホームに戻る
         const homeBreadcrumb = articlePage.getBreadcrumbLink('/');
         await expect(homeBreadcrumb).toBeVisible();
         await homeBreadcrumb.click();
-
-        // ホームに戻ったか確認
         await expect(page).toHaveURL(/\/$/);
     });
 });

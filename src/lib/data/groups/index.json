@@ -1,27 +1,44 @@
 [
 	{
+		"slug": "_mock",
+		"image": "/images/examples/dummyimage-600x300.png",
+		"sections": [
+			{
+				"category": "_mock",
+				"articles": [
+					{
+						"slug": "_mock/example"
+					},
+					{
+						"slug": "_mock/example2"
+					}
+				]
+			}
+		]
+	},
+	{
 		"slug": "camp",
-		"image": "//dummyimage.com/600x300/000/fff",
+		"image": "/images/examples/dummyimage-600x300.png",
 		"sections": []
 	},
 	{
 		"slug": "mountain",
-		"image": "//dummyimage.com/600x300/000/fff",
+		"image": "/images/examples/dummyimage-600x300.png",
 		"sections": []
 	},
 	{
 		"slug": "car",
-		"image": "//dummyimage.com/600x300/000/fff",
+		"image": "/images/examples/dummyimage-600x300.png",
 		"sections": []
 	},
 	{
 		"slug": "moto",
-		"image": "//dummyimage.com/600x300/000/fff",
+		"image": "/images/examples/dummyimage-600x300.png",
 		"sections": []
 	},
 	{
 		"slug": "ocean",
-		"image": "//dummyimage.com/600x300/000/fff",
+		"image": "/images/examples/dummyimage-600x300.png",
 		"sections": [
 			{
 				"category": "rope-work",

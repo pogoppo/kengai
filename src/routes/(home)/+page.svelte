@@ -12,6 +12,7 @@
 
 	function handleSearch(query: string) {
 		const uri = createSearchURL(query);
+		if (!uri.searchParams.get('q')) return;
 		goto(uri);
 	}
 </script>

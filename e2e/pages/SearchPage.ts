@@ -8,6 +8,7 @@ export class SearchPage extends BasePage {
   readonly articleList: Locator;
   readonly articleItems: Locator;
   readonly noArticlesMessage: Locator;
+  readonly queryEmptyMessage: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -17,6 +18,7 @@ export class SearchPage extends BasePage {
     this.articleList = page.locator('.article-list');
     this.articleItems = page.locator('.article-list > li');
     this.noArticlesMessage = page.locator('.no-articles');
+    this.queryEmptyMessage = page.locator('.query-empty');
   }
 
   async search(query: string) {

@@ -1,7 +1,7 @@
 ---
-title: "はじめてのロープワーク"
-description: "この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。"
-tags: ["キャンプ", "登山"]
+title: "記事タイトル1"
+description: "[記事タイトル1] この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。"
+tags: ["タグ", "タグ2"]
 published: true
 ---
 
@@ -12,7 +12,7 @@ published: true
 
 この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
 
-![代替テキスト](https://dummyimage.com/600x400/000/fff)
+![代替テキスト](/images/examples/dummyimage-600x400.png)
 
 ## 見出しレベル2
 
@@ -24,12 +24,12 @@ published: true
 この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
 
 <figure>
-  <img src="https://dummyimage.com/800x600/000/fff" alt="代替テキスト">
+  <img src="/images/examples/dummyimage-600x400.png" alt="代替テキスト">
   <figcaption>図のキャプション例</figcaption>
 </figure>
 
 <figure>
-  <img src="https://dummyimage.com/800x600/000/fff" alt="代替テキスト">
+  <img src="/images/examples/dummyimage-600x400.png" alt="代替テキスト">
 </figure>
 
 [この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。](https://example.com)
@@ -72,7 +72,3 @@ greet('World');
 ## 動画の埋め込み例
 
 <youtube-embed src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"></youtube-embed>
-
-### オフライン
-
-<youtube-embed src="https://youtube.invalid" title="YouTube video player"></youtube-embed>

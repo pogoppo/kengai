@@ -1,7 +1,8 @@
 export function createSearchURL(query: string) {
+  const trimmedQuery = query.replace(/\s+/g, ' ').trim();
   const params = new URLSearchParams();
-  if (query && query.trim() !== '') {
-    params.set('q', query.trim());
+  if (trimmedQuery !== '') {
+    params.set('q', trimmedQuery);
   }
   const uri = new URL(location.href);
   uri.pathname = '/search';

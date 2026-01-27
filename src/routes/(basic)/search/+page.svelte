@@ -8,12 +8,14 @@
 	import SearchBar from '$lib/components/contents/SearchBar.svelte';
 	import ArticleList from '$lib/components/contents/ArticleList.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
+	import DashedBorderBox from '$lib/components/contents/DashedBorderBox.svelte';
 
 	let query = $derived((page.url.searchParams.get('q') ?? '').trim());
 	let results = $derived(query ? articleRepository.filter({ query }) : []);
 
 	function handleSearch(query: string) {
 		const uri = createSearchURL(query);
+		if (!uri.searchParams.get('q')) return;
 		goto(uri);
 	}
 </script>
@@ -35,8 +37,12 @@
 					の検索結果 {results.length} 件
 				</span>
 			</SectionBasicHeading>
+			<ArticleList articles={results} />
+		{:else}
+			<DashedBorderBox>
+				<p class="query-empty">{m['search.query-empty']()}</p>
+			</DashedBorderBox>
 		{/if}
-		<ArticleList articles={results} />
 	</SectionBasic>
 </main>
 

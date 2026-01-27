@@ -28,7 +28,10 @@
 
 	"search.page.title": "記事検索",
 	"search.placeholder": "記事を検索 (例: タープ)",
+	"search.query-empty": "検索キーワードを入力してください。",
 
+	"category._mock.label": "開発用カテゴリ",
+	"category.uncategorized.label": "未分類",
 	"category.tarp.label": "タープ",
 	"category.tent.label": "テント",
 	"category.rope-work.label": "ロープワーク",
@@ -36,7 +39,8 @@
 	"category.car-trouble.label": "自動車トラブル",
 
 	"group.section.more": "全項目",
-
+	"group._mock.label": "開発用グループ",
+	"group._mock.description": "開発用のダミーグループです",
 	"group.moto.label": "バイクノウハウ",
 	"group.moto.description": "トラブルの対応やメンテナンスなど",
 	"group.camp.label": "キャンプノウハウ",
