@@ -13,7 +13,6 @@ describe('SectionBasicHeading', () => {
 
 		render(SectionBasicHeading, {
 			level: 2,
-			icon: faCoffee,
 			children
 		});
 
@@ -45,7 +44,6 @@ describe('SectionBasicHeading', () => {
 
 		render(SectionBasicHeading, {
 			level: 1,
-			icon: faCoffee,
 			children
 		});
 
@@ -66,5 +64,8 @@ describe('SectionBasicHeading', () => {
 
 		const heading = page.getByRole('heading', { level: 6 });
 		await expect.element(heading).toBeInTheDocument();
+
+		const svg = heading.element().querySelector('svg');
+		await expect.element(svg).toBeInTheDocument();
 	});
 });

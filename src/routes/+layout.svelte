@@ -39,6 +39,7 @@
 		max-width: var(--container-max-width);
 		margin-inline: auto;
 		background-color: var(--local-background-color, var(--color-bg-secondary));
+		font-family: sans-serif;
 		font-weight: 500;
 
 		/* フロートの<GlobalNavigation>を考慮し、余白の遊びを確保 */

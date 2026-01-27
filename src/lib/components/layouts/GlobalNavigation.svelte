@@ -12,6 +12,8 @@
 	import NavigationBar from '$lib/components/contents/NavigationBar.svelte';
 	import FloatNavigation from '$lib/components/contents/FloatNavigation.svelte';
 
+	let isArticlePage = $derived(/article\/[^/]+\/[^/]+$/.test(page.url.pathname));
+
 	let mainNavigation = $derived([
 		{
 			href: '/',
@@ -34,7 +36,6 @@
 	]);
 
 	let subNavigation = $derived.by(() => {
-		const isArticlePage = /article\/[^/]+\/[^/]+$/.test(page.url.pathname);
 		const items = [
 			{
 				action: actionSearchArticles,
@@ -72,7 +73,9 @@
 
 <nav class="global-navigation" aria-label={m['component.global-navigation.aria-label']()}>
 	<NavigationBar items={mainNavigation} />
-	<FloatNavigation items={subNavigation} />
+	{#key isArticlePage}
+		<FloatNavigation items={subNavigation} />
+	{/key}
 </nav>
 
 <style>

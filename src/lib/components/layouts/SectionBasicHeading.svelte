@@ -1,18 +1,21 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 	interface SectionBasicHeadingProps {
 		level: 1 | 2 | 3 | 4 | 5 | 6;
-		icon: any;
+		icon?: IconProp;
 		children: Snippet;
 	}
 	let { level, icon, children }: SectionBasicHeadingProps = $props();
 </script>
 
 <svelte:element this={`h${level}`} class="section-basic-heading">
-	<heading-icon>
-		<FontAwesomeIcon {icon} />
-	</heading-icon>
+	{#if icon}
+		<heading-icon>
+			<FontAwesomeIcon {icon} />
+		</heading-icon>
+	{/if}
 	{@render children()}
 </svelte:element>
 

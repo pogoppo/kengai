@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { m } from '$lib/paraglide/messages.js';
 	import { categoryIcon, categoryLabel } from '$lib/utils/category';
+	import { createSearchURL } from '$lib/utils/search';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SearchBar from '$lib/components/contents/SearchBar.svelte';
 	import LinkCard from '$lib/components/contents/LinkCard.svelte';
@@ -9,8 +11,8 @@
 	let { data } = $props();
 
 	function handleSearch(query: string) {
-		// 検索処理
-		console.log('Search from Home:', query);
+		const uri = createSearchURL(query);
+		goto(uri);
 	}
 </script>
 

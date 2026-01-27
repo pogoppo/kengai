@@ -13,10 +13,11 @@ export class ArticleRepository {
           { name: 'description', weight: 1 },
           { name: 'tags', weight: 1.5 }
         ],
-        threshold: 0.4, // 0=完全一致, 1=すべてマッチ
+        threshold: 0.2, // 0=完全一致, 1=すべてマッチ
         includeScore: true,
         minMatchCharLength: 2,
-        ignoreLocation: true
+        ignoreLocation: true,
+        useExtendedSearch: true
       });
     }
 
@@ -109,9 +110,12 @@ export class ArticleRepository {
    */
   search(query: string): ArticleSummary[] {
     if (!query.trim()) return this.articles;
+    // 全角スペースを半角に変換して、AND検索が効くようにする
+    // eslint-disable-next-line no-irregular-whitespace
+    const normalizedQuery = query.replace(/　/g, ' ');
 
     return this.fuse
-      .search(query)
+      .search(normalizedQuery)
       .map((result) => result.item);
   }
 
@@ -119,15 +123,36 @@ export class ArticleRepository {
    * 複数の条件で記事を検索・絞り込む
    */
   filter(filters: { query?: string; category?: string; tags?: string[] }): ArticleSummary[] {
-    let results = filters.query ? this.search(filters.query) : this.articles;
+    let query = filters.query || '';
+    let tags = filters.tags ? [...filters.tags] : [];
+
+    // クエリからハッシュタグを抽出 (#タグ)
+    if (query.includes('#')) {
+      const tokens = query.split(/\s+/);
+      const cleanTokens: string[] = [];
+
+      for (const token of tokens) {
+        if (token.startsWith('#') && token.length > 1) {
+          tags.push(token.slice(1));
+        } else {
+          cleanTokens.push(token);
+        }
+      }
+      query = cleanTokens.join(' ');
+    }
+
+    // タグの重複排除
+    tags = [...new Set(tags)];
+
+    let results = query ? this.search(query) : this.articles;
 
     if (filters.category) {
       results = results.filter((article) => article.category === filters.category);
     }
 
-    if (filters.tags && filters.tags.length > 0) {
+    if (tags.length > 0) {
       results = results.filter((article) =>
-        filters.tags!.some((tag) => article.tags?.includes(tag))
+        tags.some((tag) => article.tags?.includes(tag))
       );
     }
 

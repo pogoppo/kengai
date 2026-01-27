@@ -165,5 +165,34 @@ describe('ArticleRepository', () => {
       expect(result).toHaveLength(1);
       expect(result[0]).toEqual(mockArticles[0]);
     });
+
+    it('クエリ内のハッシュタグをタグとして抽出してフィルタリングすること', () => {
+      const result = repository.filter({ query: '#javascript' });
+      expect(result).toHaveLength(1);
+      expect(result[0]).toEqual(mockArticles[0]);
+    });
+
+    it('クエリ内の複数のハッシュタグを抽出すること', () => {
+      // tags: ['javascript', 'camping'] (OR condition)
+      const result = repository.filter({ query: '#javascript #camping' });
+      expect(result).toHaveLength(2);
+      expect(result).toEqual(expect.arrayContaining([mockArticles[0], mockArticles[2]]));
+    });
+
+    it('ハッシュタグと検索キーワードを組み合わせること', () => {
+      // tags: ['web'], query: 'Second'
+      // 'web' tag exists in article-1 and article-2
+      // 'Second' keyword exists in article-2
+      const result = repository.filter({ query: '#web Second' });
+      expect(result).toHaveLength(1);
+      expect(result[0]).toEqual(mockArticles[1]);
+    });
+
+    it('既存のタグフィルタとハッシュタグをマージすること', () => {
+      // query='#javascript', tags=['camping'] -> tags=['javascript', 'camping']
+      const result = repository.filter({ query: '#javascript', tags: ['camping'] });
+      expect(result).toHaveLength(2);
+      expect(result).toEqual(expect.arrayContaining([mockArticles[0], mockArticles[2]]));
+    });
   });
 });

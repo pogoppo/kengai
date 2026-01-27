@@ -12,6 +12,14 @@ describe('SearchBar', () => {
 		await expect.element(input).toBeInTheDocument();
 	});
 
+	test('初期値が設定される', async () => {
+		const onSearch = vi.fn();
+		render(SearchBar, { onSearch, value: 'initial query' });
+
+		const input = page.getByRole('searchbox');
+		await expect.element(input).toHaveValue('initial query');
+	});
+
 	test('EnterキーでonSearchが呼ばれる', async () => {
 		const onSearch = vi.fn();
 		render(SearchBar, { onSearch });

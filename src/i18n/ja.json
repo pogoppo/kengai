@@ -11,12 +11,12 @@
 	"component.sub-navigation.back-to-top.label": "トップへ戻る",
 	"component.sub-navigation.add-favorite.label": "お気に入りに追加",
 	"component.search-bar.button.aria-label": "検索",
+	"component.article-list.no-articles": "記事が見つかりませんでした。",
 
 	"common.back-to-home": "ホームに戻る",
 
 	"faq.page.title": "よくある質問",
 	"favorite.page.title": "お気に入り",
-	"search.page.title": "記事検索",
 
 	"error.page.title": "404 Not Found",
 	"error.page.description": "お探しのページは見つかりませんでした。",
@@ -24,6 +24,9 @@
 	"home.page.title": "圏外でも使える野外ノウハウアプリ",
 	"home.concept": "圏外でも使える\n野外ノウハウアプリ",
 	"home.search.placeholder": "ノウハウを検索 (例: タープ)",
+
+	"search.page.title": "記事検索",
+	"search.placeholder": "記事を検索 (例: タープ)",
 
 	"category.tarp.label": "タープ",
 	"category.tent.label": "テント",

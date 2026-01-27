@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import type { ArticleSummary } from '$lib/types/article';
 
 	let { articles }: { articles: ArticleSummary[] } = $props();
@@ -8,20 +9,36 @@
 	}
 </script>
 
-<ul class="article-list">
-	{#each articles as article}
-		<li>
-			<article>
-				<a class="article-item" href={articlePath(article.slug)}>
-					<h3 class="article-title">{article.title}</h3>
-					<p class="article-description">{article.description}</p>
-				</a>
-			</article>
-		</li>
-	{/each}
-</ul>
+{#if articles.length === 0}
+	<div class="no-articles">
+		{m['component.article-list.no-articles']()}
+	</div>
+{:else}
+	<ul class="article-list">
+		{#each articles as article}
+			<li>
+				<article>
+					<a class="article-item" href={articlePath(article.slug)}>
+						<h3 class="article-title">{article.title}</h3>
+						<p class="article-description">
+							{article.description}
+							<tag-text>{article.tags.map((tag) => `#${tag}`).join(' ')}</tag-text>
+						</p>
+					</a>
+				</article>
+			</li>
+		{/each}
+	</ul>
+{/if}
 
 <style>
+	.no-articles {
+		padding: 3rem 1rem;
+		background-color: color-mix(in srgb, var(--color-bg-primary) 50%, transparent 50%);
+		border: 1px dashed var(--color-bg-reverse);
+		border-radius: 0.5rem;
+		text-align: center;
+	}
 	.article-list {
 		padding: 0.75rem 1rem;
 		background-color: var(--color-bg-primary);
@@ -45,5 +62,8 @@
 	}
 	.article-description {
 		font-size: 0.8rem;
+		tag-text {
+			opacity: 0.5;
+		}
 	}
 </style>

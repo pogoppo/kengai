@@ -5,16 +5,16 @@
 
 	let {
 		onSearch,
-		placeholder
+		placeholder,
+		value = $bindable('')
 	}: {
 		onSearch: (query: string) => void | Promise<void>;
 		placeholder?: string;
+		value?: string;
 	} = $props();
 
-	let searchQuery = $state('');
-
 	function handleSearch() {
-		onSearch(searchQuery);
+		onSearch(value);
 	}
 </script>
 
@@ -23,7 +23,7 @@
 		type="search"
 		class="search-input"
 		{placeholder}
-		bind:value={searchQuery}
+		bind:value
 		onkeydown={(e) => e.key === 'Enter' && handleSearch()}
 	/>
 	<button

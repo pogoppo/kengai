@@ -33,9 +33,8 @@ describe('ArticleList', () => {
 		await expect.element(page.getByText('Description 2')).toBeInTheDocument();
 	});
 
-	test('記事がない場合は空リストを表示', async () => {
+	test('記事がない場合はメッセージが表示される', async () => {
 		render(ArticleList, { articles: [] });
-		const item = page.getByRole('listitem');
-		await expect.element(item).not.toBeInTheDocument();
+		await expect.element(page.getByText('記事が見つかりませんでした。')).toBeInTheDocument();
 	});
 });
