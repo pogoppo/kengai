@@ -23,8 +23,7 @@ test.describe('ホームページ', () => {
         const homePage = new HomePage(page);
         await homePage.goto('/');
 
-        await homePage.search('テスト検索');
-        // 現状はログ出力のみなので、エラーが出ないことを確認
-        // 将来的にはURL遷移などをアサートする: await expect(page).toHaveURL(/search/);
+        await homePage.search('#タグ');
+        await expect(page).toHaveURL(/search/)
     });
 });
