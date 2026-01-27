@@ -1,21 +1,19 @@
 <script lang="ts">
-	let {
-		label,
-		description,
-		image,
-		href
-	}: {
+	interface LinkCardProps {
+		href: string;
 		label: string;
 		description: string;
-		image: string;
-		href: string;
-	} = $props();
+		image?: string;
+	}
+	let { href, label, description, image }: LinkCardProps = $props();
 </script>
 
 <a class="link-card" {href}>
-	<picture class="card-image">
-		<img src={image} alt={label} />
-	</picture>
+	{#if image}
+		<picture class="card-image">
+			<img src={image} alt={label} />
+		</picture>
+	{/if}
 	<h3 class="card-label">{label}</h3>
 	<p class="card-description">{description}</p>
 </a>

@@ -1,11 +1,18 @@
 <script lang="ts">
-	let { children, color = 'transparent', continuously = false } = $props();
+	import type { Snippet } from 'svelte';
+	interface SectionBasicProps {
+		color?: string;
+		continuously?: boolean;
+		children: Snippet;
+	}
+	let { children, color = 'transparent', continuously = false }: SectionBasicProps = $props();
 </script>
 
 <section
 	class="section-basic"
 	style="--local-background-color: {color}"
 	data-continuously={continuously}
+	data-testid="section-basic"
 >
 	{@render children()}
 </section>

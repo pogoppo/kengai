@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ArticleSummary } from '$lib/types/article.js';
+	import type { ArticleSummary } from '$lib/types/article';
 
 	let { articles }: { articles: ArticleSummary[] } = $props();
 

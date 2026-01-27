@@ -2,13 +2,13 @@
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-	interface Chip {
+	interface ChipProps {
 		href: string;
 		label: string;
 		icon?: IconProp;
 	}
 
-	let { href, label, icon }: Chip = $props();
+	let { href, label, icon }: ChipProps = $props();
 </script>
 
 <a class="chip" {href}>
