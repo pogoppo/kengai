@@ -6,16 +6,26 @@
 	let {
 		onSearch,
 		placeholder,
-		value = $bindable('')
+		value = $bindable(''),
+		focused = $bindable(false)
 	}: {
 		onSearch: (query: string) => void | Promise<void>;
 		placeholder?: string;
 		value?: string;
+		focused?: boolean;
 	} = $props();
+
+	let input: HTMLInputElement | null = null;
 
 	function handleSearch() {
 		onSearch(value);
 	}
+
+	$effect(() => {
+		if (focused && input) {
+			input.focus();
+		}
+	});
 </script>
 
 <div class="search">
@@ -24,6 +34,7 @@
 		class="search-input"
 		{placeholder}
 		bind:value
+		bind:this={input}
 		onkeydown={(e) => e.key === 'Enter' && handleSearch()}
 	/>
 	<button

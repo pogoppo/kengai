@@ -43,4 +43,12 @@ describe('SearchBar', () => {
 
 		expect(onSearch).toHaveBeenCalledWith('another query');
 	});
+
+	test('focusedプロパティがtrueの場合、inputがフォーカスされる', async () => {
+		const onSearch = vi.fn();
+		render(SearchBar, { onSearch, focused: true });
+
+		const input = page.getByRole('searchbox');
+		await expect.element(input).toHaveFocus();
+	});
 });

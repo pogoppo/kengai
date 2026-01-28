@@ -12,6 +12,8 @@
 	"component.sub-navigation.add-favorite.label": "お気に入りに追加",
 	"component.search-bar.button.aria-label": "検索",
 	"component.article-list.no-articles": "記事が見つかりませんでした。",
+	"component.modal.close": "閉じる",
+	"component.modal.search.description": "記事のタイトルや内容の検索が行えます",
 
 	"common.back-to-home": "ホームに戻る",
 	"common.youtube.offlineMessage": "オフラインのため動画を表示できません",

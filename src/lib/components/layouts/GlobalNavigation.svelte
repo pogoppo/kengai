@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { createRawSnippet, mount, unmount } from 'svelte';
 	import { page } from '$app/state';
 	import { m } from '$lib/paraglide/messages';
 	import {
@@ -9,10 +10,15 @@
 		faMagnifyingGlass
 	} from '@fortawesome/free-solid-svg-icons';
 	import { backToTop } from '$lib/utils/navigation';
+	import { modalState } from '$lib/stores/modal.svelte';
 	import NavigationBar from '$lib/components/contents/NavigationBar.svelte';
 	import FloatNavigation from '$lib/components/contents/FloatNavigation.svelte';
+	import ModalSearch from '../modals/ModalSearch.svelte';
 
-	let isArticlePage = $derived(/article\/[^/]+\/[^/]+$/.test(page.url.pathname));
+	interface GlobalNavigationProps {
+		isArticlePage?: boolean;
+	}
+	let { isArticlePage = false }: GlobalNavigationProps = $props();
 
 	let mainNavigation = $derived([
 		{
@@ -66,8 +72,17 @@
 		backToTop();
 	}
 
+	const modalSearchSnippet = createRawSnippet(() => {
+		return {
+			render: () => `<div style="display: contents;"></div>`,
+			setup: (target) => {
+				const component = mount(ModalSearch, { target });
+				return () => unmount(component);
+			}
+		};
+	});
 	function actionSearchArticles() {
-		console.log('記事検索 clicked');
+		modalState.open(modalSearchSnippet);
 	}
 </script>
 

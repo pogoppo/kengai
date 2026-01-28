@@ -57,7 +57,7 @@ describe('GlobalNavigation', () => {
 	});
 
 	test('通常ページではサブナビゲーションに「検索」と「トップへ戻る」のみが表示される', async () => {
-		mocks.pathname = '/category/some-slug'; // 記事ページ以外
+		mocks.pathname = '/category/_mock'; // 記事ページ以外
 		render(GlobalNavigation);
 
 		const searchBtn = user.getByRole('button', { name: '検索' });
@@ -70,9 +70,8 @@ describe('GlobalNavigation', () => {
 		await expect.element(addFavBtn).not.toBeInTheDocument();
 	});
 
-	test('記事ページではサブナビゲーションに「お気に入り追加」が表示される', async () => {
-		mocks.pathname = '/article/camp/tent-setup';
-		render(GlobalNavigation);
+	test('`isArticlePage = true`ではサブナビゲーションに「お気に入り追加」が表示される', async () => {
+		render(GlobalNavigation, { isArticlePage: true });
 
 		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
 		await expect.element(addFavBtn).toBeInTheDocument();
