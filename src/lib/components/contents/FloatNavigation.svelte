@@ -28,13 +28,11 @@
 		right: 0;
 		padding: 0.5rem 0.75rem;
 
-		/* ページの一番下までスクロールで非表示に */
-		pointer-events: none;
-		opacity: 0;
+		/* ページの一番下までスクロールでスタイル変更 */
+		opacity: 1;
 		transition: opacity 0.3s ease-in-out;
-		@container scroll-state(scrollable: bottom) {
-			pointer-events: auto;
-			opacity: 1;
+		@container scroll-state(scrollable: top) {
+			opacity: 0.5;
 		}
 
 		> li > button {

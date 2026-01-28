@@ -37,12 +37,10 @@
 		position: relative;
 		box-sizing: border-box;
 		max-width: var(--container-max-width);
+		min-height: 100lvh;
 		margin-inline: auto;
+		padding-bottom: var(--global-navigation-height);
 		background-color: var(--local-background-color, var(--color-bg-secondary));
 		font-family: sans-serif;
-
-		/* フロートの<GlobalNavigation>を考慮し、余白の遊びを確保 */
-		min-height: calc(100lvh + var(--scroll-free-play));
-		padding-bottom: var(--global-navigation-height);
 	}
 </style>
