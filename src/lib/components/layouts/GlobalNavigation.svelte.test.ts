@@ -16,7 +16,9 @@ vi.mock('$lib/paraglide/messages', () => ({
 }));
 
 const mocks = vi.hoisted(() => ({
-	pathname: '/'
+	pathname: '/',
+	favoriteCheck: vi.fn(() => false),
+	favoriteToggle: vi.fn()
 }));
 
 vi.mock('$app/state', () => ({
@@ -29,9 +31,17 @@ vi.mock('$app/state', () => ({
 	}
 }));
 
+vi.mock('$lib/stores/favorite.svelte', () => ({
+	favoriteState: {
+		check: mocks.favoriteCheck,
+		toggle: mocks.favoriteToggle
+	}
+}));
+
 describe('GlobalNavigation', () => {
 	beforeEach(() => {
 		mocks.pathname = '/';
+		mocks.favoriteCheck.mockReturnValue(false);
 		vi.clearAllMocks();
 	});
 
@@ -81,5 +91,38 @@ describe('GlobalNavigation', () => {
 
 		const backToTopBtn = user.getByRole('button', { name: 'トップへ戻る' });
 		await expect.element(backToTopBtn).toBeInTheDocument();
+	});
+
+	test('お気に入り追加ボタンをクリックするとfavoriteState.toggle()が呼ばれる', async () => {
+		mocks.pathname = '/article/_mock/sample-article';
+		render(GlobalNavigation, { isArticlePage: true });
+
+		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
+		await addFavBtn.click({ force: true });
+
+		expect(mocks.favoriteToggle).toHaveBeenCalledTimes(1);
+		expect(mocks.favoriteToggle).toHaveBeenCalledWith('_mock/sample-article');
+	});
+
+	test('お気に入りに登録済みの記事ではボタンがハイライト表示される', async () => {
+		mocks.pathname = '/article/_mock/sample-article';
+		mocks.favoriteCheck.mockReturnValue(true);
+
+		render(GlobalNavigation, { isArticlePage: true });
+
+		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
+		await expect.element(addFavBtn).toBeInTheDocument();
+		await expect.element(addFavBtn).toHaveAttribute('data-highlight', 'true');
+	});
+
+	test('お気に入り未登録の記事ではボタンがハイライト表示されない', async () => {
+		mocks.pathname = '/article/_mock/sample-article';
+		mocks.favoriteCheck.mockReturnValue(false);
+
+		render(GlobalNavigation, { isArticlePage: true });
+
+		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
+		await expect.element(addFavBtn).toBeInTheDocument();
+		await expect.element(addFavBtn).toHaveAttribute('data-highlight', 'false');
 	});
 });

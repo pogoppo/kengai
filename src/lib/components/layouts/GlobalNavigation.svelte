@@ -10,7 +10,9 @@
 		faMagnifyingGlass
 	} from '@fortawesome/free-solid-svg-icons';
 	import { backToTop } from '$lib/utils/navigation';
+	import { pathnameToArticleSlug } from '$lib/utils/article';
 	import { modalState } from '$lib/stores/modal.svelte';
+	import { favoriteState } from '$lib/stores/favorite.svelte';
 	import NavigationBar from '$lib/components/contents/NavigationBar.svelte';
 	import FloatNavigation from '$lib/components/contents/FloatNavigation.svelte';
 	import ModalSearch from '../modals/ModalSearch.svelte';
@@ -41,31 +43,41 @@
 		}
 	]);
 
+	let isFavorite = $derived.by(() => {
+		if (!isArticlePage) return false;
+		const slug = pathnameToArticleSlug(page.url.pathname);
+		return favoriteState.check(slug);
+	});
 	let subNavigation = $derived.by(() => {
 		const items = [
 			{
 				action: actionSearchArticles,
 				label: m['component.sub-navigation.search.label'](),
-				icon: faMagnifyingGlass
+				icon: faMagnifyingGlass,
+				highlight: false
 			},
 			{
 				action: actionBackToTop,
 				label: m['component.sub-navigation.back-to-top.label'](),
-				icon: faChevronUp
+				icon: faChevronUp,
+				highlight: false
 			}
 		];
 		if (isArticlePage) {
+			const slug = pathnameToArticleSlug(page.url.pathname);
 			items.unshift({
-				action: actionAddFavorite,
+				action: () => actionAddFavorite(slug),
 				label: m['component.sub-navigation.add-favorite.label'](),
-				icon: faStar
+				icon: faStar,
+				highlight: isFavorite
 			});
 		}
 		return items;
 	});
 
-	function actionAddFavorite() {
-		console.log('お気に入りに追加 clicked');
+	function actionAddFavorite(slug: string) {
+		favoriteState.toggle(slug);
+		isFavorite = favoriteState.check(slug);
 	}
 
 	function actionBackToTop() {

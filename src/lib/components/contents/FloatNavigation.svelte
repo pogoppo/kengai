@@ -3,7 +3,7 @@
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 
 	interface FloatNavigationProps {
-		items: { action: () => void; label: string; icon: IconProp }[];
+		items: { action: () => void; label: string; icon: IconProp; highlight?: boolean }[];
 	}
 	let { items }: FloatNavigationProps = $props();
 </script>
@@ -11,7 +11,7 @@
 <ul class="float-navigation">
 	{#each items as item}
 		<li>
-			<button onclick={item.action} aria-label={item.label}>
+			<button onclick={item.action} aria-label={item.label} data-highlight={!!item.highlight}>
 				<FontAwesomeIcon icon={item.icon} />
 			</button>
 		</li>
@@ -50,6 +50,7 @@
 			/* ビジュアルの調整として背景を重ねている */
 			background-color: var(--color-bg-secondary);
 			mix-blend-mode: multiply;
+			transition: background-color 0.2s ease-in-out;
 			&::before {
 				content: '';
 				position: absolute;
@@ -58,6 +59,10 @@
 				background-color: color-mix(in srgb, var(--color-bg-secondary) 50%, transparent);
 				mix-blend-mode: multiply;
 				pointer-events: none;
+			}
+			&[data-highlight='true'] {
+				background-color: var(--color-bg-tertiary);
+				color: var(--color-fg-reverse);
 			}
 		}
 	}
