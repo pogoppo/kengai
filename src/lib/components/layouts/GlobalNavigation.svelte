@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createRawSnippet, mount, unmount } from 'svelte';
 	import { page } from '$app/state';
+	import type { Pathname } from '$app/types';
 	import { m } from '$lib/paraglide/messages';
 	import {
 		faHome,
@@ -24,19 +25,19 @@
 
 	let mainNavigation = $derived([
 		{
-			href: '/',
+			href: '/' as Pathname,
 			label: m['component.main-navigation.home.label'](),
 			icon: faHome,
 			active: page.url.pathname === '/'
 		},
 		{
-			href: '/favorite',
+			href: '/favorite' as Pathname,
 			label: m['component.main-navigation.favorite.label'](),
 			icon: faStar,
 			active: page.url.pathname === '/favorite'
 		},
 		{
-			href: '/faq',
+			href: '/faq' as Pathname,
 			label: m['component.main-navigation.faq.label'](),
 			icon: faCircleQuestion,
 			active: page.url.pathname === '/faq'

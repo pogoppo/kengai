@@ -6,26 +6,29 @@ import LinkCard from './LinkCard.svelte';
 const imgDataUrl = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 describe('LinkCard', () => {
-	const props = {
-		label: 'Card Label',
-		description: 'Card Description',
-		image: imgDataUrl,
-		href: '/card-link'
-	};
-
 	test('正しい内容とリンクでカードが表示される', async () => {
-		render(LinkCard, props);
+		render(LinkCard, {
+			label: 'Card Label',
+			description: 'Card Description',
+			image: imgDataUrl,
+			href: '/'
+		});
 
 		const link = page.getByRole('link', { name: 'Card Label' });
 		await expect.element(link).toBeInTheDocument();
-		await expect.element(link).toHaveAttribute('href', '/card-link');
+		await expect.element(link).toHaveAttribute('href', '/');
 
 		await expect.element(page.getByText('Card Label')).toBeInTheDocument();
 		await expect.element(page.getByText('Card Description')).toBeInTheDocument();
 	});
 
 	test('画像が正しい属性で表示される', async () => {
-		render(LinkCard, props);
+		render(LinkCard, {
+			label: 'Card Label',
+			description: 'Card Description',
+			image: imgDataUrl,
+			href: '/'
+		});
 
 		const img = page.getByAltText('Card Label');
 		await expect.element(img).toBeInTheDocument();

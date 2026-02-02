@@ -9,8 +9,3 @@
 <main class="faq">
 	<!-- TODO -->
 </main>
-
-<style>
-	.faq {
-	}
-</style>

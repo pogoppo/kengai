@@ -12,9 +12,9 @@ vi.mock('$lib/paraglide/messages', () => ({
 
 describe('Breadcrumbs', () => {
 	test('ホームリンクとパンくずリスト項目が表示される', async () => {
-		const items = [{ label: 'Category', href: '/category' }, { label: 'Current Page' }];
-
-		render(Breadcrumbs, { items });
+		render(Breadcrumbs, {
+			items: [{ label: 'Category', href: '/category/_mock' }, { label: 'Current Page' }]
+		});
 
 		const nav = page.getByRole('navigation', { name: 'Breadcrumbs Label' });
 		await expect.element(nav).toBeInTheDocument();
@@ -25,7 +25,7 @@ describe('Breadcrumbs', () => {
 
 		const categoryLink = page.getByRole('link', { name: 'Category' });
 		await expect.element(categoryLink).toBeInTheDocument();
-		await expect.element(categoryLink).toHaveAttribute('href', '/category');
+		await expect.element(categoryLink).toHaveAttribute('href', '/category/_mock');
 
 		const currentPage = page.getByText('Current Page');
 		await expect.element(currentPage).toBeInTheDocument();
@@ -35,8 +35,7 @@ describe('Breadcrumbs', () => {
 	});
 
 	test('区切りアイコンが表示される', async () => {
-		const items = [{ label: 'Page 1', href: '/p1' }];
-		render(Breadcrumbs, { items });
+		render(Breadcrumbs, { items: [{ label: 'Current Page' }] });
 
 		const nav = page.getByRole('navigation', { name: 'Breadcrumbs Label' });
 		await expect.element(nav).toBeInTheDocument();

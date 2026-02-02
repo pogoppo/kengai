@@ -6,15 +6,15 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 describe('Chip', () => {
 	test('ラベルとリンクが表示される', async () => {
-		render(Chip, { href: '/test-link', label: 'Test Label' });
+		render(Chip, { href: '/', label: 'Test Label' });
 
 		const link = page.getByRole('link', { name: 'Test Label' });
 		await expect.element(link).toBeInTheDocument();
-		await expect.element(link).toHaveAttribute('href', '/test-link');
+		await expect.element(link).toHaveAttribute('href', '/');
 	});
 
 	test('icon指定時にアイコンが表示される', async () => {
-		render(Chip, { href: '/test-icon', label: 'Icon Label', icon: faCoffee });
+		render(Chip, { href: '/', label: 'Icon Label', icon: faCoffee });
 
 		const link = page.getByRole('link', { name: 'Icon Label' });
 		await expect.element(link).toBeInTheDocument();

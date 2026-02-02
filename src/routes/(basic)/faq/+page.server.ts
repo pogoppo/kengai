@@ -1,5 +1,1 @@
-import type { EntryGenerator } from './$types';
-
-export const entries: EntryGenerator = () => {
-	return [];
-};
+// Static page - no entries needed
