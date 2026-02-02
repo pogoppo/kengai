@@ -9,7 +9,7 @@
 		variant?: 'primary' | 'accent' | 'danger';
 		icon?: IconProp;
 		rounded?: boolean;
-		[key: string]: any;
+		[key: string]: unknown;
 	}
 	let {
 		children,

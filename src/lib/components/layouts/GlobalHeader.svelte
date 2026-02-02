@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { m } from '$lib/paraglide/messages.js';
 	import logo from '$lib/assets/app-logo.svg';
 	let { isHome = false } = $props();
@@ -6,7 +7,7 @@
 
 <header class="global-header">
 	<svelte:element this={isHome ? 'h1' : 'div'} class="header-logo">
-		<a href="/">
+		<a href={resolve('/')}>
 			<img src={logo} alt={m['app.name']()} />
 		</a>
 	</svelte:element>

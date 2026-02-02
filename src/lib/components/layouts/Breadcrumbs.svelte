@@ -1,21 +1,26 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+	import type { Pathname } from '$app/types';
 	import { m } from '$lib/paraglide/messages';
 	import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 
 	interface BreadcrumbsItem {
 		label: string;
-		href?: string;
+		href?: Pathname;
 	}
 
 	let { items }: { items: BreadcrumbsItem[] } = $props();
 
-	let breadcrumbsItems = $derived([{ label: m['app.name'](), href: '/' }, ...items]);
+	let breadcrumbsItems = $derived([
+		{ label: m['app.name'](), href: '/' } as BreadcrumbsItem,
+		...items
+	]);
 </script>
 
 <nav aria-label={m['component.breadcrumbs.aria-label']()}>
 	<ol class="breadcrumbs">
-		{#each breadcrumbsItems as item, index}
+		{#each breadcrumbsItems as item, index (index)}
 			<li>
 				{#if index > 0}
 					<separator-icon>
@@ -23,7 +28,7 @@
 					</separator-icon>
 				{/if}
 				{#if item.href}
-					<a href={item.href} class="breadcrumbs-link">{item.label}</a>
+					<a href={resolve(item.href)} class="breadcrumbs-link">{item.label}</a>
 				{:else}
 					<span class="breadcrumbs-current">{item.label}</span>
 				{/if}

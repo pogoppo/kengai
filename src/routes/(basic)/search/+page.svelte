@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import { m } from '$lib/paraglide/messages.js';
 	import { articleRepository } from '$lib/repositories/article';
 	import { createSearchURL } from '$lib/utils/search';
@@ -16,7 +17,7 @@
 	function handleSearch(query: string) {
 		const uri = createSearchURL(query);
 		if (!uri.searchParams.get('q')) return;
-		goto(uri);
+		goto(resolve(uri.toString() as '/search'));
 	}
 </script>
 

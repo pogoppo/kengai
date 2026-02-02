@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { m } from '$lib/paraglide/messages.js';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -24,7 +25,7 @@
 	</div>
 	<p class="error-description">{m['error.page.description']()}</p>
 	<p class="error-back-to-home">
-		<a href="/">
+		<a href={resolve('/')}>
 			{m['common.back-to-home']()}<FontAwesomeIcon icon={faCircleChevronRight} />
 		</a>
 	</p>

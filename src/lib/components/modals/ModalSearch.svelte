@@ -4,12 +4,13 @@
 	import { createSearchURL } from '$lib/utils/search';
 	import { modalState } from '$lib/stores/modal.svelte';
 	import SearchBar from '$lib/components/contents/SearchBar.svelte';
+	import { resolve } from '$app/paths';
 
 	function handleSearch(query: string) {
 		const uri = createSearchURL(query);
 		if (!uri.searchParams.get('q')) return;
 		modalState.close();
-		goto(uri);
+		goto(resolve(uri.toString() as '/search'));
 	}
 </script>
 

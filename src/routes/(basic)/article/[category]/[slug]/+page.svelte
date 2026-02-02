@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { resolve } from '$app/paths';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import { m } from '$lib/paraglide/messages';
 	import { categoryLabel } from '$lib/utils/category.js';
@@ -31,21 +32,23 @@
 	<article class="article">
 		<header class="article-header">
 			<div class="article-category">
-				<a href={`/category/${data.articleSummary.category}`}>
+				<a href={resolve(`/category/${data.articleSummary.category}`)}>
 					{categoryLabel(data.articleSummary.category)}
 				</a>
 			</div>
 			<h1 class="article-title">{data.articleSummary.title}</h1>
 			<ul class="article-tags">
-				{#each data.articleSummary.tags as tag}
+				{#each data.articleSummary.tags as tag (tag)}
 					<li>
-						<a href={`/search?q=${encodeURIComponent(`#${tag}`)}`}>#{tag}</a>
+						<a href={resolve(`/search?q=${encodeURIComponent(`#${tag}`)}` as `/search`)}>#{tag}</a>
 					</li>
 				{/each}
 			</ul>
 		</header>
 
 		<div class="article-content">
+			<!-- サーバーサイドで作成されたマークダウンをHTMLに変換して表示するためignore -->
+			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 			{@html data.content}
 		</div>
 	</article>

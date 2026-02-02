@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import { m } from '$lib/paraglide/messages.js';
 	import { categoryIcon, categoryLabel } from '$lib/utils/category';
 	import { createSearchURL } from '$lib/utils/search';
@@ -13,7 +14,7 @@
 	function handleSearch(query: string) {
 		const uri = createSearchURL(query);
 		if (!uri.searchParams.get('q')) return;
-		goto(uri);
+		goto(resolve(uri.toString() as '/search'));
 	}
 </script>
 
@@ -37,7 +38,7 @@
 
 	<SectionBasic continuously={true} --local-padding-inline="0.5rem">
 		<ul class="groups">
-			{#each data.groups as group}
+			{#each data.groups as group (group.slug)}
 				<li>
 					<LinkCard
 						label={group.label}
@@ -52,7 +53,7 @@
 
 	<SectionBasic continuously={true} --local-padding-inline="0.5rem">
 		<ul class="categories">
-			{#each data.categories as category}
+			{#each data.categories as category (category)}
 				<li>
 					<Chip
 						href={`/category/${category}`}

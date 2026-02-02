@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+	import type { Pathname } from '$app/types';
 	interface LinkCardProps {
-		href: string;
+		href: Pathname;
 		label: string;
 		description: string;
 		image?: string;
@@ -8,7 +10,7 @@
 	let { href, label, description, image }: LinkCardProps = $props();
 </script>
 
-<a class="link-card" {href}>
+<a class="link-card" href={resolve(href)}>
 	{#if image}
 		<picture class="card-image">
 			<img src={image} alt={label} />

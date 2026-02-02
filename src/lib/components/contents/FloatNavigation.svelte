@@ -9,7 +9,7 @@
 </script>
 
 <ul class="float-navigation">
-	{#each items as item}
+	{#each items as item, index (index)}
 		<li>
 			<button onclick={item.action} aria-label={item.label} data-highlight={!!item.highlight}>
 				<FontAwesomeIcon icon={item.icon} />

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+	import { SvelteSet } from 'svelte/reactivity';
 	import { m } from '$lib/paraglide/messages';
 	import type { ArticleSummary } from '$lib/types/article';
 	import CheckboxBasic from './CheckboxBasic.svelte';
@@ -16,17 +18,13 @@
 	}: ArticleListProps = $props();
 
 	function toggleArticleCheck(slug: string) {
-		const newSet = new Set(checkedArticles);
+		const newSet = new SvelteSet(checkedArticles);
 		if (newSet.has(slug)) {
 			newSet.delete(slug);
 		} else {
 			newSet.add(slug);
 		}
 		checkedArticles = newSet;
-	}
-
-	function articlePath(slug: string): string {
-		return `/article/${slug}`;
 	}
 </script>
 
@@ -40,10 +38,10 @@
 
 {#snippet articleList()}
 	<ul class="article-list">
-		{#each articles as article}
+		{#each articles as article (article.slug)}
 			<li>
 				<article>
-					<a class="article-item" href={articlePath(article.slug)}>
+					<a class="article-item" href={resolve(`/article/${article.slug}`)}>
 						{@render articleInfo(article)}
 					</a>
 				</article>
@@ -54,7 +52,7 @@
 
 {#snippet checkableArticleList()}
 	<ul class="article-list">
-		{#each articles as article}
+		{#each articles as article (article.slug)}
 			<li>
 				<article>
 					<label class="article-item">

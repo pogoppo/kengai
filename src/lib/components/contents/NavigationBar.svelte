@@ -1,17 +1,19 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+	import type { Pathname } from '$app/types';
 	import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 
 	interface NavigationBarProps {
-		items: { href: string; label: string; icon: IconProp; active: boolean }[];
+		items: { href: Pathname; label: string; icon: IconProp; active: boolean }[];
 	}
 	let { items }: NavigationBarProps = $props();
 </script>
 
 <ul class="navigation-bar">
-	{#each items as item}
+	{#each items as item (item.href)}
 		<li>
-			<a href={item.href} data-active={item.active}>
+			<a href={resolve(item.href)} data-active={item.active}>
 				<nav-icon>
 					<FontAwesomeIcon icon={item.icon} />
 				</nav-icon>

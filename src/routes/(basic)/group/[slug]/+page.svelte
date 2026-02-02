@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 	import { m } from '$lib/paraglide/messages.js';
@@ -7,7 +8,6 @@
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
-
 	let { data } = $props();
 </script>
 
@@ -26,13 +26,13 @@
 		<p class="group-description">{data.groupData.description}</p>
 	</header>
 
-	{#each data.groupData.sections as section}
+	{#each data.groupData.sections as section (section.category)}
 		<SectionBasic continuously={true}>
 			<header class="group-section-header">
 				<SectionBasicHeading level={2} icon={categoryIcon(section.category)}>
 					{categoryLabel(section.category)}
 				</SectionBasicHeading>
-				<a href={`/category/${section.category}`} class="group-section-more">
+				<a href={resolve(`/category/${section.category}`)} class="group-section-more">
 					{m['group.section.more']()}
 					<FontAwesomeIcon icon={faCircleChevronRight} />
 				</a>
