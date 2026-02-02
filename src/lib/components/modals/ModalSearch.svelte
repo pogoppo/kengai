@@ -7,10 +7,11 @@
 	import { resolve } from '$app/paths';
 
 	function handleSearch(query: string) {
-		const uri = createSearchURL(query);
-		if (!uri.searchParams.get('q')) return;
+		const url = createSearchURL(query);
+		if (!url.searchParams.get('q')) return;
+		const pathname = `/search${url.search}`;
+		goto(resolve(pathname as '/search'));
 		modalState.close();
-		goto(resolve(uri.toString() as '/search'));
 	}
 </script>
 

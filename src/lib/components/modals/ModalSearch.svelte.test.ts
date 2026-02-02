@@ -60,7 +60,7 @@ describe('ModalSearch', () => {
 		expect(modalState.close).toHaveBeenCalled();
 
 		// gotoが正しいURLで呼ばれたか
-		expect(goto).toHaveBeenCalledWith(mockUrl);
+		expect(goto).toHaveBeenCalledWith(`/search${mockUrl.search}`);
 	});
 
 	test('空文字で検索した場合、何も起こらないこと', async () => {
