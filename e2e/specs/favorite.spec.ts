@@ -72,13 +72,20 @@ test.describe('お気に入り機能', () => {
 
 		// 事前に2つの記事をお気に入りに追加
 		await page.goto('/article/_mock/example');
-		await page.getByRole('button', { name: /お気に入り/ }).click();
+		const favoriteButton1 = page.getByRole('button', { name: /お気に入り/ });
+		await favoriteButton1.click();
+		await expect(favoriteButton1).toHaveAttribute('data-highlight', 'true');
 
 		await page.goto('/article/_mock/example2');
-		await page.getByRole('button', { name: /お気に入り/ }).click();
+		const favoriteButton2 = page.getByRole('button', { name: /お気に入り/ });
+		await favoriteButton2.click();
+		await expect(favoriteButton2).toHaveAttribute('data-highlight', 'true');
 
 		// お気に入りページへ
 		await favoritePage.goto('/favorite');
+
+		// 記事が読み込まれるまで待機
+		await expect(favoritePage.articles.first()).toBeVisible();
 
 		// 初期状態で2つの記事があることを確認
 		const initialCount = await favoritePage.getArticleCount();
@@ -147,12 +154,20 @@ test.describe('お気に入り機能', () => {
 
 		// 2つの記事をお気に入りに追加
 		await page.goto(`/article/_mock/example`);
-		await page.getByRole('button', { name: /お気に入り/ }).click();
+		const favoriteButton1 = page.getByRole('button', { name: /お気に入り/ });
+		await favoriteButton1.click();
+		await expect(favoriteButton1).toHaveAttribute('data-highlight', 'true');
+
 		await page.goto(`/article/_mock/example2`);
-		await page.getByRole('button', { name: /お気に入り/ }).click();
+		const favoriteButton2 = page.getByRole('button', { name: /お気に入り/ });
+		await favoriteButton2.click();
+		await expect(favoriteButton2).toHaveAttribute('data-highlight', 'true');
 
 		// お気に入りページへ
 		await favoritePage.goto('/favorite');
+
+		// 記事が読み込まれるまで待機
+		await expect(favoritePage.articles.first()).toBeVisible();
 
 		// 初期状態で2つの記事があることを確認
 		const initialCount = await favoritePage.getArticleCount();

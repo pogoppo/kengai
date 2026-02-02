@@ -6,6 +6,7 @@ export class FavoritePage extends BasePage {
 	readonly editButton: Locator;
 	readonly deleteButton: Locator;
 	readonly articleList: Locator;
+	readonly articles: Locator;
 	readonly articleCheckboxes: Locator;
 
 	constructor(page: Page) {
@@ -14,6 +15,7 @@ export class FavoritePage extends BasePage {
 		this.editButton = page.getByRole('button', { name: /編集|キャンセル/ });
 		this.deleteButton = page.getByRole('button', { name: /削除/ });
 		this.articleList = page.locator('.article-list');
+		this.articles = this.articleList.locator('> li');
 		this.articleCheckboxes = page.locator('input[type="checkbox"]');
 	}
 
