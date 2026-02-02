@@ -25,7 +25,8 @@ vite.config.ts.timestamp-*
 
 # Paraglide
 src/lib/paraglide
-project.inlang/cache/
+project.inlang/*
+!project.inlang/settings.json
 
 # Article index (auto-generated)
 src/lib/data/articles/*/index.json
