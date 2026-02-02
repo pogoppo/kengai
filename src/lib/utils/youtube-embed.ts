@@ -1,30 +1,30 @@
-import { m } from "$lib/paraglide/messages";
+import { m } from '$lib/paraglide/messages';
 
 export class YoutubeEmbed extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
+	constructor() {
+		super();
+		this.attachShadow({ mode: 'open' });
+	}
 
-  connectedCallback() {
-    this.render();
-    window.addEventListener('online', this.render);
-    window.addEventListener('offline', this.render);
-  }
+	connectedCallback() {
+		this.render();
+		window.addEventListener('online', this.render);
+		window.addEventListener('offline', this.render);
+	}
 
-  disconnectedCallback() {
-    window.removeEventListener('online', this.render);
-    window.removeEventListener('offline', this.render);
-  }
+	disconnectedCallback() {
+		window.removeEventListener('online', this.render);
+		window.removeEventListener('offline', this.render);
+	}
 
-  render = () => {
-    const src = this.getAttribute('src');
-    const title = this.getAttribute('title');
-    const isOnline = navigator.onLine;
+	render = () => {
+		const src = this.getAttribute('src');
+		const title = this.getAttribute('title');
+		const isOnline = navigator.onLine;
 
-    if (this.shadowRoot) {
-      if (isOnline) {
-        this.shadowRoot.innerHTML = `
+		if (this.shadowRoot) {
+			if (isOnline) {
+				this.shadowRoot.innerHTML = `
 					<style>
 						iframe {
 							width: 100%;
@@ -34,11 +34,11 @@ export class YoutubeEmbed extends HTMLElement {
 					</style>
           <iframe src="${src}" title="${title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				`;
-      } else {
-        this.shadowRoot.innerHTML = `
+			} else {
+				this.shadowRoot.innerHTML = `
           <span>${m['common.youtube.offlineMessage']()}</span>
         `;
-      }
-    };
-  }
+			}
+		}
+	};
 }

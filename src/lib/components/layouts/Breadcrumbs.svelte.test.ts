@@ -12,10 +12,7 @@ vi.mock('$lib/paraglide/messages', () => ({
 
 describe('Breadcrumbs', () => {
 	test('ホームリンクとパンくずリスト項目が表示される', async () => {
-		const items = [
-			{ label: 'Category', href: '/category' },
-			{ label: 'Current Page' }
-		];
+		const items = [{ label: 'Category', href: '/category' }, { label: 'Current Page' }];
 
 		render(Breadcrumbs, { items });
 
@@ -38,9 +35,7 @@ describe('Breadcrumbs', () => {
 	});
 
 	test('区切りアイコンが表示される', async () => {
-		const items = [
-			{ label: 'Page 1', href: '/p1' }
-		];
+		const items = [{ label: 'Page 1', href: '/p1' }];
 		render(Breadcrumbs, { items });
 
 		const nav = page.getByRole('navigation', { name: 'Breadcrumbs Label' });

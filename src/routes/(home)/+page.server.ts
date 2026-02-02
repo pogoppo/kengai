@@ -3,10 +3,10 @@ import { groups } from '$lib/data/groups';
 import { articleRepository } from '$lib/repositories/article';
 
 export const load: PageServerLoad = () => {
-  const categories = articleRepository.getAllCategories();
+	const categories = articleRepository.getAllCategories();
 
-  return {
-    groups,
-    categories
-  };
+	return {
+		groups,
+		categories
+	};
 };

@@ -59,9 +59,7 @@ describe('FloatNavigation', () => {
 	});
 
 	test('highlightが未設定の場合はdata-highlightがfalseになる', async () => {
-		const itemsWithoutHighlight = [
-			{ action: vi.fn(), label: 'Default Button', icon: faCheck }
-		];
+		const itemsWithoutHighlight = [{ action: vi.fn(), label: 'Default Button', icon: faCheck }];
 
 		render(FloatNavigation, { items: itemsWithoutHighlight });
 

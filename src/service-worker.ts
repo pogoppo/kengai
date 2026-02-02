@@ -8,8 +8,8 @@ declare const self: ServiceWorkerGlobalScope;
 const CACHE_NAME = `kengai-v${version}`;
 
 const ASSETS = [
-	...build,      // JS, CSSなどのビルドされたアセット
-	...files,      // `static` ディレクトリ内のファイル
+	...build, // JS, CSSなどのビルドされたアセット
+	...files, // `static` ディレクトリ内のファイル
 	...prerendered // 事前レンダリングされたページ
 ];
 
@@ -19,9 +19,7 @@ self.addEventListener('install', (event) => {
 
 	async function addFilesToCache() {
 		const cache = await caches.open(CACHE_NAME);
-		await Promise.allSettled(
-			ASSETS.map((asset) => cache.add(asset))
-		);
+		await Promise.allSettled(ASSETS.map((asset) => cache.add(asset)));
 	}
 
 	event.waitUntil(addFilesToCache());
@@ -65,7 +63,7 @@ self.addEventListener('fetch', (event) => {
 		url.search = '';
 		const requestWithoutQuery = new Request(url.toString(), {
 			method: request.method,
-			headers: request.headers,
+			headers: request.headers
 			// body, mode, credentials, etc. はGETなので不要
 		});
 		const cacheResponse = await cache.match(requestWithoutQuery);

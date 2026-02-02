@@ -9,8 +9,8 @@
 			"type": "http"
 		},
 		"chrome-devtools": {
-			"command":"npx",
-			"args":["chrome-devtools-mcp@latest"]
+			"command": "npx",
+			"args": ["chrome-devtools-mcp@latest"]
 		}
 	},
 	"inputs": []

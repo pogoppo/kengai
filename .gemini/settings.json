@@ -7,9 +7,9 @@
 		"figma": {
 			"url": "https://mcp.figma.com/mcp"
 		},
-    "chrome-devtools": {
-      "command": "npx",
-      "args": ["chrome-devtools-mcp@latest"]
-    }
+		"chrome-devtools": {
+			"command": "npx",
+			"args": ["chrome-devtools-mcp@latest"]
+		}
 	}
 }

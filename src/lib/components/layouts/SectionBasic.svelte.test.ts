@@ -23,7 +23,9 @@ describe('SectionBasic', () => {
 
 		const section = page.getByTestId('section-basic');
 		// toHaveStyleがCSS変数に対応していない
-		await expect.element(section).toHaveAttribute('style', '--local-background-color: transparent;');
+		await expect
+			.element(section)
+			.toHaveAttribute('style', '--local-background-color: transparent;');
 		await expect.element(section).toHaveAttribute('data-continuously', 'false');
 	});
 

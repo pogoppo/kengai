@@ -5,13 +5,13 @@ import { page } from 'vitest/browser';
 import DashedBorderBox from './DashedBorderBox.svelte';
 
 describe('DashedBorderBox', () => {
-  test('ボックスが表示される', async () => {
-    const children = createRawSnippet(() => ({
-      render: () => '<div>Test Content</div>'
-    }));
-    render(DashedBorderBox, { children });
+	test('ボックスが表示される', async () => {
+		const children = createRawSnippet(() => ({
+			render: () => '<div>Test Content</div>'
+		}));
+		render(DashedBorderBox, { children });
 
-    const box = page.getByText('Test Content');
-    await expect.element(box).toBeInTheDocument();
-  });
+		const box = page.getByText('Test Content');
+		await expect.element(box).toBeInTheDocument();
+	});
 });

@@ -7,6 +7,7 @@ This is a **SvelteKit** application using **Svelte 5** with internationalization
 ## Architecture & Key Patterns
 
 ### Internationalization (i18n)
+
 - **Paraglide JS** handles i18n with Japanese (`ja`) as the base locale
 - Message files: [messages/ja.json](messages/ja.json)
 - Configuration: [project.inlang/settings.json](project.inlang/settings.json)
@@ -16,7 +17,9 @@ This is a **SvelteKit** application using **Svelte 5** with internationalization
 - [src/hooks.ts](src/hooks.ts) implements URL delocalizing via `reroute` hook
 
 ### Testing Strategy
+
 Two separate test projects configured in [vite.config.ts](vite.config.ts):
+
 1. **Client tests** (`.svelte.{test,spec}.{js,ts}`): Vitest browser mode with Playwright
    - Use `vitest-browser-svelte` for component rendering
    - Example: [src/routes/page.svelte.spec.ts](src/routes/page.svelte.spec.ts)
@@ -25,21 +28,25 @@ Two separate test projects configured in [vite.config.ts](vite.config.ts):
 3. **E2E tests**: Playwright in [e2e/](e2e/) directory
 
 Run tests with:
+
 - `npm run test:unit` - Unit tests (vitest)
 - `npm run test:e2e` - E2E tests (playwright)
 - `npm test` - All tests
 
 ### File Extensions & Preprocessors
+
 - Uses `vitePreprocess()` preprocessor ([svelte.config.js](svelte.config.js))
 - Article content is managed in Markdown files with frontmatter, processed via `gray-matter`
 
 ### Deployment
+
 - Configured for **Vercel** via `@sveltejs/adapter-vercel`
 - Build: `npm run build`, Preview: `npm run preview`
 
 ## Development Workflow
 
 ### Essential Commands
+
 ```bash
 npm run dev              # Start dev server
 npm run check            # Type-check with svelte-check
@@ -50,12 +57,14 @@ npm run prepare          # Sync SvelteKit types (runs automatically)
 ```
 
 ### Code Quality
+
 - **ESLint**: Flat config ([eslint.config.js](eslint.config.js)) with TypeScript, Svelte, and Prettier integration
 - **TypeScript**: Strict mode enabled, uses SvelteKit's generated tsconfig
 - `no-undef` rule disabled for TypeScript (per typescript-eslint recommendations)
 - Prettier integrated with both ESLint and Svelte configs
 
 ### CSS Conventions
+
 - **Use native CSS nesting**: This project uses standard CSS nesting syntax (supported natively in modern browsers)
 - Prefer `>` child combinator for direct descendants (e.g., `> li`, `> a`)
 - Use `&` for pseudo-classes, pseudo-elements, and modifier selectors (e.g., `&:hover`, `&::before`, `&[data-current="true"]`)
@@ -64,6 +73,7 @@ npm run prepare          # Sync SvelteKit types (runs automatically)
 ## Svelte 5 Specific Conventions
 
 When working with Svelte code:
+
 1. **Always use MCP tools** for Svelte development:
    - Use `list-sections` first to discover relevant documentation
    - Use `get-documentation` to fetch needed sections
