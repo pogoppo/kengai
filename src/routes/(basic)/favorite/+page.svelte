@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { faStar, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 	import { m } from '$lib/paraglide/messages.js';
+	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import ArticleList from '$lib/components/contents/ArticleList.svelte';
 	import ButtonBasic from '$lib/components/contents/ButtonBasic.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
@@ -36,6 +37,8 @@
 <svelte:head>
 	<title>{m['favorite.page.title']()} - {m['app.name']()}</title>
 </svelte:head>
+
+<Breadcrumbs items={[{ label: m['favorite.page.title']() }]} />
 
 <main class="favorite">
 	<SectionBasic>

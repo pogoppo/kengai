@@ -5,6 +5,7 @@
 	import { m } from '$lib/paraglide/messages.js';
 	import { articleRepository } from '$lib/repositories/article';
 	import { createSearchURL } from '$lib/utils/search';
+	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SearchBar from '$lib/components/contents/SearchBar.svelte';
 	import ArticleList from '$lib/components/contents/ArticleList.svelte';
@@ -25,6 +26,8 @@
 <svelte:head>
 	<title>{m['search.page.title']()} - {m['app.name']()}</title>
 </svelte:head>
+
+<Breadcrumbs items={[{ label: m['search.page.title']() }]} />
 
 <main class="search">
 	<SectionBasic>
