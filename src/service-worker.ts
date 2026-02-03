@@ -5,48 +5,71 @@ import { build, files, prerendered, version } from '$service-worker';
 
 declare const self: ServiceWorkerGlobalScope;
 
+// キャッシュのキー
 const CACHE_NAME = `kengai-v${version}`;
-
+// キャッシュ対象
 const ASSETS = [
 	...build, // JS, CSSなどのビルドされたアセット
 	...files, // `static` ディレクトリ内のファイル
 	...prerendered // 事前レンダリングされたページ
 ];
 
-// インストール時に静的アセットをキャッシュ
+/////////////////////////////////////////////////////////////////////
+// インストール時の処理
+// 備考: Svelte Kitでは自動登録のこのファイルでのみ`$service-worker`が扱える
+/////////////////////////////////////////////////////////////////////
+
+// キャッシュにASSETSのファイルを追加
+async function addFilesToCache() {
+	const cache = await caches.open(CACHE_NAME);
+	await Promise.allSettled(ASSETS.map((asset) => cache.add(asset)));
+}
+
 self.addEventListener('install', (event) => {
-	console.log('Service Worker: Installing');
-
-	async function addFilesToCache() {
-		const cache = await caches.open(CACHE_NAME);
-		await Promise.allSettled(ASSETS.map((asset) => cache.add(asset)));
-	}
-
-	event.waitUntil(addFilesToCache());
-
-	// インストール後すぐに有効化
-	self.skipWaiting();
+	event.waitUntil(addFilesToCache().then(() => self.skipWaiting()));
 });
+
+/////////////////////////////////////////////////////////////////////
+// 有効化時の処理
+/////////////////////////////////////////////////////////////////////
 
 // 古いキャッシュを削除
-self.addEventListener('activate', (event) => {
-	console.log('Service Worker: Activating');
-
-	async function deleteOldCaches() {
-		for (const key of await caches.keys()) {
-			if (key !== CACHE_NAME) {
-				await caches.delete(key);
-			}
+async function deleteOldCaches() {
+	for (const key of await caches.keys()) {
+		if (key !== CACHE_NAME) {
+			await caches.delete(key);
 		}
 	}
+}
 
-	event.waitUntil(deleteOldCaches());
-
-	// 有効化後すぐにクライアントを制御
-	self.clients.claim();
+self.addEventListener('activate', (event) => {
+	event.waitUntil(deleteOldCaches().then(() => self.clients.claim()));
 });
 
+///////////////////////////////////////////////////////////////////
 // リクエストを処理
+///////////////////////////////////////////////////////////////////
+
+// キャッシュを検索
+async function findCache(request: Request): Promise<Response | null> {
+	// キャッシュの存在を確認
+	// `caches.open()`すると存在しない場合に新規作成されてしまうため
+	const cacheExists = (await caches.keys()).includes(CACHE_NAME);
+	if (!cacheExists) {
+		return null;
+	}
+
+	const cache = await caches.open(CACHE_NAME);
+	const url = new URL(request.url);
+	url.search = '';
+	const requestWithoutQuery = new Request(url.toString(), {
+		method: request.method,
+		headers: request.headers
+	});
+	const cacheResponse = await cache.match(requestWithoutQuery);
+	return cacheResponse || null;
+}
+
 self.addEventListener('fetch', (event) => {
 	const request = event.request;
 
@@ -56,37 +79,13 @@ self.addEventListener('fetch', (event) => {
 	}
 
 	async function respond() {
-		const cache = await caches.open(CACHE_NAME);
-
-		// 1. キャッシュから提供 (Cache First)
-		const url = new URL(request.url);
-		url.search = '';
-		const requestWithoutQuery = new Request(url.toString(), {
-			method: request.method,
-			headers: request.headers
-			// body, mode, credentials, etc. はGETなので不要
-		});
-		const cacheResponse = await cache.match(requestWithoutQuery);
+		// キャッシュから提供 (Cache First)
+		const cacheResponse = await findCache(request);
 		if (cacheResponse) {
 			return cacheResponse;
 		}
 
-		// 2. ネットワークから取得してキャッシュに保存
-		try {
-			const networkResponse = await fetch(request);
-			if (networkResponse.ok) {
-				// 同一オリジンのみキャッシュ
-				if (request.url.startsWith(self.location.origin)) {
-					event.waitUntil(cache.put(request, networkResponse.clone()));
-				}
-			}
-			return networkResponse;
-		} catch (error) {
-			return new Response(`Network error: ${error}`, {
-				status: 408,
-				headers: { 'Content-Type': 'text/plain' }
-			});
-		}
+		return fetch(request);
 	}
 
 	event.respondWith(respond());
