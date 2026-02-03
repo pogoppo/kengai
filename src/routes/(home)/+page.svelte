@@ -74,8 +74,8 @@
 		align-items: center;
 		gap: 1rem;
 		margin-top: -1px;
-		padding-bottom: 1rem;
-		background-color: var(--color-bg-tertiary);
+		padding-block: 1rem;
+		background-color: color-mix(in srgb, var(--color-bg-tertiary) 75%, var(--color-bg-reverse));
 	}
 	.concept-text {
 		color: var(--color-fg-reverse);

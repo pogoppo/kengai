@@ -51,7 +51,7 @@
 		grid-template-columns: 50% 1fr;
 		gap: 0.25rem 0.5rem;
 		margin-bottom: 1rem;
-		padding: 1rem 0.5rem;
+		padding: 1rem;
 		background-color: var(--color-bg-primary);
 	}
 	.group-image {

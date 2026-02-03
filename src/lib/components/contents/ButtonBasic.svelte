@@ -46,12 +46,13 @@
 		align-items: center;
 		justify-content: center;
 		gap: 0.25rem;
-		padding: 0.25rem 0.75rem;
+		padding: 0.5rem 0.75rem;
 		border: unset;
 		border-radius: 0.25rem;
 		font-size: var(--local-font-size, 0.9rem);
-		cursor: pointer;
+		line-height: 1;
 		transition: opacity 0.2s ease-in-out;
+		cursor: pointer;
 		&:disabled {
 			cursor: not-allowed;
 			opacity: 0.33;

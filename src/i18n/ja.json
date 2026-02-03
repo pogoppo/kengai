@@ -2,6 +2,11 @@
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"app.name": "KENGAI",
 
+	"common.edit": "編集",
+	"common.cancel": "キャンセル",
+	"common.back-to-home": "ホームに戻る",
+	"common.youtube.offlineMessage": "オフラインのため動画を表示できません",
+
 	"component.breadcrumbs.aria-label": "パンくずナビゲーション",
 	"component.global-navigation.aria-label": "グローバルナビゲーション",
 	"component.main-navigation.home.label": "ホーム",
@@ -14,13 +19,13 @@
 	"component.article-list.no-articles": "記事が見つかりませんでした。",
 	"component.modal.close": "閉じる",
 	"component.modal.search.description": "記事のタイトルや内容の検索が行えます",
-
-	"common.edit": "編集",
-	"common.cancel": "キャンセル",
-	"common.back-to-home": "ホームに戻る",
-	"common.youtube.offlineMessage": "オフラインのため動画を表示できません",
-
-	"faq.page.title": "よくある質問",
+	"component.offline-info.not-installed": "オンラインでの設定が必要",
+	"component.offline-info.install": "オフライン利用を開始",
+	"component.offline-info.installing": "設定中",
+	"component.offline-info.installed": "オフライン利用が有効",
+	"component.offline-info.offline": "オフラインで利用中",
+	"component.offline-info.waiting": "更新が利用可能",
+	"component.offline-info.error": "設定エラーが発生",
 
 	"error.page.title": "404 Not Found",
 	"error.page.description": "お探しのページは見つかりませんでした。",
@@ -28,6 +33,8 @@
 	"home.page.title": "圏外でも使える野外ノウハウアプリ",
 	"home.concept": "圏外でも使える\n野外ノウハウアプリ",
 	"home.search.placeholder": "ノウハウを検索 (例: タープ)",
+
+	"faq.page.title": "よくある質問",
 
 	"search.page.title": "記事検索",
 	"search.placeholder": "記事を検索 (例: タープ)",

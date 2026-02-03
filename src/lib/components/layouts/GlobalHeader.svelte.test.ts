@@ -1,13 +1,7 @@
-import { describe, test, expect, vi } from 'vitest';
+import { describe, test, expect } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page } from 'vitest/browser';
 import GlobalHeader from './GlobalHeader.svelte';
-
-vi.mock('$lib/paraglide/messages', () => ({
-	m: {
-		'app.name': () => 'Test App Name'
-	}
-}));
 
 describe('GlobalHeader', () => {
 	test('ロゴが表示され、トップページへのリンクが設定されている', async () => {
@@ -16,11 +10,11 @@ describe('GlobalHeader', () => {
 		const header = page.getByRole('banner');
 		await expect.element(header).toBeInTheDocument();
 
-		const link = header.getByRole('link', { name: 'Test App Name' });
+		const link = header.getByRole('link', { name: 'KENGAI' });
 		await expect.element(link).toBeInTheDocument();
 		await expect.element(link).toHaveAttribute('href', '/');
 
-		const img = header.getByAltText('Test App Name');
+		const img = header.getByAltText('KENGAI');
 		await expect.element(img).toBeInTheDocument();
 	});
 
@@ -30,7 +24,7 @@ describe('GlobalHeader', () => {
 		const header = page.getByRole('banner');
 		await expect.element(header).toBeInTheDocument();
 
-		const heading = header.getByRole('heading', { level: 1, name: 'Test App Name' });
+		const heading = header.getByRole('heading', { level: 1, name: 'KENGAI' });
 		await expect.element(heading).toBeInTheDocument();
 
 		await expect.element(heading).toHaveClass('header-logo');
