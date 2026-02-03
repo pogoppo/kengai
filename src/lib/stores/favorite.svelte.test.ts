@@ -44,7 +44,6 @@ describe('FavoriteState', () => {
 		});
 
 		it('既に存在するslugを削除できること', () => {
-			console.log(favoriteState.entries());
 			favoriteState.toggle('cat/article-1');
 			favoriteState.toggle('cat/article-1');
 
