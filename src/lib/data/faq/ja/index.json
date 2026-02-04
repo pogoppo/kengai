@@ -37,7 +37,7 @@
 			{
 				"id": "how-to-unregister-offline",
 				"summary": "オフライン利用を解除したい",
-				"content": "下記のボタンを押下してください。押下後、ヘッダーに再び利用開始ボタンが表示されれば成功です。<br/><button onClick='window.appOfflineUnregister()'>オフライン利用を解除する</button>"
+				"content": "下記のボタンを押下してください。押下後、アプリ上部に再び利用開始ボタンが表示されれば成功です。<br/><button onClick='window.appOfflineUnregister()'>オフライン利用を解除する</button>"
 			}
 		]
 	},
