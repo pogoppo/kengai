@@ -22,7 +22,65 @@
 			{
 				"id": "what-is-kengai",
 				"summary": "このアプリは何ですか？",
-				"content": "KENGAIはオフラインでも使えるアウトドア向けの基礎的なノウハウを提供するアプリです。オフラインに限らず、インターネット接続が不安定な環境でも快適に利用できるよう設計されています。"
+				"content": "KENGAIはインターネット接続の無い山奥でも使えるアウトドア向けの基礎的なノウハウを提供するアプリです。インターネット接続が不安定な環境でも快適に利用できるよう設計されています。"
+			},
+			{
+				"id": "how-to-install-offline",
+				"summary": "オフラインで使うには？",
+				"content": "アプリ上部の「オフライン利用を開始」ボタンを押下してください。利用を開始すると、ボタンが「オフライン利用が有効」という案内に置き換わり、オフライン時でもアプリの内容にアクセスできるようになります。<br/>利用できない場合は<a href='#how-to-register-offline'>オフライン利用できない</a>をご覧ください。"
+			},
+			{
+				"id": "offline-storage-cost",
+				"summary": "オフライン利用のコストは？",
+				"content": "料金等は掛かりませんが、利用を開始すると端末に約20MBのデータ（スマートフォンの動画10秒程度のサイズ）が保存されます。これは主に記事の内容や画像データです。"
+			},
+			{
+				"id": "how-to-unregister-offline",
+				"summary": "オフライン利用を解除したい",
+				"content": "下記のボタンを押下してください。押下後、ヘッダーに再び利用開始ボタンが表示されれば成功です。<br/><button onClick='window.appOfflineUnregister()'>オフライン利用を解除する</button>"
+			}
+		]
+	},
+	{
+		"id": "troubleshooting",
+		"title": "トラブルシューティング",
+		"items": [
+			{
+				"id": "how-to-register-offline",
+				"summary": "オフライン利用できない",
+				"content": "プライベートブラウザモードや、ブラウザの設定でサービスワーカーが無効になっている、またはキャッシュが無効になっている場合はオフライン利用を開始できません。通常のブラウザモードでアクセスし、サービスワーカーが有効になっていることを確認してください。"
+			},
+			{
+				"id": "offline-issue",
+				"summary": "オフライン利用時の挙動がおかしい",
+				"content": "<a href='#how-to-unregister-offline'>オフライン利用を解除したい</a>を参照し、一度オフライン利用を解除してから再度利用開始を試みてください。"
+			}
+		]
+	},
+	{
+		"id": "content",
+		"title": "内容に関して",
+		"items": [
+			{
+				"id": "content-reliability",
+				"summary": "記事の内容は信頼できますか？",
+				"content": "掲載されている記事は全ての情報の正確性や最新性を保証するものではありません。記事の内容を参考にする際は自己責任でお願いいたします。"
+			},
+			{
+				"id": "",
+				"summary": "間違っている箇所・情報を見つけた",
+				"content": "<a href='//github.com/pogoppo/kengai' target='_blank'>GitHubリポジトリ</a>のIssueにてご報告ください。(GitHubのアカウントが必要です。)"
+			}
+		]
+	},
+	{
+		"id": "other",
+		"title": "その他",
+		"items": [
+			{
+				"id": "github-repo",
+				"summary": "GitHubリポジトリ",
+				"content": "<a href='//github.com/pogoppo/kengai' target='_blank'>github.com/pogoppo/kengai</a>"
 			}
 		]
 	}

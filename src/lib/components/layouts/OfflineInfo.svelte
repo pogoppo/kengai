@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { dev } from '$app/environment';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCheck, faExclamationTriangle, faGear } from '@fortawesome/free-solid-svg-icons';
 	import { m } from '$lib/paraglide/messages';
+	import { register, REGISTRATION_FILE } from '$lib/utils/offline';
 	import ButtonBasic from '$lib/components/contents/ButtonBasic.svelte';
 
 	type ServiceWorkerState =
@@ -36,25 +36,20 @@
 	}
 
 	const handleClickInstall = () => {
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker
-				.register('/service-worker.js', {
-					type: dev ? 'module' : 'classic'
-				})
-				.then(() => {
-					handleStateChange();
-				})
-				.catch((error) => {
-					console.error('Service Worker registration failed:', error);
-					swState = 'error';
-				});
-		}
+		register()
+			.then(() => {
+				handleStateChange();
+			})
+			.catch((error) => {
+				console.error('Service Worker registration failed:', error);
+				swState = 'error';
+			});
 	};
 
 	let currentWorker: ServiceWorker | null = null;
 	const handleStateChange = async () => {
 		if ('serviceWorker' in navigator) {
-			const registration = await navigator.serviceWorker.getRegistration();
+			const registration = await navigator.serviceWorker.getRegistration(REGISTRATION_FILE);
 			updateServiceWorkerState(registration);
 			currentWorker?.removeEventListener('statechange', handleStateChange);
 			currentWorker =
@@ -91,9 +86,9 @@
 <aside class="offline-info">
 	{#if swState === 'not-installed'}
 		{#if isOnline === true}
-			<effect-wrapper class="offline-info-button-effect">
+			<effect-wrapper class="offline-info-install-effect">
 				<ButtonBasic onclick={handleClickInstall}>
-					<span class="offline-info-button">{m['component.offline-info.install']()}</span>
+					<span class="offline-info-install">{m['component.offline-info.install']()}</span>
 				</ButtonBasic>
 			</effect-wrapper>
 		{:else if isOnline === false}
@@ -164,10 +159,10 @@
 			scale: 1.1;
 		}
 	}
-	.offline-info-button {
+	.offline-info-install {
 		font-size: 0.9rem;
 	}
-	.offline-info-button-effect {
+	.offline-info-install-effect {
 		display: inline-block;
 		border-radius: 0.25rem;
 		outline-width: 0;

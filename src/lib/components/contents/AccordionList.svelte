@@ -104,5 +104,15 @@
 			text-decoration-style: dashed;
 			text-underline-offset: 0.25em;
 		}
+		:global(button) {
+			margin-top: 0.4rem;
+			padding: 0.25rem 0.5rem;
+			background-color: var(--color-link);
+			border: none;
+			border-radius: 0.25rem;
+			color: var(--color-fg-reverse);
+			font-size: 0.8rem;
+			cursor: pointer;
+		}
 	}
 </style>

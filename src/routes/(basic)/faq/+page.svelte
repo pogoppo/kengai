@@ -3,6 +3,7 @@
 	import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 	import { m } from '$lib/paraglide/messages.js';
 	import type { PageData } from './$types';
+	import { unregister } from '$lib/utils/offline';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
@@ -13,7 +14,19 @@
 	}
 	let { data }: Props = $props();
 
+	const appOfflineUnregister = async () => {
+		await unregister();
+		location.href = location.pathname;
+	};
+
 	onMount(() => {
+		// FAQ内からオフライン登録解除を行うためのグローバル関数を定義
+		Object.defineProperty(window, 'appOfflineUnregister', {
+			value: appOfflineUnregister,
+			writable: true,
+			configurable: true // 削除可能にする
+		});
+
 		// アンカーリンクで指定されたFAQ項目を開く
 		const handleHashChange = () => {
 			const { hash } = location;
@@ -33,6 +46,7 @@
 
 		return () => {
 			window.removeEventListener('hashchange', handleHashChange);
+			Reflect.deleteProperty(window, 'appOfflineUnregister');
 		};
 	});
 </script>
