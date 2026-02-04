@@ -2,7 +2,6 @@ import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import {
 	faRibbon,
 	faCampground,
-	faCarSide,
 	faMotorcycle,
 	faTent,
 	faGear
@@ -14,8 +13,7 @@ const CATEGORY_ICONS: Record<string, IconProp> = {
 	tarp: faCampground,
 	tent: faTent,
 	'rope-work': faRibbon,
-	'moto-trouble': faMotorcycle,
-	'car-trouble': faCarSide
+	'moto-trouble': faMotorcycle
 };
 
 export function categoryIcon(slug: string): IconProp {

@@ -27,7 +27,7 @@
 		"sections": []
 	},
 	{
-		"slug": "car",
+		"slug": "fishing",
 		"image": "/images/examples/dummyimage-600x300.png",
 		"sections": []
 	},
@@ -35,39 +35,5 @@
 		"slug": "moto",
 		"image": "/images/examples/dummyimage-600x300.png",
 		"sections": []
-	},
-	{
-		"slug": "ocean",
-		"image": "/images/examples/dummyimage-600x300.png",
-		"sections": [
-			{
-				"category": "rope-work",
-				"articles": [
-					{
-						"slug": "rope-work/article-1"
-					},
-					{
-						"slug": "rope-work/article-2"
-					},
-					{
-						"slug": "rope-work/article-3"
-					}
-				]
-			},
-			{
-				"category": "tarp",
-				"articles": [
-					{
-						"slug": "tarp/article-4"
-					},
-					{
-						"slug": "tarp/article-5"
-					},
-					{
-						"slug": "tarp/article-6"
-					}
-				]
-			}
-		]
 	}
 ]

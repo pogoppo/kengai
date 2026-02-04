@@ -41,29 +41,26 @@
 	"search.query-empty": "検索キーワードを入力してください。",
 
 	"favorite.page.title": "お気に入り",
-	"favorite.empty": "登録された記事はありませんでした。",
+	"favorite.empty": "登録された記事はありません。",
 	"favorite.delete-button": "選択した項目を削除する",
 	"favorite.delete-confirm": "選択した項目を削除しますか？",
 
 	"category._mock.label": "開発用カテゴリ",
 	"category.uncategorized.label": "未分類",
-	"category.tarp.label": "タープ",
 	"category.tent.label": "テント",
+	"category.tarp.label": "タープ",
 	"category.rope-work.label": "ロープワーク",
 	"category.moto-trouble.label": "バイクトラブル",
-	"category.car-trouble.label": "自動車トラブル",
 
 	"group.section.more": "全項目",
 	"group._mock.label": "開発用グループ",
 	"group._mock.description": "開発用のダミーグループです",
-	"group.moto.label": "バイクノウハウ",
-	"group.moto.description": "トラブルの対応やメンテナンスなど",
 	"group.camp.label": "キャンプノウハウ",
-	"group.camp.description": "ロープワークやタープの張り方、焚き火など",
-	"group.car.label": "自動車ノウハウ",
-	"group.car.description": "トラブルの対応やメンテナンス、車中泊など",
+	"group.camp.description": "テントやタープの張り方、焚き火など",
 	"group.mountain.label": "登山ノウハウ",
-	"group.mountain.description": "ロープワークやトラブルの対応、図鑑など",
-	"group.ocean.label": "釣り・船上ノウハウ",
-	"group.ocean.description": "ロープワークやトラブルの対応、魚についてなど"
+	"group.mountain.description": "ロープワークやトラブルの対応など",
+	"group.fishing.label": "釣りノウハウ",
+	"group.fishing.description": "ロープワークやトラブルの対応など",
+	"group.moto.label": "バイクノウハウ",
+	"group.moto.description": "トラブルの対応やメンテナンスなど"
 }
