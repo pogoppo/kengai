@@ -104,6 +104,7 @@
 		> :global(blockquote),
 		> :global(pre),
 		> :global(figure),
+		> :global(table),
 		:global(youtube-embed) {
 			margin-block: 1rem;
 		}
@@ -191,6 +192,23 @@
 			background-color: color-mix(in srgb, var(--color-bg-secondary) 50%, transparent 50%);
 			border-radius: 0.5rem;
 			font-size: 0.9rem;
+		}
+		:global(table) {
+			display: flow-root;
+			overflow-x: auto;
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 0.9rem;
+			white-space: nowrap;
+			:global(th),
+			:global(td) {
+				padding: 0.5rem 0.75rem;
+				border: 1px solid color-mix(in srgb, var(--color-fg-primary) 25%, transparent);
+			}
+			:global(th) {
+				background-color: var(--color-bg-secondary);
+				font-weight: 700;
+			}
 		}
 		:global(youtube-embed) {
 			display: flex;
