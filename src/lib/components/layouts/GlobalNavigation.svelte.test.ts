@@ -94,18 +94,18 @@ describe('GlobalNavigation', () => {
 	});
 
 	test('お気に入り追加ボタンをクリックするとfavoriteState.toggle()が呼ばれる', async () => {
-		mocks.pathname = '/article/_mock/sample-article';
+		mocks.pathname = '/article/_mock/example';
 		render(GlobalNavigation, { isArticlePage: true });
 
 		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
 		await addFavBtn.click({ force: true });
 
 		expect(mocks.favoriteToggle).toHaveBeenCalledTimes(1);
-		expect(mocks.favoriteToggle).toHaveBeenCalledWith('_mock/sample-article');
+		expect(mocks.favoriteToggle).toHaveBeenCalledWith('_mock/example');
 	});
 
 	test('お気に入りに登録済みの記事ではボタンがハイライト表示される', async () => {
-		mocks.pathname = '/article/_mock/sample-article';
+		mocks.pathname = '/article/_mock/example';
 		mocks.favoriteCheck.mockReturnValue(true);
 
 		render(GlobalNavigation, { isArticlePage: true });
@@ -116,7 +116,7 @@ describe('GlobalNavigation', () => {
 	});
 
 	test('お気に入り未登録の記事ではボタンがハイライト表示されない', async () => {
-		mocks.pathname = '/article/_mock/sample-article';
+		mocks.pathname = '/article/_mock/example';
 		mocks.favoriteCheck.mockReturnValue(false);
 
 		render(GlobalNavigation, { isArticlePage: true });
