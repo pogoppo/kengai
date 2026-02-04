@@ -8,7 +8,7 @@
 	let { data } = $props();
 
 	if (browser && !customElements.get('youtube-embed')) {
-		import('$lib/utils/youtube-embed.js').then(({ YoutubeEmbed }) => {
+		import('$lib/components/web-components/youtube-embed').then(({ YoutubeEmbed }) => {
 			customElements.define('youtube-embed', YoutubeEmbed);
 		});
 	}
