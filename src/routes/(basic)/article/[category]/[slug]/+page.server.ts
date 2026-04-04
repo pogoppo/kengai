@@ -5,10 +5,10 @@ import type { PageServerLoad, EntryGenerator } from './$types';
 
 export const entries: EntryGenerator = () => {
 	// 全記事のパラメータを返してプリレンダリング対象にする
-	return articleRepository.findAll().map((article) => {
-		const [category, slug] = article.slug.split('/');
-		return { category, slug };
-	});
+	return articleRepository.findAll().map((article) => ({
+		category: article.category,
+		slug: article.slug
+	}));
 };
 
 export const load: PageServerLoad = async ({ params }) => {

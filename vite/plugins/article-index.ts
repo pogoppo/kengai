@@ -78,7 +78,7 @@ export async function buildArticleIndex(): Promise<void> {
 			if (fm.published) {
 				const filename = path.basename(filePath, '.md');
 				articles.push({
-					slug: `${category}/${filename}`,
+					slug: filename,
 					title: fm.title,
 					description: fm.description,
 					category,

@@ -7,10 +7,10 @@
 				"category": "_mock",
 				"articles": [
 					{
-						"slug": "_mock/example"
+						"slug": "example"
 					},
 					{
-						"slug": "_mock/example2"
+						"slug": "example2"
 					}
 				]
 			}

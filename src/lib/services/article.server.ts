@@ -20,10 +20,8 @@ export const getArticle = async (
 	category: string,
 	slug: string
 ): Promise<{ articleSummary: ArticleSummary; content: string }> => {
-	const fullSlug = `${category}/${slug}`;
-
 	// 記事メタデータを取得
-	const articleSummary = articleRepository.findBySlug(fullSlug);
+	const articleSummary = articleRepository.findBySlug(slug);
 
 	if (!articleSummary) {
 		throw new ArticleServiceError('NOT_FOUND', 'Article not found');
@@ -31,7 +29,7 @@ export const getArticle = async (
 
 	// Markdownファイルを読み込む
 	try {
-		const filePath = join(process.cwd(), 'src/lib/data/articles/ja', `${articleSummary.slug}.md`);
+		const filePath = join(process.cwd(), 'src/lib/data/articles/ja', `${articleSummary.category}/${articleSummary.slug}.md`);
 		const fileContent = await readFile(filePath, 'utf-8');
 
 		// フロントマターとコンテンツを分離
