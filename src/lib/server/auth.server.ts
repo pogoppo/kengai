@@ -1,12 +1,13 @@
 import type { Handle } from '@sveltejs/kit';
+import { building } from '$app/environment';
 import { BASIC_AUTH_USER, BASIC_AUTH_PASSWORD } from '$env/static/private';
 
 export const handleBasicAuth: Handle = async ({ event, resolve }) => {
 	const username = BASIC_AUTH_USER;
 	const password = BASIC_AUTH_PASSWORD;
 
-	// 環境変数が設定されていない場合は認証をスキップ
-	if (!username || !password) {
+	// ビルド時（プリレンダリング）または環境変数が未設定の場合は認証をスキップ
+	if (building || !username || !password) {
 		return resolve(event);
 	}
 
