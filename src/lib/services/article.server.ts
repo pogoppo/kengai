@@ -29,7 +29,11 @@ export const getArticle = async (
 
 	// Markdownファイルを読み込む
 	try {
-		const filePath = join(process.cwd(), 'src/lib/data/articles/ja', `${articleSummary.category}/${articleSummary.slug}.md`);
+		const filePath = join(
+			process.cwd(),
+			'src/lib/data/articles/ja',
+			`${articleSummary.category}/${articleSummary.slug}.md`
+		);
 		const fileContent = await readFile(filePath, 'utf-8');
 
 		// フロントマターとコンテンツを分離

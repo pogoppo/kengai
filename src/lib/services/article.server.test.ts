@@ -24,7 +24,7 @@ describe('getArticle', () => {
 
 	beforeEach(() => {
 		vi.resetAllMocks();
-		vi.spyOn(console, 'error').mockImplementation(() => { });
+		vi.spyOn(console, 'error').mockImplementation(() => {});
 	});
 
 	it('記事が存在しファイルが有効な場合、記事データとHTMLコンテンツを返すこと', async () => {
