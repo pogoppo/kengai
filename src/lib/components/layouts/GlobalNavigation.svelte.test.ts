@@ -101,7 +101,7 @@ describe('GlobalNavigation', () => {
 		await addFavBtn.click({ force: true });
 
 		expect(mocks.favoriteToggle).toHaveBeenCalledTimes(1);
-		expect(mocks.favoriteToggle).toHaveBeenCalledWith('_mock/example');
+		expect(mocks.favoriteToggle).toHaveBeenCalledWith('example');
 	});
 
 	test('お気に入りに登録済みの記事ではボタンがハイライト表示される', async () => {

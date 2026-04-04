@@ -6,21 +6,21 @@ import ArticleList from './ArticleList.svelte';
 describe('ArticleList', () => {
 	const articles = [
 		{
-			slug: 'cat1/article-1',
+			slug: 'article-1',
 			title: 'First Article',
 			description: 'Description 1',
 			category: 'cat1',
 			tags: ['tag1', 'tag2']
 		},
 		{
-			slug: 'cat2/article-2',
+			slug: 'article-2',
 			title: 'Second Article',
 			description: 'Description 2',
 			category: 'cat2',
 			tags: ['tag3']
 		},
 		{
-			slug: 'cat1/article-3',
+			slug: 'article-3',
 			title: 'Third Article',
 			description: 'Description 3',
 			category: 'cat1',
@@ -123,7 +123,7 @@ describe('ArticleList', () => {
 			render(ArticleList, {
 				articles,
 				checkable: true,
-				checkedArticles: new Set<string>(['cat1/article-1'])
+				checkedArticles: new Set<string>(['article-1'])
 			});
 
 			const checkboxes = page.getByRole('checkbox');
@@ -166,7 +166,7 @@ describe('ArticleList', () => {
 		});
 
 		test('checkedArticlesの初期値が反映される', async () => {
-			const checkedArticles = new Set<string>(['cat2/article-2', 'cat1/article-3']);
+			const checkedArticles = new Set<string>(['article-2', 'article-3']);
 			render(ArticleList, {
 				articles,
 				checkable: true,

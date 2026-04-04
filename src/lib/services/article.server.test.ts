@@ -12,10 +12,9 @@ vi.mock('marked');
 describe('getArticle', () => {
 	const mockCategory = 'test-category';
 	const mockSlug = 'test-slug';
-	const fullSlug = `${mockCategory}/${mockSlug}`;
 
 	const mockArticle = {
-		slug: fullSlug,
+		slug: mockSlug,
 		title: 'Test Article',
 		description: 'Test Description',
 		date: '2023-01-01',
@@ -25,7 +24,7 @@ describe('getArticle', () => {
 
 	beforeEach(() => {
 		vi.resetAllMocks();
-		vi.spyOn(console, 'error').mockImplementation(() => {});
+		vi.spyOn(console, 'error').mockImplementation(() => { });
 	});
 
 	it('記事が存在しファイルが有効な場合、記事データとHTMLコンテンツを返すこと', async () => {
@@ -41,7 +40,7 @@ title: Test
 		const result = await getArticle(mockCategory, mockSlug);
 
 		// Assert
-		expect(articleRepository.findBySlug).toHaveBeenCalledWith(fullSlug);
+		expect(articleRepository.findBySlug).toHaveBeenCalledWith(mockSlug);
 		expect(readFile).toHaveBeenCalled(); // パスの検証は複雑になるため省略または別途検証
 		expect(marked).toHaveBeenCalledWith('# Hello World');
 		expect(result).toEqual({
