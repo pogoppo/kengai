@@ -7,21 +7,21 @@ describe('ArticleRepository', () => {
 
 	const mockArticles: ArticleSummary[] = [
 		{
-			slug: 'tech/article-1',
+			slug: 'article-1',
 			title: 'Tech Article 1',
 			description: 'First tech article about javascript',
 			tags: ['javascript', 'web'],
 			category: 'tech'
 		},
 		{
-			slug: 'tech/article-2',
+			slug: 'article-2',
 			title: 'Tech Article 2',
 			description: 'Second tech article about typescript',
 			tags: ['typescript', 'web'],
 			category: 'tech'
 		},
 		{
-			slug: 'life/article-3',
+			slug: 'article-3',
 			title: 'Life Article 1',
 			description: 'Article about life and outdoor',
 			tags: ['outdoor', 'camping'],
@@ -43,7 +43,7 @@ describe('ArticleRepository', () => {
 
 	describe('findBySlug', () => {
 		it('スラッグが一致する場合、記事を返すこと', () => {
-			const result = repository.findBySlug('tech/article-1');
+			const result = repository.findBySlug('article-1');
 			expect(result).toEqual(mockArticles[0]);
 		});
 
@@ -55,7 +55,7 @@ describe('ArticleRepository', () => {
 
 	describe('findBySlugs', () => {
 		it('スラッグのリストに一致する記事を返すこと', () => {
-			const slugs = ['tech/article-1', 'life/article-3'];
+			const slugs = ['article-1', 'article-3'];
 			const result = repository.findBySlugs(slugs);
 			expect(result).toHaveLength(2);
 			expect(result).toContainEqual(mockArticles[0]);
@@ -63,7 +63,7 @@ describe('ArticleRepository', () => {
 		});
 
 		it('存在しないスラッグを無視すること', () => {
-			const slugs = ['tech/article-1', 'non-existent'];
+			const slugs = ['article-1', 'non-existent'];
 			const result = repository.findBySlugs(slugs);
 			expect(result).toHaveLength(1);
 			expect(result[0]).toEqual(mockArticles[0]);
@@ -74,7 +74,7 @@ describe('ArticleRepository', () => {
 		it('指定されたカテゴリの記事を返すこと', () => {
 			const result = repository.findByCategory('tech');
 			expect(result).toHaveLength(2);
-			expect(result.map((a) => a.slug)).toEqual(['tech/article-1', 'tech/article-2']);
+			expect(result.map((a) => a.slug)).toEqual(['article-1', 'article-2']);
 		});
 
 		it('存在しないカテゴリの場合、空の配列を返すこと', () => {
@@ -87,7 +87,7 @@ describe('ArticleRepository', () => {
 		it('指定されたタグを持つ記事を返すこと', () => {
 			const result = repository.findByTag('web');
 			expect(result).toHaveLength(2);
-			expect(result.map((a) => a.slug)).toEqual(['tech/article-1', 'tech/article-2']);
+			expect(result.map((a) => a.slug)).toEqual(['article-1', 'article-2']);
 		});
 
 		it('存在しないタグの場合、空の配列を返すこと', () => {

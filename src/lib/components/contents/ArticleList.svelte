@@ -41,7 +41,7 @@
 		{#each articles as article (article.slug)}
 			<li>
 				<article>
-					<a class="article-item" href={resolve(`/article/${article.slug}`)}>
+					<a class="article-item" href={resolve(`/article/${article.category}/${article.slug}`)}>
 						{@render articleInfo(article)}
 					</a>
 				</article>

@@ -17,14 +17,16 @@
 		variant = 'primary',
 		icon,
 		rounded = false,
+		class: _class,
 		...restProps
 	}: ButtonBasicProps = $props();
 
 	// classの指定を許さないようにする
-	if (restProps.class) {
-		delete restProps.class;
-		console.warn('ButtonBasic does not accept "class" prop.');
-	}
+	$effect(() => {
+		if (_class) {
+			console.warn('ButtonBasic does not accept "class" prop.');
+		}
+	});
 </script>
 
 <svelte:element
