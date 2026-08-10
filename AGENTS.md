@@ -79,7 +79,7 @@ When working with Svelte code:
    - Use `get-documentation` to fetch needed sections
    - Use `svelte-autofixer` to validate all Svelte code before finalizing
 2. Follow Svelte 5 patterns (runes: `$state`, `$derived`, `$props`, etc.)
-3. See [AGENTS.md](AGENTS.md) for detailed MCP workflow
+3. See [Using the Svelte MCP Server](#using-the-svelte-mcp-server) below for the detailed MCP workflow
 
 ## Project-Specific Conventions
 
