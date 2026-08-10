@@ -37,7 +37,7 @@
 		<SearchBar onSearch={handleSearch} placeholder={m['home.search.placeholder']()} />
 	</SectionBasic>
 
-	<SectionBasic continuously={true} --local-padding-inline="0.5rem">
+	<SectionBasic continuously={true}>
 		<ul class="groups">
 			{#each data.groups as group (group.slug)}
 				<li>
@@ -52,7 +52,7 @@
 		</ul>
 	</SectionBasic>
 
-	<SectionBasic continuously={true} --local-padding-inline="0.5rem">
+	<SectionBasic continuously={true}>
 		<ul class="categories">
 			{#each data.categories as category (category)}
 				<li>
@@ -89,7 +89,7 @@
 	}
 	.groups {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 		grid-template-rows: 1fr;
 		gap: 0.5rem;
 	}

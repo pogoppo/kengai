@@ -31,6 +31,9 @@
 		margin-inline: auto;
 		background-color: var(--color-bg-reverse);
 		border-radius: 999px;
+		> li {
+			line-height: 0;
+		}
 		> li > a {
 			display: flex;
 			align-items: center;

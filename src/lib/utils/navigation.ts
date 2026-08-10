@@ -6,25 +6,44 @@ export function backToTop(): void {
 	}
 }
 
-export function createHeadroomScroll(target: HTMLElement, showAt: number = 80) {
-	let lastScrollY = window.scrollY;
+// ラバーバンドスクロールでは scrollY が0未満や最大値を超えるため丸める
+function getScrollY() {
+	const maxScrollY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+	return Math.min(Math.max(window.scrollY, 0), maxScrollY);
+}
+
+export function createHeadroomScroll(
+	target: HTMLElement,
+	showAt: number = 80,
+	threshold: number = 4
+) {
+	let lastScrollY = getScrollY();
 	let ticking = false;
 	target.dataset.pinned = 'true';
 
 	function update() {
-		const currentScrollY = window.scrollY;
-		if (currentScrollY <= showAt) {
+		ticking = false;
+		const currentScrollY = getScrollY();
+		const delta = currentScrollY - lastScrollY;
+		const isAtTop = currentScrollY <= showAt;
+		const isScrollingDown = delta > 0;
+
+		if (Math.abs(delta) < threshold) {
+			// 微小な変化は無視する
+			return;
+		}
+
+		if (isAtTop) {
 			// ページ上部では常に表示
 			target.dataset.pinned = 'true';
-		} else if (currentScrollY > lastScrollY) {
+		} else if (isScrollingDown) {
 			// 下スクロールで非表示
 			target.dataset.pinned = 'false';
-		} else if (currentScrollY < lastScrollY) {
+		} else {
 			// 上スクロールで表示
 			target.dataset.pinned = 'true';
 		}
 		lastScrollY = currentScrollY;
-		ticking = false;
 	}
 
 	return () => {

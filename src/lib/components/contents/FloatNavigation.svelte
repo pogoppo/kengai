@@ -45,6 +45,9 @@
 			pointer-events: none;
 		}
 
+		> li {
+			line-height: 0;
+		}
 		> li > button {
 			display: flex;
 			align-items: center;

@@ -7,12 +7,14 @@
 		onSearch,
 		placeholder,
 		value = $bindable(''),
-		focused = $bindable(false)
+		focused = $bindable(false),
+		appearance = $bindable('default')
 	}: {
 		onSearch: (query: string) => void | Promise<void>;
 		placeholder?: string;
 		value?: string;
 		focused?: boolean;
+		appearance?: 'default' | 'rounded';
 	} = $props();
 
 	let input: HTMLInputElement | null = null;
@@ -28,7 +30,7 @@
 	});
 </script>
 
-<div class="search">
+<div class="search" data-appearance={appearance}>
 	<input
 		type="search"
 		class="search-input"
@@ -53,9 +55,12 @@
 		gap: 8px;
 		position: relative;
 		overflow: hidden;
-		padding: 10px 48px 10px 20px;
+		padding: 8px 48px 8px 12px;
 		background-color: var(--color-bg-primary);
-		border-radius: 999px;
+		border-radius: 8px;
+		&[data-appearance='rounded'] {
+			border-radius: 999px;
+		}
 	}
 	.search-input {
 		flex: 1;
