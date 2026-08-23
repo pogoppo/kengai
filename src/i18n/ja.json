@@ -57,8 +57,6 @@
 	"group._mock.description": "開発用のダミーグループです",
 	"group.camp.label": "キャンプノウハウ",
 	"group.camp.description": "テントやタープの張り方、焚き火など",
-	"group.mountain.label": "登山ノウハウ",
-	"group.mountain.description": "ロープワークやトラブルの対応など",
 	"group.fishing.label": "釣りノウハウ",
 	"group.fishing.description": "ロープワークやトラブルの対応など",
 	"group.moto.label": "バイクノウハウ",

@@ -1,6 +1,6 @@
 ---
 title: 'クリンチノット (Clinch Knot)'
-description: 'サルカン（スイベル）やルアーのアイ（環）に糸を結ぶ基本中の基本です。'
+description: 'ルアーの接続等に使われる、釣り人にとって基本的な結びです。'
 tags: ['釣り']
 published: true
 ---
