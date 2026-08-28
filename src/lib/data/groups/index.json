@@ -17,18 +17,49 @@
 		]
 	},
 	{
-		"slug": "camp",
+		"slug": "tarp-camping-basic",
 		"image": "/images/examples/dummyimage-600x300.png",
-		"sections": []
+		"sections": [
+			{
+				"category": "tarp",
+				"articles": [
+					{
+						"slug": "diamond"
+					},
+					{
+						"slug": "stealth"
+					},
+					{
+						"slug": "adirondack"
+					}
+				]
+			}
+		]
 	},
 	{
-		"slug": "fishing",
+		"slug": "rope-work-basic",
 		"image": "/images/examples/dummyimage-600x300.png",
-		"sections": []
-	},
-	{
-		"slug": "moto",
-		"image": "/images/examples/dummyimage-600x300.png",
-		"sections": []
+		"sections": [
+			{
+				"category": "rope-work",
+				"articles": [
+					{
+						"slug": "bowline-knot"
+					},
+					{
+						"slug": "clove-hitch"
+					},
+					{
+						"slug": "figure-eight-knot"
+					},
+					{
+						"slug": "taut-line-hitch"
+					},
+					{
+						"slug": "two-half-hitches"
+					}
+				]
+			}
+		]
 	}
 ]

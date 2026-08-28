@@ -51,18 +51,14 @@
 
 	"category._mock.label": "開発用カテゴリ",
 	"category.uncategorized.label": "未分類",
-	"category.tent.label": "テント",
 	"category.tarp.label": "タープ",
 	"category.rope-work.label": "ロープワーク",
-	"category.moto-trouble.label": "バイクトラブル",
 
 	"group.section.more": "全項目",
 	"group._mock.label": "開発用グループ",
 	"group._mock.description": "開発用のダミーグループです",
-	"group.camp.label": "キャンプノウハウ",
-	"group.camp.description": "テントやタープの張り方、焚き火など",
-	"group.fishing.label": "釣りノウハウ",
-	"group.fishing.description": "ロープワークやトラブルの対応など",
-	"group.moto.label": "バイクノウハウ",
-	"group.moto.description": "トラブルの対応やメンテナンスなど"
+	"group.tarp-camping-basic.label": "タープ泊「基本のキ」",
+	"group.tarp-camping-basic.description": "タープ泊で定番の張り方を紹介します",
+	"group.rope-work-basic.label": "ロープワーク「基本のキ」",
+	"group.rope-work-basic.description": "よく使われるロープワークを紹介します"
 }
