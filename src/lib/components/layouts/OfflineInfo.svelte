@@ -164,13 +164,8 @@
 	}
 	.offline-info-install-effect {
 		display: inline-block;
-		border-radius: 0.25rem;
-		outline-width: 0;
-		outline-offset: 0;
-		outline-color: transparent;
-		outline-style: solid;
-		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
-		animation: animateOutline 2s ease infinite;
+		border: 2px solid rgba(255, 255, 255, 0.33);
+		border-radius: 0.33rem;
 	}
 	@keyframes spin {
 		from {
@@ -178,28 +173,6 @@
 		}
 		to {
 			transform: rotate(360deg);
-		}
-	}
-	@keyframes animateOutline {
-		0% {
-			outline-width: 1px;
-			outline-offset: 0;
-			outline-color: color-mix(in srgb, var(--color-accent-primary) 0%, transparent);
-		}
-
-		10% {
-			outline-color: color-mix(in srgb, var(--color-accent-primary) 90%, transparent);
-		}
-		50% {
-			outline-width: 5px;
-			outline-offset: 3px;
-			outline-color: color-mix(in srgb, var(--color-accent-primary) 0%, transparent);
-		}
-
-		100% {
-			outline-width: 5px;
-			outline-offset: 3px;
-			outline-color: color-mix(in srgb, var(--color-accent-primary) 0%, transparent);
 		}
 	}
 </style>
