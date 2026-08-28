@@ -8,6 +8,7 @@
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 	import DashedBorderBox from '$lib/components/contents/DashedBorderBox.svelte';
 	import { favoriteState } from '$lib/stores/favorite.svelte';
+	import { toastState } from '$lib/stores/toast.svelte';
 	import { articleRepository } from '$lib/repositories/article';
 
 	let favoriteEntries = $derived(favoriteState.entries());
@@ -31,6 +32,7 @@
 		favoriteEntries = favoriteState.entries();
 		checkedArticles = new Set();
 		isEditMode = false;
+		toastState.show(m['favorite.toast.deleted']());
 	}
 </script>
 

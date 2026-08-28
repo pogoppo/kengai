@@ -2,6 +2,7 @@ import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page as user } from 'vitest/browser';
 import GlobalNavigation from './GlobalNavigation.svelte';
+import { toastState } from '$lib/stores/toast.svelte';
 
 vi.mock('$lib/paraglide/messages', () => ({
 	m: {
@@ -11,7 +12,9 @@ vi.mock('$lib/paraglide/messages', () => ({
 		'component.main-navigation.faq.label': () => 'よくある質問',
 		'component.sub-navigation.search.label': () => '検索',
 		'component.sub-navigation.back-to-top.label': () => 'トップへ戻る',
-		'component.sub-navigation.add-favorite.label': () => 'お気に入り追加'
+		'component.sub-navigation.add-favorite.label': () => 'お気に入り追加',
+		'favorite.toast.added': () => 'お気に入りに追加しました',
+		'favorite.toast.removed': () => 'お気に入りから削除しました'
 	}
 }));
 
@@ -42,6 +45,7 @@ describe('GlobalNavigation', () => {
 	beforeEach(() => {
 		mocks.pathname = '/';
 		mocks.favoriteCheck.mockReturnValue(false);
+		toastState.toasts = [];
 		vi.clearAllMocks();
 	});
 
@@ -102,6 +106,35 @@ describe('GlobalNavigation', () => {
 
 		expect(mocks.favoriteToggle).toHaveBeenCalledTimes(1);
 		expect(mocks.favoriteToggle).toHaveBeenCalledWith('example');
+	});
+
+	test('お気に入りに追加するとToastが表示される', async () => {
+		mocks.pathname = '/article/_mock/example';
+		render(GlobalNavigation, { isArticlePage: true });
+
+		// クリック後は登録済みになる想定
+		mocks.favoriteCheck.mockReturnValue(true);
+
+		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
+		await addFavBtn.click({ force: true });
+
+		expect(toastState.toasts).toHaveLength(1);
+		expect(toastState.toasts[0].message).toBe('お気に入りに追加しました');
+	});
+
+	test('お気に入りから削除するとToastが表示される', async () => {
+		mocks.pathname = '/article/_mock/example';
+		mocks.favoriteCheck.mockReturnValue(true);
+		render(GlobalNavigation, { isArticlePage: true });
+
+		// クリック後は未登録になる想定
+		mocks.favoriteCheck.mockReturnValue(false);
+
+		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
+		await addFavBtn.click({ force: true });
+
+		expect(toastState.toasts).toHaveLength(1);
+		expect(toastState.toasts[0].message).toBe('お気に入りから削除しました');
 	});
 
 	test('お気に入りに登録済みの記事ではボタンがハイライト表示される', async () => {

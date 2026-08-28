@@ -13,6 +13,8 @@
 	import '$lib/styles/variables.css';
 	import '$lib/styles/global.css';
 
+	import Toast from '$lib/components/layouts/Toast.svelte';
+
 	let { children } = $props();
 
 	onNavigate((navigation) => {
@@ -30,6 +32,7 @@
 <div class="app-root">
 	{@render children()}
 </div>
+<Toast />
 
 <style>
 	.app-root {

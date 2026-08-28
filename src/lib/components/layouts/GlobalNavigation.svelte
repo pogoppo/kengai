@@ -14,6 +14,7 @@
 	import { pathnameToArticleSlug } from '$lib/utils/article';
 	import { modalState } from '$lib/stores/modal.svelte';
 	import { favoriteState } from '$lib/stores/favorite.svelte';
+	import { toastState } from '$lib/stores/toast.svelte';
 	import NavigationBar from '$lib/components/contents/NavigationBar.svelte';
 	import FloatNavigation from '$lib/components/contents/FloatNavigation.svelte';
 	import ModalSearch from '../modals/ModalSearch.svelte';
@@ -79,6 +80,7 @@
 	function actionAddFavorite(slug: string) {
 		favoriteState.toggle(slug);
 		isFavorite = favoriteState.check(slug);
+		toastState.show(isFavorite ? m['favorite.toast.added']() : m['favorite.toast.removed']());
 	}
 
 	function actionBackToTop() {

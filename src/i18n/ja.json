@@ -19,6 +19,7 @@
 	"component.article-list.no-articles": "記事が見つかりませんでした。",
 	"component.modal.close": "閉じる",
 	"component.modal.search.description": "記事のタイトルや内容の検索が行えます",
+	"component.toast.close": "閉じる",
 	"component.offline-info.not-installed": "オンラインでの設定が必要",
 	"component.offline-info.install": "オフライン利用を開始",
 	"component.offline-info.installing": "設定中",
@@ -44,6 +45,9 @@
 	"favorite.empty": "登録された記事はありません。",
 	"favorite.delete-button": "選択した項目を削除する",
 	"favorite.delete-confirm": "選択した項目を削除しますか？",
+	"favorite.toast.added": "お気に入りに追加しました",
+	"favorite.toast.removed": "お気に入りから削除しました",
+	"favorite.toast.deleted": "選択した項目を削除しました",
 
 	"category._mock.label": "開発用カテゴリ",
 	"category.uncategorized.label": "未分類",
