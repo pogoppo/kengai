@@ -43,10 +43,10 @@
 	.card-label {
 		margin-bottom: 2px;
 		color: var(--color-link);
-		font-size: 1rem;
+		font-size: 0.85rem;
 		font-weight: 700;
 	}
 	.card-description {
-		font-size: 0.8rem;
+		font-size: 0.75rem;
 	}
 </style>
