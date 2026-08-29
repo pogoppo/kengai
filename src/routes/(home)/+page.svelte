@@ -89,7 +89,7 @@
 	}
 	.groups {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(167px, 1fr));
 		grid-template-rows: 1fr;
 		gap: 0.5rem;
 	}
