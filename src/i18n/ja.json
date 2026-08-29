@@ -27,6 +27,7 @@
 	"component.offline-info.offline": "オフラインで利用中",
 	"component.offline-info.waiting": "更新が利用可能",
 	"component.offline-info.error": "設定エラーが発生",
+	"component.offline-info.guide": "オフライン利用はこちら",
 
 	"error.page.title": "404 Not Found",
 	"error.page.description": "お探しのページは見つかりませんでした。",
