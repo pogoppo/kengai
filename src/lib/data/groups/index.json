@@ -33,6 +33,26 @@
 						"slug": "adirondack"
 					}
 				]
+			},
+			{
+				"category": "rope-work",
+				"articles": [
+					{
+						"slug": "bowline-knot"
+					},
+					{
+						"slug": "taut-line-hitch"
+					},
+					{
+						"slug": "clove-hitch"
+					},
+					{
+						"slug": "two-half-hitches"
+					},
+					{
+						"slug": "siberian-hitch"
+					}
+				]
 			}
 		]
 	},
@@ -45,6 +65,9 @@
 				"articles": [
 					{
 						"slug": "bowline-knot"
+					},
+					{
+						"slug": "square-knot"
 					},
 					{
 						"slug": "clove-hitch"

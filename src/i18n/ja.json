@@ -58,7 +58,7 @@
 	"group._mock.label": "開発用グループ",
 	"group._mock.description": "開発用のダミーグループです",
 	"group.tarp-camping-basic.label": "タープ泊 基本のキ",
-	"group.tarp-camping-basic.description": "タープ泊で定番の張り方を紹介します",
+	"group.tarp-camping-basic.description": "タープ泊で定番の張り方と必要なロープワークを紹介します。",
 	"group.rope-work-basic.label": "ロープワーク 基本のキ",
-	"group.rope-work-basic.description": "よく使われるロープワークを紹介します"
+	"group.rope-work-basic.description": "よく使われるロープワークを紹介します。"
 }
