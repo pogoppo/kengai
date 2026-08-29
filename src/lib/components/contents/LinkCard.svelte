@@ -32,7 +32,7 @@
 	}
 	.card-image {
 		display: flex;
-		aspect-ratio: 2 / 1;
+		aspect-ratio: 5 / 3;
 		margin-bottom: 0.5rem;
 		> img {
 			width: 100%;

@@ -57,7 +57,7 @@
 	.group-image {
 		grid-area: image;
 		display: flex;
-		aspect-ratio: 2 / 1;
+		aspect-ratio: 5 / 3;
 		> img {
 			width: 100%;
 			height: 100%;
@@ -70,13 +70,13 @@
 		width: fit-content;
 		padding: 2px 4px;
 		background-color: var(--color-accent-primary);
-		font-size: 1rem;
+		font-size: 0.9rem;
 		font-weight: 900;
 	}
 	.group-description {
 		grid-area: description;
 		align-self: flex-start;
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 	}
 	.group-section-header {
 		display: grid;
