@@ -1,7 +1,7 @@
 [
 	{
 		"slug": "_mock",
-		"image": "/images/examples/dummyimage-600x300.png",
+		"image": "/images/examples/dummyimage-500x300.png",
 		"sections": [
 			{
 				"category": "_mock",
@@ -17,8 +17,37 @@
 		]
 	},
 	{
+		"slug": "rope-work-basic",
+		"image": "/images/groups/rope-work-basic.webp",
+		"sections": [
+			{
+				"category": "rope-work",
+				"articles": [
+					{
+						"slug": "bowline-knot"
+					},
+					{
+						"slug": "square-knot"
+					},
+					{
+						"slug": "clove-hitch"
+					},
+					{
+						"slug": "figure-eight-knot"
+					},
+					{
+						"slug": "taut-line-hitch"
+					},
+					{
+						"slug": "two-half-hitches"
+					}
+				]
+			}
+		]
+	},
+	{
 		"slug": "tarp-camping-basic",
-		"image": "/images/examples/dummyimage-600x300.png",
+		"image": "/images/groups/tarp-camping-basic.webp",
 		"sections": [
 			{
 				"category": "tarp",
@@ -51,35 +80,6 @@
 					},
 					{
 						"slug": "siberian-hitch"
-					}
-				]
-			}
-		]
-	},
-	{
-		"slug": "rope-work-basic",
-		"image": "/images/examples/dummyimage-600x300.png",
-		"sections": [
-			{
-				"category": "rope-work",
-				"articles": [
-					{
-						"slug": "bowline-knot"
-					},
-					{
-						"slug": "square-knot"
-					},
-					{
-						"slug": "clove-hitch"
-					},
-					{
-						"slug": "figure-eight-knot"
-					},
-					{
-						"slug": "taut-line-hitch"
-					},
-					{
-						"slug": "two-half-hitches"
 					}
 				]
 			}
