@@ -3,7 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { m } from '$lib/paraglide/messages.js';
 	import logo from '$lib/assets/app-logo.svg';
-	import { globalState } from '$lib/stores/global.svelte';
+	import { visitedState } from '$lib/stores/visited.svelte';
 	import OfflineInfo from './OfflineInfo.svelte';
 	import Popover from './Popover.svelte';
 	let { isHome = false } = $props();
@@ -13,10 +13,10 @@
 	const GUIDE_DURATION = 3000;
 	let isGuideOpen = $state(false);
 	const showGuideOnFirstVisit = () => {
-		if (!globalState.isFirstVisit) {
+		if (!visitedState.isFirstVisit) {
 			return;
 		}
-		globalState.markVisited();
+		visitedState.markVisited();
 		return [
 			setTimeout(() => (isGuideOpen = true), GUIDE_DELAY),
 			setTimeout(() => (isGuideOpen = false), GUIDE_DELAY + GUIDE_DURATION)

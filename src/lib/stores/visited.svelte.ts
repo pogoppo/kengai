@@ -2,7 +2,7 @@ import { browser } from '$app/environment';
 
 export const VISITED_STORAGE_KEY = 'kengai-visited';
 
-class GlobalState {
+class VisitedState {
 	// 初回アクセスかどうか
 	get isFirstVisit() {
 		return browser && localStorage.getItem(VISITED_STORAGE_KEY) === null;
@@ -15,4 +15,4 @@ class GlobalState {
 	}
 }
 
-export const globalState = new GlobalState();
+export const visitedState = new VisitedState();
