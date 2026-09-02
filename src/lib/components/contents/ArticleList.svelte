@@ -29,6 +29,11 @@
 </script>
 
 {#snippet articleInfo(article: ArticleSummary)}
+	{#if article.thumbnail}
+		<picture class="article-thumbnail">
+			<img src={article.thumbnail} alt="" loading="lazy" decoding="async" />
+		</picture>
+	{/if}
 	<h3 class="article-title">{article.title}</h3>
 	<p class="article-description">
 		{article.description}
@@ -95,19 +100,31 @@
 	}
 	.article-item {
 		display: grid;
+		/* checkbox・thumbnailは省略可能。未描画のトラックは幅0に潰れるため、
+		   カラム間の余白はcolumn-gapではなく各要素のmargin-rightで表現する */
 		grid-template-areas:
-			'title'
-			'description';
-		gap: 2px;
+			'checkbox thumbnail title'
+			'checkbox thumbnail description';
+		grid-template-columns: auto auto 1fr;
+		row-gap: 2px;
 		&:is(a, label) {
 			cursor: pointer;
 		}
-		&:has(article-checkbox) {
-			grid-template-areas:
-				'checkbox title'
-				'checkbox description';
-			grid-template-columns: auto 1fr;
-			gap: 2px 1rem;
+	}
+	.article-thumbnail {
+		grid-area: thumbnail;
+		align-self: start;
+		overflow: hidden;
+		aspect-ratio: 1 / 1;
+		width: 4rem;
+		margin-right: 0.75rem;
+		box-sizing: border-box;
+		background-color: var(--color-bg-secondary);
+		border-radius: 0.25rem;
+		> img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 	.article-title {
@@ -130,5 +147,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		margin-right: 1rem;
 	}
 </style>

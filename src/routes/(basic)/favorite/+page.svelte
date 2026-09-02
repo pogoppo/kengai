@@ -66,7 +66,6 @@
 		{#if isEditMode}
 			<div class="favorite-delete">
 				<ButtonBasic
-					rounded={true}
 					variant="danger"
 					icon={faTrashCan}
 					onclick={handleDeleteClick}

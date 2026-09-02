@@ -4,4 +4,5 @@ export interface ArticleSummary {
 	description: string;
 	category: string;
 	tags: string[];
+	thumbnail?: string;
 }

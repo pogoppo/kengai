@@ -2,6 +2,7 @@
 title: '巻き結び (Clove Hitch)'
 description: '棒状の物に巻きつけるシンプルな結びです。'
 tags: ['ロープワーク基礎']
+thumbnail: '/images/articles/rope-work/clove-hitch/first.webp'
 published: true
 ---
 

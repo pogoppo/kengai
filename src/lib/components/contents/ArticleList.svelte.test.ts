@@ -212,6 +212,53 @@ describe('ArticleList', () => {
 		});
 	});
 
+	describe('サムネイル表示', () => {
+		test('thumbnailが指定された記事では画像が表示される', async () => {
+			const articlesWithThumbnail = [
+				{
+					slug: 'with-thumbnail',
+					title: 'Thumbnail Article',
+					description: 'Has thumbnail',
+					category: 'cat1',
+					tags: [],
+					thumbnail: '/images/articles/cat1/with-thumbnail/first.webp'
+				}
+			];
+
+			const { container } = render(ArticleList, { articles: articlesWithThumbnail });
+
+			const image = container.querySelector('.article-thumbnail img');
+			expect(image?.getAttribute('src')).toBe('/images/articles/cat1/with-thumbnail/first.webp');
+		});
+
+		test('thumbnailが未指定の記事ではサムネイルの枠自体が描画されない', async () => {
+			const { container } = render(ArticleList, { articles });
+
+			expect(container.querySelectorAll('.article-thumbnail').length).toBe(0);
+		});
+
+		test('チェック可能モードでもサムネイルが表示される', async () => {
+			const articlesWithThumbnail = [
+				{
+					slug: 'with-thumbnail',
+					title: 'Thumbnail Article',
+					description: 'Has thumbnail',
+					category: 'cat1',
+					tags: [],
+					thumbnail: '/images/articles/cat1/with-thumbnail/first.webp'
+				}
+			];
+
+			const { container } = render(ArticleList, {
+				articles: articlesWithThumbnail,
+				checkable: true
+			});
+
+			const image = container.querySelector('.article-thumbnail img');
+			expect(image?.getAttribute('src')).toBe('/images/articles/cat1/with-thumbnail/first.webp');
+		});
+	});
+
 	describe('タグ表示', () => {
 		test('タグがない記事ではタグテキストが空になる', async () => {
 			const articlesWithoutTags = [

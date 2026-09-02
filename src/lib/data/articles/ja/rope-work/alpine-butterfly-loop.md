@@ -2,6 +2,7 @@
 title: '中間者結び (Alpine Butterfly)'
 description: 'ロープの中間に輪を作る結びです。'
 tags: ['ロープワーク基礎', '登山', 'キャンプ']
+thumbnail: '/images/articles/rope-work/alpine-butterfly-loop/first.webp'
 published: true
 ---
 

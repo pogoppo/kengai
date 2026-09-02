@@ -7,6 +7,7 @@ interface ArticleBase {
 	title: string;
 	description: string;
 	tags: string[];
+	thumbnail?: string;
 }
 
 interface ArticleIndex extends ArticleBase {
@@ -82,7 +83,8 @@ export async function buildArticleIndex(): Promise<void> {
 					title: fm.title,
 					description: fm.description,
 					category,
-					tags: fm.tags || []
+					tags: fm.tags || [],
+					...(fm.thumbnail ? { thumbnail: fm.thumbnail } : {})
 				});
 			}
 		} catch (error) {
