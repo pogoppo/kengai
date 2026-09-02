@@ -37,6 +37,7 @@
 				</a>
 			</div>
 			<h1 class="article-title">{data.articleSummary.title}</h1>
+			<p class="article-description">{data.articleSummary.description}</p>
 			<ul class="article-tags">
 				{#each data.articleSummary.tags as tag (tag)}
 					<li>
@@ -70,6 +71,10 @@
 		font-size: 1.75rem;
 		font-weight: 900;
 	}
+	.article-description {
+		font-size: 0.75rem;
+		opacity: 0.9;
+	}
 	.article-category {
 		display: flex;
 		flex-wrap: wrap;
@@ -88,7 +93,7 @@
 		> li {
 			> a {
 				color: var(--color-link);
-				font-size: 1rem;
+				font-size: 0.8rem;
 				font-weight: 700;
 			}
 		}
@@ -153,9 +158,6 @@
 			> :global(img) {
 				background-color: var(--color-bg-primary);
 			}
-		}
-		:global(figcaption) {
-			font-size: 0.9em;
 		}
 		:global(ul),
 		:global(ol) {
