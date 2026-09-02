@@ -5,4 +5,6 @@ export interface ArticleSummary {
 	category: string;
 	tags: string[];
 	thumbnail?: string;
+	date?: string;
+	updated?: string;
 }

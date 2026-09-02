@@ -8,12 +8,27 @@
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
+	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
+	import { collectionPageSchema } from '$lib/utils/structured-data';
+
 	let { data } = $props();
+
+	let path = $derived(`/group/${data.slug}`);
+	let articles = $derived(data.groupData.sections.flatMap((section) => section.articles));
 </script>
 
-<svelte:head>
-	<title>{data.groupData.label} - {m['app.name']()}</title>
-</svelte:head>
+<PageMeta
+	title={data.groupData.label}
+	description={data.groupData.description}
+	{path}
+	image={data.groupData.image}
+	structuredData={collectionPageSchema({
+		name: data.groupData.label,
+		description: data.groupData.description,
+		path,
+		articles
+	})}
+/>
 
 <Breadcrumbs items={[{ label: data.groupData.label }]} />
 

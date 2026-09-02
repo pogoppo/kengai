@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
@@ -11,8 +12,15 @@
 	import ArticleList from '$lib/components/contents/ArticleList.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 	import DashedBorderBox from '$lib/components/contents/DashedBorderBox.svelte';
+	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
 
-	let query = $derived((page.url.searchParams.get('q') ?? '').trim());
+	// ハイドレーション不整合を防ぐ
+	let mounted = $state(false);
+	onMount(() => {
+		mounted = true;
+	});
+
+	let query = $derived(mounted ? (page.url.searchParams.get('q') ?? '').trim() : '');
 	let results = $derived(query ? articleRepository.filter({ query }) : []);
 
 	function handleSearch(query: string) {
@@ -23,9 +31,12 @@
 	}
 </script>
 
-<svelte:head>
-	<title>{m['search.page.title']()} - {m['app.name']()}</title>
-</svelte:head>
+<PageMeta
+	title={m['search.page.title']()}
+	description={m['search.page.description']()}
+	path="/search"
+	noindex
+/>
 
 <Breadcrumbs items={[{ label: m['search.page.title']() }]} />
 

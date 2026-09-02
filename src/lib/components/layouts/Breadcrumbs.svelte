@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import type { Pathname } from '$app/types';
 	import { m } from '$lib/paraglide/messages';
 	import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import { breadcrumbSchema } from '$lib/utils/structured-data';
+	import { serializeJsonLd } from '$lib/utils/json-ld';
 
 	interface BreadcrumbsItem {
 		label: string;
@@ -16,7 +19,20 @@
 		{ label: m['app.name'](), href: '/' } as BreadcrumbsItem,
 		...items
 	]);
+
+	let jsonLdContent = $derived.by(() => {
+		const structuredItems = breadcrumbsItems.map((item) => ({
+			label: item.label,
+			href: item.href ?? page.url.pathname
+		}));
+
+		return serializeJsonLd(breadcrumbSchema(structuredItems));
+	});
 </script>
+
+<svelte:head>
+	<svelte:element this={'script'} type="application/ld+json">{jsonLdContent}</svelte:element>
+</svelte:head>
 
 <nav aria-label={m['component.breadcrumbs.aria-label']()}>
 	<ol class="breadcrumbs">

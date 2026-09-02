@@ -1,6 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"app.name": "KENGAI",
+	"app.description": "圏外でも使える野外ノウハウアプリ。電波の届かない場所でも利用できるアプリです。",
 
 	"common.edit": "編集",
 	"common.cancel": "キャンセル",
@@ -37,12 +38,15 @@
 	"home.search.placeholder": "ノウハウを検索 (例: タープ)",
 
 	"faq.page.title": "よくある質問",
+	"faq.page.description": "アプリの使い方やオフライン利用に関する質問と回答です。",
 
 	"search.page.title": "記事検索",
+	"search.page.description": "記事をキーワードやタグから検索できます。",
 	"search.placeholder": "記事を検索 (例: タープ)",
 	"search.query-empty": "検索キーワードを入力してください。",
 
 	"favorite.page.title": "お気に入り",
+	"favorite.page.description": "お気に入りに登録した記事の一覧です。",
 	"favorite.empty": "登録された記事はありません。",
 	"favorite.delete-button": "選択した項目を削除する",
 	"favorite.delete-confirm": "選択した項目を削除しますか？",
@@ -50,6 +54,7 @@
 	"favorite.toast.removed": "お気に入りから削除しました",
 	"favorite.toast.deleted": "選択した項目を削除しました",
 
+	"category.page.description": "「{label}」に関する記事の一覧です。",
 	"category._mock.label": "開発用カテゴリ",
 	"category.uncategorized.label": "未分類",
 	"category.tarp.label": "タープ",
@@ -61,5 +66,8 @@
 	"group.tarp-camping-basic.label": "タープ泊",
 	"group.tarp-camping-basic.description": "タープ泊で定番の張り方とロープワーク。",
 	"group.rope-work-basic.label": "ロープワーク 基本のキ",
-	"group.rope-work-basic.description": "よく使われる汎用的なロープワーク集。"
+	"group.rope-work-basic.description": "よく使われる汎用的なロープワーク集。",
+
+	"article.date.published": "記事の公開日",
+	"article.date.updated": "更新日"
 }

@@ -4,12 +4,11 @@
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 	import GlobalHeader from '$lib/components/layouts/GlobalHeader.svelte';
+	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
 	import mog404 from '$lib/assets/mog-404.webp';
 </script>
 
-<svelte:head>
-	<title>{m['error.page.title']()} - {m['app.name']()}</title>
-</svelte:head>
+<PageMeta title={m['error.page.title']()} description={m['error.page.description']()} noindex />
 
 <div class="float-header">
 	<GlobalHeader />

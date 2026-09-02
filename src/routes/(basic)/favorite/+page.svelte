@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { faStar, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 	import { m } from '$lib/paraglide/messages.js';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
@@ -7,11 +8,18 @@
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 	import DashedBorderBox from '$lib/components/contents/DashedBorderBox.svelte';
+	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
 	import { favoriteState } from '$lib/stores/favorite.svelte';
 	import { toastState } from '$lib/stores/toast.svelte';
 	import { articleRepository } from '$lib/repositories/article';
 
-	let favoriteEntries = $derived(favoriteState.entries());
+	// ハイドレーション不整合を防ぐ
+	let mounted = $state(false);
+	onMount(() => {
+		mounted = true;
+	});
+
+	let favoriteEntries = $derived(mounted ? favoriteState.entries() : []);
 	let articles = $derived(articleRepository.findBySlugs(favoriteEntries));
 	let isEditMode = $state(false);
 	let checkedArticles = $state(new Set<string>());
@@ -36,9 +44,12 @@
 	}
 </script>
 
-<svelte:head>
-	<title>{m['favorite.page.title']()} - {m['app.name']()}</title>
-</svelte:head>
+<PageMeta
+	title={m['favorite.page.title']()}
+	description={m['favorite.page.description']()}
+	path="/favorite"
+	noindex
+/>
 
 <Breadcrumbs items={[{ label: m['favorite.page.title']() }]} />
 

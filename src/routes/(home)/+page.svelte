@@ -8,6 +8,8 @@
 	import SearchBar from '$lib/components/contents/SearchBar.svelte';
 	import LinkCard from '$lib/components/contents/LinkCard.svelte';
 	import Chip from '$lib/components/contents/Chip.svelte';
+	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
+	import { websiteSchema } from '$lib/utils/structured-data';
 	import mogFrontBasic from '$lib/assets/mog-front-basic.webp';
 
 	let { data } = $props();
@@ -20,9 +22,12 @@
 	}
 </script>
 
-<svelte:head>
-	<title>{m['home.page.title']()} - {m['app.name']()}</title>
-</svelte:head>
+<PageMeta
+	title={m['home.page.title']()}
+	description={m['app.description']()}
+	path="/"
+	structuredData={websiteSchema()}
+/>
 
 <main class="home">
 	<section class="concept">

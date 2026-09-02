@@ -5,13 +5,27 @@
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
+	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
+	import { collectionPageSchema } from '$lib/utils/structured-data';
 
 	let { data } = $props();
+
+	let label = $derived(categoryLabel(data.category));
+	let description = $derived(m['category.page.description']({ label }));
+	let path = $derived(`/category/${data.category}`);
 </script>
 
-<svelte:head>
-	<title>{categoryLabel(data.category)} - {m['app.name']()}</title>
-</svelte:head>
+<PageMeta
+	title={label}
+	{description}
+	{path}
+	structuredData={collectionPageSchema({
+		name: label,
+		description,
+		path,
+		articles: data.articles
+	})}
+/>
 
 <Breadcrumbs items={[{ label: categoryLabel(data.category) }]} />
 

@@ -8,6 +8,8 @@
 	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
 	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
 	import AccordionList from '$lib/components/contents/AccordionList.svelte';
+	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
+	import { faqSchema } from '$lib/utils/structured-data';
 
 	interface Props {
 		data: PageData;
@@ -51,9 +53,12 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{m['faq.page.title']()} - {m['app.name']()}</title>
-</svelte:head>
+<PageMeta
+	title={m['faq.page.title']()}
+	description={m['faq.page.description']()}
+	path="/faq"
+	structuredData={faqSchema(data.faqSections)}
+/>
 
 <Breadcrumbs items={[{ label: m['faq.page.title']() }]} />
 

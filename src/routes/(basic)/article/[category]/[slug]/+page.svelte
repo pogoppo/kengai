@@ -1,11 +1,17 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { resolve } from '$app/paths';
+	import { m } from '$lib/paraglide/messages.js';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
-	import { m } from '$lib/paraglide/messages';
+	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
+	import { articleSchema } from '$lib/utils/structured-data';
 	import { categoryLabel } from '$lib/utils/category.js';
 
 	let { data } = $props();
+
+	let articlePath = $derived(
+		`/article/${data.articleSummary.category}/${data.articleSummary.slug}`
+	);
 
 	if (browser && !customElements.get('youtube-embed')) {
 		import('$lib/components/web-components/youtube-embed').then(({ YoutubeEmbed }) => {
@@ -14,9 +20,20 @@
 	}
 </script>
 
-<svelte:head>
-	<title>{data.articleSummary.title} - {m['app.name']()}</title>
-</svelte:head>
+<PageMeta
+	title={data.articleSummary.title}
+	description={data.articleSummary.description}
+	path={articlePath}
+	image={data.articleSummary.thumbnail}
+	type="article"
+	article={{
+		publishedTime: data.articleSummary.date,
+		modifiedTime: data.articleSummary.updated,
+		section: categoryLabel(data.articleSummary.category),
+		tags: data.articleSummary.tags
+	}}
+	structuredData={articleSchema(data.articleSummary, { path: articlePath })}
+/>
 
 <Breadcrumbs
 	items={[
@@ -52,6 +69,27 @@
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 			{@html data.content}
 		</div>
+
+		{#if data.articleSummary.date || data.articleSummary.updated}
+			<footer class="article-footer">
+				{#if data.articleSummary.date}
+					<article-date>
+						{m['article.date.published']()}:
+						<time datetime={data.articleSummary.date}>
+							{data.articleSummary.date}
+						</time>
+					</article-date>
+				{/if}
+				{#if data.articleSummary.updated}
+					<article-date>
+						{m['article.date.updated']()}:
+						<time datetime={data.articleSummary.updated}>
+							{data.articleSummary.updated}
+						</time>
+					</article-date>
+				{/if}
+			</footer>
+		{/if}
 	</article>
 </main>
 
@@ -96,6 +134,14 @@
 				font-size: 0.8rem;
 				font-weight: 700;
 			}
+		}
+	}
+	.article-footer {
+		article-date {
+			display: inline-block;
+			margin-right: 1rem;
+			font-size: 0.8rem;
+			opacity: 0.5;
 		}
 	}
 	.article-content {

@@ -8,6 +8,8 @@ interface ArticleBase {
 	description: string;
 	tags: string[];
 	thumbnail?: string;
+	date?: string;
+	updated?: string;
 }
 
 interface ArticleIndex extends ArticleBase {
@@ -15,8 +17,19 @@ interface ArticleIndex extends ArticleBase {
 	category: string;
 }
 
-interface ArticleFrontmatter extends ArticleBase {
+interface ArticleFrontmatter extends Omit<ArticleBase, 'date' | 'updated'> {
 	published: boolean;
+	date?: string | Date;
+	updated?: string | Date;
+}
+
+function normalizeDate(value: string | Date | undefined): string | undefined {
+	if (!value) return undefined;
+
+	const date = value instanceof Date ? value : new Date(value);
+	if (Number.isNaN(date.getTime())) return undefined;
+
+	return date.toISOString().slice(0, 10);
 }
 
 /**
@@ -78,13 +91,17 @@ export async function buildArticleIndex(): Promise<void> {
 
 			if (fm.published) {
 				const filename = path.basename(filePath, '.md');
+				const date = normalizeDate(fm.date);
+				const updated = normalizeDate(fm.updated);
 				articles.push({
 					slug: filename,
 					title: fm.title,
 					description: fm.description,
 					category,
 					tags: fm.tags || [],
-					...(fm.thumbnail ? { thumbnail: fm.thumbnail } : {})
+					...(fm.thumbnail ? { thumbnail: fm.thumbnail } : {}),
+					...(date ? { date } : {}),
+					...(updated ? { updated } : {})
 				});
 			}
 		} catch (error) {
