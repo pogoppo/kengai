@@ -4,6 +4,7 @@
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 	import GlobalHeader from '$lib/components/layouts/GlobalHeader.svelte';
+	import mog404 from '$lib/assets/mog-404.webp';
 </script>
 
 <svelte:head>
@@ -20,7 +21,7 @@
 			<span>Not Found</span>
 		</h1>
 		<picture class="error-heading-image">
-			<img src="/images/app/mog-404.webp" alt="" />
+			<img src={mog404} alt="" />
 		</picture>
 	</div>
 	<p class="error-description">{m['error.page.description']()}</p>

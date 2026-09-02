@@ -5,6 +5,7 @@
 	import { modalState } from '$lib/stores/modal.svelte';
 	import SearchBar from '$lib/components/contents/SearchBar.svelte';
 	import { resolve } from '$app/paths';
+	import mogModalSearch from '$lib/assets/mog-modal-search.webp';
 
 	function handleSearch(query: string) {
 		const url = createSearchURL(query);
@@ -17,7 +18,7 @@
 
 <div class="modal-search">
 	<picture class="modal-search-image">
-		<img src="/images/app/mog-modal-search.webp" alt="" />
+		<img src={mogModalSearch} alt="" />
 	</picture>
 	<p class="modal-search-description">{m['component.modal.search.description']()}</p>
 	<div class="modal-search-bar">

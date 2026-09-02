@@ -8,6 +8,7 @@
 	import SearchBar from '$lib/components/contents/SearchBar.svelte';
 	import LinkCard from '$lib/components/contents/LinkCard.svelte';
 	import Chip from '$lib/components/contents/Chip.svelte';
+	import mogFrontBasic from '$lib/assets/mog-front-basic.webp';
 
 	let { data } = $props();
 
@@ -29,7 +30,7 @@
 			{m['home.concept']()}
 		</h2>
 		<picture>
-			<img class="concept-image" src="/images/app/mog-front-basic.webp" alt="" />
+			<img class="concept-image" src={mogFrontBasic} alt="" />
 		</picture>
 	</section>
 
