@@ -16,18 +16,18 @@
 	}
 </script>
 
-<div class="modal-search">
+<modal-search>
 	<picture class="modal-search-image">
 		<img src={mogModalSearch} alt="" />
 	</picture>
 	<p class="modal-search-description">{m['component.modal.search.description']()}</p>
-	<div class="modal-search-bar">
+	<modal-search-bar>
 		<SearchBar onSearch={handleSearch} placeholder={m['search.placeholder']()} focused={true} />
-	</div>
-</div>
+	</modal-search-bar>
+</modal-search>
 
 <style>
-	.modal-search {
+	modal-search {
 		display: grid;
 		align-content: center;
 		justify-items: center;
@@ -36,7 +36,7 @@
 		padding: 1rem;
 		box-sizing: border-box;
 	}
-	.modal-search-bar {
+	modal-search-bar {
 		width: 100%;
 		max-width: 400px;
 		margin-top: 1rem;

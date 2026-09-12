@@ -7,14 +7,12 @@
 		onSearch,
 		placeholder,
 		value = $bindable(''),
-		focused = $bindable(false),
-		appearance = $bindable('default')
+		focused = $bindable(false)
 	}: {
 		onSearch: (query: string) => void | Promise<void>;
 		placeholder?: string;
 		value?: string;
 		focused?: boolean;
-		appearance?: 'default' | 'rounded';
 	} = $props();
 
 	let input: HTMLInputElement | null = null;
@@ -30,7 +28,7 @@
 	});
 </script>
 
-<div class="search" data-appearance={appearance}>
+<search-bar>
 	<input
 		type="search"
 		class="search-input"
@@ -46,10 +44,10 @@
 	>
 		<FontAwesomeIcon icon={faMagnifyingGlass} />
 	</button>
-</div>
+</search-bar>
 
 <style>
-	.search {
+	search-bar {
 		display: flex;
 		align-items: center;
 		gap: 8px;
@@ -58,16 +56,13 @@
 		padding: 8px 48px 8px 12px;
 		background-color: var(--color-bg-primary);
 		border-radius: 8px;
-		&[data-appearance='rounded'] {
-			border-radius: 999px;
-		}
 	}
 	.search-input {
 		flex: 1;
 		padding-bottom: 4px;
 		border: unset;
 		border-bottom: 1px solid var(--color-bg-secondary);
-		font-size: 0.9rem;
+		font-size: 1rem;
 		font-weight: 700;
 		outline: none;
 		&::placeholder {
