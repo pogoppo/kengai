@@ -6,8 +6,12 @@
 }
 
 html {
-	container-type: scroll-state;
 	scroll-behavior: smooth;
+	scrollbar-gutter: stable;
+
+	&:has(dialog:modal) {
+		overflow: hidden;
+	}
 }
 
 body {
