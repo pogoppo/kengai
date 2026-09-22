@@ -10,6 +10,7 @@
 	--color-accent-primary: #a7ceff;
 	--color-link: var(--color-primary);
 	--color-danger: #dd4444;
+	--color-warning: #ffbc40;
 
 	/* Layout */
 	--container-max-width: 560px;

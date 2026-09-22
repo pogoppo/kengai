@@ -193,6 +193,10 @@
 			height: auto;
 			margin-inline: auto;
 			border-radius: 0.5rem;
+			object-fit: cover;
+			&[data-aspect-ratio='2/1'] {
+				aspect-ratio: 2 / 1;
+			}
 		}
 		:global(figure) {
 			display: grid;
@@ -201,6 +205,10 @@
 			margin-inline-start: calc((100% - 100cqw) / 2);
 			padding: 1rem;
 			background-color: var(--color-bg-secondary);
+			text-align: justify;
+			&[data-variant='warning'] {
+				background-color: var(--color-warning);
+			}
 			> :global(img) {
 				background-color: var(--color-bg-primary);
 			}
@@ -230,6 +238,7 @@
 			background-color: color-mix(in srgb, var(--color-bg-secondary) 50%, transparent 50%);
 			border-left: 6px solid color-mix(in srgb, var(--color-fg-primary) 50%, transparent 50%);
 			font-size: 0.9rem;
+			text-align: justify;
 			:global(p) {
 				font-size: inherit;
 			}
@@ -256,6 +265,9 @@
 			:global(th) {
 				background-color: var(--color-bg-secondary);
 				font-weight: 700;
+			}
+			:global(tbody) {
+				text-align: justify;
 			}
 		}
 		:global(youtube-embed) {
