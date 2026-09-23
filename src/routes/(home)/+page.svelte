@@ -44,6 +44,20 @@
 	</SectionBasic>
 
 	<SectionBasic continuously={true}>
+		<ul class="categories">
+			{#each data.categories as category (category)}
+				<li>
+					<Chip
+						href={`/category/${category}`}
+						label={categoryLabel(category)}
+						icon={categoryIcon(category)}
+					/>
+				</li>
+			{/each}
+		</ul>
+	</SectionBasic>
+
+	<SectionBasic continuously={true}>
 		<ul class="groups">
 			{#each data.groups as group (group.slug)}
 				<li>
@@ -57,29 +71,18 @@
 			{/each}
 		</ul>
 	</SectionBasic>
-
-	<SectionBasic continuously={true}>
-		<ul class="categories">
-			{#each data.categories as category (category)}
-				<li>
-					<Chip
-						href={`/category/${category}`}
-						label={categoryLabel(category)}
-						icon={categoryIcon(category)}
-					/>
-				</li>
-			{/each}
-		</ul>
-	</SectionBasic>
 </main>
 
 <style>
+	.home {
+		display: flow-root;
+	}
 	.concept {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
-		margin-top: -1px;
+		margin-top: -1px; /* 隙間ができないように */
 		padding-block: 1rem;
 		background-color: color-mix(in srgb, var(--color-bg-tertiary) 75%, var(--color-bg-reverse));
 	}
