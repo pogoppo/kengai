@@ -67,7 +67,7 @@
 				"content": "掲載されている記事は全ての情報の正確性や最新性を保証するものではありません。記事の内容を参考にする際は自己責任でお願いいたします。"
 			},
 			{
-				"id": "",
+				"id": "content-issue",
 				"summary": "間違っている箇所・情報を見つけた",
 				"content": "<a href='//github.com/pogoppo/kengai' target='_blank'>GitHubリポジトリ</a>のIssueにてご報告ください。(GitHubのアカウントが必要です。)"
 			}
