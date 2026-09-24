@@ -9,7 +9,7 @@ published: true
 ![本結びのイメージ](/images/articles/rope-work/square-knot/first.webp)
 
 同じ太さの2本のロープやロープの先端同士を交差させて結ぶ基本的な結びです。  
-太さが違う場合は[一重継ぎ結び](./sheet-bend-knot)の方が適しています。
+太さが違う場合は[一重継ぎ結び](./sheet-bend)の方が適しています。
 
 ## 結び方
 
