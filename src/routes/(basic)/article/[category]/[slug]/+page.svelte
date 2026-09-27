@@ -197,6 +197,9 @@
 			&[data-aspect-ratio='2/1'] {
 				aspect-ratio: 2 / 1;
 			}
+			&[data-aspect-ratio='3/2'] {
+				aspect-ratio: 3 / 2;
+			}
 			&[data-aspect-ratio='4/3'] {
 				aspect-ratio: 4 / 3;
 			}

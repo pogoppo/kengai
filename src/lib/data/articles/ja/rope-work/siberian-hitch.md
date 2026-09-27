@@ -11,12 +11,12 @@ published: true
 ## 結び方
 
 <figure>
-  <img src="/images/articles/rope-work/siberian-hitch/step1.webp" alt="シベリアン・ヒッチの手順1">
+  <img src="/images/articles/rope-work/siberian-hitch/step1.webp" alt="シベリアン・ヒッチの手順1" data-aspect-ratio="3/2">
   <figcaption>ポールやリングに対してロープの先端を裏から通します。</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/articles/rope-work/siberian-hitch/step2.webp" alt="シベリアン・ヒッチの手順2">
+  <img src="/images/articles/rope-work/siberian-hitch/step2.webp" alt="シベリアン・ヒッチの手順2" data-aspect-ratio="3/2">
   <figcaption>
 	そのまま<strong>広めに輪を作りながら</strong>、先端を根元の裏から通します。
 	<br/>先端は気持ち長めに取ります。
@@ -24,16 +24,16 @@ published: true
 </figure>
 
 <figure>
-  <img src="/images/articles/rope-work/siberian-hitch/step3.webp" alt="シベリアン・ヒッチの手順3">
+  <img src="/images/articles/rope-work/siberian-hitch/step3.webp" alt="シベリアン・ヒッチの手順3" data-aspect-ratio="3/2">
   <figcaption>作った輪を<strong>時計回りに2回</strong>ひねります。</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/articles/rope-work/siberian-hitch/step4.webp" alt="シベリアン・ヒッチの手順4">
+  <img src="/images/articles/rope-work/siberian-hitch/step4.webp" alt="シベリアン・ヒッチの手順4" data-aspect-ratio="3/2">
   <figcaption>先端から引き解けになる部分を取り出します。</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/articles/rope-work/siberian-hitch/step5.webp" alt="シベリアン・ヒッチの手順5">
+  <img src="/images/articles/rope-work/siberian-hitch/step5.webp" alt="シベリアン・ヒッチの手順5" data-aspect-ratio="3/2">
   <figcaption>取り出した部分を輪に通し、締めて完成です。</figcaption>
 </figure>

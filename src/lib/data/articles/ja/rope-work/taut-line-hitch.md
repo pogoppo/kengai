@@ -20,13 +20,13 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/taut-line-hitch/step2.webp" alt="自在結びの手順2" data-aspect-ratio="4/3">
-  <img src="/images/articles/rope-work/taut-line-hitch/step3.webp" alt="自在結びの手順3" data-aspect-ratio="4/3">
-  <figcaption>根元の上を通り輪を作りながら、<strong>2回</strong>巻き付けます。</figcaption>
+  <figcaption>根元の上を通り、輪を作りながら<strong>2回</strong>巻き付けます。</figcaption>
 </figure>
 
 <figure>
+  <img src="/images/articles/rope-work/taut-line-hitch/step3.webp" alt="自在結びの手順3" data-aspect-ratio="4/3">
   <img src="/images/articles/rope-work/taut-line-hitch/step4.webp" alt="自在結びの手順4">
-  <figcaption>そのまま上を通りつつ根元で<a href="/article/rope-work/half-hitch">ひと結び</a>を作り、締めて完成です。</figcaption>
+  <figcaption>そのまま上を通りつつ、根元で<a href="/article/rope-work/half-hitch">ひと結び</a>を作り、締めて完成です。</figcaption>
 </figure>
 
 ## 日本の「自在結び」
@@ -41,6 +41,6 @@ published: true
 
 ## 調整方法
 
-結び目を持ったまま、メインラインを上下どちらかに引く事で調整できます。
+結び目を持ったまま、メインラインを上下に引く事で調整できます。
 
 ![自在結び調整方法のイメージ](/images/articles/rope-work/taut-line-hitch/howto.webp)

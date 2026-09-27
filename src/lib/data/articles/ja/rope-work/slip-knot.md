@@ -14,7 +14,7 @@ published: true
 ## 結び方
 
 <figure>
-  <img src="/images/articles/rope-work/slip-knot/step1.webp" alt="引き解け結びの手順1">
+  <img src="/images/articles/rope-work/slip-knot/step1.webp" alt="引き解け結びの手順1" data-aspect-ratio="2/1">
   <figcaption>
     図のように内側に輪を作ります。位置や重ね順に注意してください。
     <br/>輪の作り方を逆にすると<a href="/article/rope-work/noose-knot">わな結び</a>になります。
@@ -22,7 +22,7 @@ published: true
 </figure>
 
 <figure>
-  <img src="/images/articles/rope-work/slip-knot/step2.webp" alt="引き解け結びの手順2">
+  <img src="/images/articles/rope-work/slip-knot/step2.webp" alt="引き解け結びの手順2" data-aspect-ratio="2/1">
   <img src="/images/articles/rope-work/slip-knot/step3.webp" alt="引き解け結びの手順3">
   <figcaption>赤いマーカーの部分を輪の下から通します。</figcaption>
 </figure>

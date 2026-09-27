@@ -16,15 +16,15 @@ published: true
 ## 結び方
 
 <figure>
-  <img src="/images/articles/rope-work/two-half-hitches/step1.webp" alt="ふた結びの手順1">
+  <img src="/images/articles/rope-work/two-half-hitches/step1.webp" alt="ふた結びの手順1" data-aspect-ratio="3/2">
   <figcaption>ポールやリングに対してロープの先端を被せます。</figcaption>
 </figure>
 
 ここからはメインラインに対して[巻き結び](/article/rope-work/clove-hitch)を行います。
 
 <figure>
-  <img src="/images/articles/rope-work/two-half-hitches/step2.webp" alt="ふた結びの手順2">
-  <img src="/images/articles/rope-work/two-half-hitches/step3.webp" alt="ふた結びの手順3">
+  <img src="/images/articles/rope-work/two-half-hitches/step2.webp" alt="ふた結びの手順2" data-aspect-ratio="3/2">
+  <img src="/images/articles/rope-work/two-half-hitches/step3.webp" alt="ふた結びの手順3" data-aspect-ratio="3/2">
   <figcaption>
 	  メインラインに対して1回巻き付けます。重なり順に注意してください。
     <br/>ここで2回巻き付けると<a href="/article/rope-work/taut-line-hitch">自在結び</a>になります。
@@ -32,6 +32,6 @@ published: true
 </figure>
 
 <figure>
-  <img src="/images/articles/rope-work/two-half-hitches/step4.webp" alt="ふた結びの手順4">
+  <img src="/images/articles/rope-work/two-half-hitches/step4.webp" alt="ふた結びの手順4" data-aspect-ratio="3/2">
   <figcaption>もう一度巻き付けます。巻き付ける際にロープの間を通し、そのまま締めて完成です。</figcaption>
 </figure>
