@@ -24,22 +24,25 @@
 				"category": "rope-work",
 				"articles": [
 					{
-						"slug": "bowline-knot"
-					},
-					{
-						"slug": "square-knot"
-					},
-					{
-						"slug": "clove-hitch"
+						"slug": "half-hitch"
 					},
 					{
 						"slug": "figure-eight"
 					},
 					{
-						"slug": "taut-line-hitch"
+						"slug": "square-knot"
+					},
+					{
+						"slug": "bowline-knot"
+					},
+					{
+						"slug": "clove-hitch"
 					},
 					{
 						"slug": "two-half-hitches"
+					},
+					{
+						"slug": "taut-line-hitch"
 					}
 				]
 			}

@@ -44,7 +44,7 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/prusik-knot/step2-2.webp" alt="プルージック・ノットの手順(ストレート)2">
-  <figcaption>そのまま根本の前を通します。</figcaption>
+  <figcaption>そのまま根元の前を通します。</figcaption>
 </figure>
 
 <figure>

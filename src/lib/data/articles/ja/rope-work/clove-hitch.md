@@ -14,16 +14,16 @@ published: true
 ## 結び方
 
 <figure>
-  <img src="/images/articles/rope-work/clove-hitch/step1.webp" alt="巻き結びの手順1" style="aspect-ratio: 2/1;">
+  <img src="/images/articles/rope-work/clove-hitch/step1.webp" alt="巻き結びの手順1" data-aspect-ratio="2/1">
   <figcaption>棒に対して一回巻き付けます。重なり順に注意してください。</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/articles/rope-work/clove-hitch/step2.webp" alt="巻き結びの手順2" style="aspect-ratio: 2/1;">
+  <img src="/images/articles/rope-work/clove-hitch/step2.webp" alt="巻き結びの手順2" data-aspect-ratio="2/1">
   <figcaption>もう一度棒に巻き付けます。</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/articles/rope-work/clove-hitch/step3.webp" alt="巻き結びの手順3" style="aspect-ratio: 2/1;">
-  <figcaption>巻き付ける際にロープの下を通し、そのまま締めて完成です。</figcaption>
+  <img src="/images/articles/rope-work/clove-hitch/step3.webp" alt="巻き結びの手順3" data-aspect-ratio="2/1">
+  <figcaption>巻き付ける際に先端をポールとロープの間を通し、そのまま締めて完成です。</figcaption>
 </figure>
