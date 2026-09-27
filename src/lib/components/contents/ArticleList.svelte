@@ -106,6 +106,7 @@
 			'checkbox thumbnail title'
 			'checkbox thumbnail description';
 		grid-template-columns: auto auto 1fr;
+		grid-template-rows: auto 1fr;
 		row-gap: 2px;
 		&:is(a, label) {
 			cursor: pointer;

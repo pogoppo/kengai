@@ -110,7 +110,7 @@
 		font-weight: 900;
 	}
 	.article-description {
-		font-size: 0.75rem;
+		font-size: 0.9rem;
 		opacity: 0.9;
 	}
 	.article-category {
@@ -196,6 +196,9 @@
 			object-fit: cover;
 			&[data-aspect-ratio='2/1'] {
 				aspect-ratio: 2 / 1;
+			}
+			&[data-aspect-ratio='4/3'] {
+				aspect-ratio: 4 / 3;
 			}
 		}
 		:global(figure) {
