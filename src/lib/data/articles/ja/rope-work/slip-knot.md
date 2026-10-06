@@ -8,7 +8,7 @@ published: true
 
 ![引き解け結びのイメージ](/images/articles/rope-work/slip-knot/first.webp)
 
-他の結びと組み合わせて末端処理で使われ事が多いです。([シベリアン・ヒッチ](/article/rope-work/siberian-hitch)など)  
+他の結びと組み合わせて末端処理で使われ事が多いです。  
 最初の手順を変えると[わな結び](/article/rope-work/noose-knot)になります。
 
 ## 結び方

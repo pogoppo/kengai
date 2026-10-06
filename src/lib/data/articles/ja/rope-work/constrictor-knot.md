@@ -8,10 +8,7 @@ published: true
 
 ![固め結びのイメージ](/images/articles/rope-work/constrictor-knot/first.webp)
 
-用途や見た目は[巻き結び](/article/rope-work/clove-hitch)と似ていますが、以下の点が異なります。
-
-- 結び目がきつく、良くも悪くも解けにくい
-- ほんの少し結びにくい
+用途や見た目は[巻き結び](/article/rope-work/clove-hitch)と似ていますが、結び目がきつく解けにくいです。
 
 ## 結び方
 

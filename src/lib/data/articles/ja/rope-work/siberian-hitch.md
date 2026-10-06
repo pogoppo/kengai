@@ -19,7 +19,7 @@ published: true
   <img src="/images/articles/rope-work/siberian-hitch/step2.webp" alt="シベリアン・ヒッチの手順2" data-aspect-ratio="3/2">
   <figcaption>
 	そのまま<strong>広めに輪を作りながら</strong>、先端を根元の裏から通します。
-	<br/>先端は気持ち長めに取ります。
+	<br/><strong>先端も長めに取ります。</strong>
 	</figcaption>
 </figure>
 

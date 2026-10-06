@@ -8,8 +8,7 @@ thumbnail: '/images/articles/rope-work/sheet-bend/first.webp'
 
 ![一重継ぎ結びのイメージ](/images/articles/rope-work/sheet-bend/first.webp)
 
-一重継ぎ結びはロープ同士を結ぶ基本的な結びです。  
-大きさの異なる二本のロープも結ぶのにも最適です。
+一重継ぎ結びは大きさの異なる二本のロープ同士を結ぶ基本的な結びです。
 
 ## 結び方
 

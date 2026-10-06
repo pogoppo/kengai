@@ -11,8 +11,6 @@ published: true
 ポールやリングに繋ぐ際に便利な結びです。  
 [巻き結び](/article/rope-work/clove-hitch)の応用です。
 
-また、メインラインに巻き付ける回数を2回にすると[自在結び](/article/rope-work/taut-line-hitch)になります。
-
 ## 結び方
 
 <figure>
