@@ -1,6 +1,6 @@
 ---
 title: 'プルージック・ノット (Prusik Knot)'
-description: 'ポール等に結ぶ際に結び目が滑らないようにする結びです。輪っかを作ることもできます。'
+description: 'ポール等に結ぶ際に結び目が滑らないようにする結びです。'
 tags: ['キャンプ', '登山']
 thumbnail: '/images/articles/rope-work/prusik-knot/first.webp'
 published: true
@@ -15,7 +15,7 @@ published: true
 
 ## 結び方(ループ)
 
-輪っかで作る結び方です。
+あらかじめ輪にしたロープ（スリング等）で結ぶ方法です。
 
 <figure>
   <img src="/images/articles/rope-work/prusik-knot/step1-1.webp" alt="プルージック・ノットの手順(ループ)1">
@@ -30,12 +30,12 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/prusik-knot/step1-4.webp" alt="プルージック・ノットの手順(ループ)4">
-  <figcaption>好きな回数巻き付け、結び目を締めて完成です。</figcaption>
+  <figcaption>2〜3回（滑る場合は回数を増やす）巻き付け、結び目を締めて完成です。</figcaption>
 </figure>
 
 ## 結び方(ストレート)
 
-通常のロープで作る結び方です。
+輪にしていないロープで結ぶ方法です。
 
 <figure>
   <img src="/images/articles/rope-work/prusik-knot/step2-1.webp" alt="プルージック・ノットの手順(ストレート)1">

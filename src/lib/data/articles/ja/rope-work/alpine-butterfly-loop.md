@@ -25,7 +25,7 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/alpine-butterfly-loop/step3.webp" alt="中間者結びの手順3">
-  <figcaption>先端（赤いマーカー）を下部にひっぱり、輪を重ねます。</figcaption>
+  <figcaption>輪の先（赤いマーカー）を下部に引っ張り、輪を重ねます。</figcaption>
 </figure>
 
 <figure>

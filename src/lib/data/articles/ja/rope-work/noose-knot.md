@@ -1,6 +1,6 @@
 ---
 title: 'わな結び (Noose Knot)'
-description: '引くと輪が引き締まる結びです。'
+description: '引くと輪が締まる結びです。'
 tags: []
 thumbnail: '/images/articles/rope-work/noose-knot/first.webp'
 published: true
@@ -8,7 +8,7 @@ published: true
 
 ![わな結びのイメージ](/images/articles/rope-work/noose-knot/first.webp)
 
-根元を引くと輪が引き締まるため、荷重がかかると結び目が締まります。  
+根元を引くと輪が締まるため、物を縛って固定するのに向いています。  
 最初の手順を変えると[引き解け結び](/article/rope-work/slip-knot)になります。
 
 ## 結び方

@@ -21,7 +21,7 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/square-knot/step3.webp" alt="本結びの手順3" data-aspect-ratio="2/1">
-  <figcaption>そのまま片方のロープで輪を作ります。先端は根元と同じ位置になるようにしてください。</figcaption>
+  <figcaption>そのまま片方のロープで輪を作ります。先端と根元が同じ側に並ぶようにしてください。</figcaption>
 </figure>
 
 <figure>

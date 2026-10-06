@@ -9,7 +9,7 @@ published: true
 ![巻き結びのイメージ](/images/articles/rope-work/clove-hitch/first.webp)
 
 ポールや木などに巻き付ける際に便利な結びです。  
-止め結びとしても使えます。
+末端処理にも使えます。
 
 ## 結び方
 
