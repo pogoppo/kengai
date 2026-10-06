@@ -25,5 +25,5 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/clove-hitch/step3.webp" alt="巻き結びの手順3" data-aspect-ratio="2/1">
-  <figcaption>巻き付ける際に先端をポールとロープの間を通し、そのまま締めて完成です。</figcaption>
+  <figcaption>巻き付ける際に先端をポールとロープの間に通し、そのまま締めて完成です。</figcaption>
 </figure>

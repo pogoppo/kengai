@@ -8,7 +8,7 @@ published: true
 
 ![引き解け結びのイメージ](/images/articles/rope-work/slip-knot/first.webp)
 
-他の結びと組み合わせて末端処理で使われ事が多いです。  
+他の結びと組み合わせて末端処理で使われることが多いです。  
 最初の手順を変えると[わな結び](/article/rope-work/noose-knot)になります。
 
 ## 結び方
@@ -29,5 +29,5 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/slip-knot/step4.webp" alt="引き解け結びの手順4">
-  <figcaption>根本を引き締めて完成です。</figcaption>
+  <figcaption>根元を引き締めて完成です。</figcaption>
 </figure>
