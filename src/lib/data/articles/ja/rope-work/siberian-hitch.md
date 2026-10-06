@@ -8,6 +8,9 @@ published: true
 
 ![シベリアン・ヒッチのイメージ](/images/articles/rope-work/siberian-hitch/first.webp)
 
+ポールやリングにすばやく結べる[引き解け結び](/article/rope-work/slip-knot)の一種です。  
+先端を引くだけでほどけるため、タープの設営など、張ったロープを後で外す場面で便利です。
+
 ## 結び方
 
 <figure>

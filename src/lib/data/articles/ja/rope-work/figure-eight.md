@@ -8,6 +8,9 @@ published: true
 
 ![八の字結びのイメージ](/images/articles/rope-work/figure-eight/first.webp)
 
+八の字結びはロープの先端にこぶを作る止め結びです。  
+強く締まった後でもほどきやすいため、ロープの抜け止めとして広く使われます。
+
 ## 結び方
 
 <figure>
@@ -17,7 +20,7 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/figure-eight/step2.webp" alt="八の字結びの手順2">
-  <figcaption>2回ひねり、2つの輪を作ります。今回は反時計回りにひねります。</figcaption>
+  <figcaption>2回ひねり、2つの輪を作ります。ここでは反時計回りにひねります。</figcaption>
 </figure>
 
 <figure>

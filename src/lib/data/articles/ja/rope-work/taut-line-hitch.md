@@ -20,7 +20,7 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/taut-line-hitch/step2.webp" alt="自在結びの手順2" data-aspect-ratio="4/3">
-  <figcaption>根元の上を通り、輪を作りながら<strong>2回</strong>巻き付けます。</figcaption>
+  <figcaption>根元の上を通し、輪を作りながら<strong>2回</strong>巻き付けます。</figcaption>
 </figure>
 
 <figure>

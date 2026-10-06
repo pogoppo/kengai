@@ -24,7 +24,7 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/constrictor-knot/step3.webp" alt="固め結びの手順3" data-aspect-ratio="2/1">
-  <figcaption>根元の上に通します。</figcaption>
+  <figcaption>根元の上を通します。</figcaption>
 </figure>
 
 <figure>
