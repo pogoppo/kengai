@@ -41,6 +41,6 @@ published: true
 
 ## 調整方法
 
-結び目を持ったまま、メインラインを上下に引く事で調整できます。
+結び目を持ったまま、根元を上下に引くことで調整できます。
 
 ![自在結び調整方法のイメージ](/images/articles/rope-work/taut-line-hitch/howto.webp)

@@ -8,7 +8,7 @@ published: true
 
 ![中間者結びのイメージ](/images/articles/rope-work/alpine-butterfly-loop/first.webp)
 
-中間者結びはロープの先端を使わずに輪っかを作る結びです。  
+中間者結びはロープの先端を使わずに輪を作る結びです。  
 安全確保のためにフィックスロープを作る際や、小物を吊るす場合などに使われます。
 
 ## 結び方
@@ -20,7 +20,7 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/alpine-butterfly-loop/step2.webp" alt="中間者結びの手順2">
-  <figcaption>2回ひねり、二つの輪を作ります。</figcaption>
+  <figcaption>2回ひねり、2つの輪を作ります。</figcaption>
 </figure>
 
 <figure>
@@ -30,5 +30,5 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/alpine-butterfly-loop/step4.webp" alt="中間者結びの手順4">
-  <figcaption>先端を二つの輪の間に下から通し、結び目を締めて完成です。</figcaption>
+  <figcaption>先端を2つの輪の間に下から通し、結び目を締めて完成です。</figcaption>
 </figure>

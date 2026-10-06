@@ -8,13 +8,13 @@ published: true
 
 ![固め結びのイメージ](/images/articles/rope-work/constrictor-knot/first.webp)
 
-用途や見た目は[巻き結び](/article/rope-work/clove-hitch)と似ていますが、結び目がきつく解けにくいです。
+用途や見た目は[巻き結び](/article/rope-work/clove-hitch)と似ていますが、結び目がきつくほどけにくいです。
 
 ## 結び方
 
 <figure>
   <img src="/images/articles/rope-work/constrictor-knot/step1.webp" alt="固め結びの手順1" data-aspect-ratio="2/1">
-  <figcaption>棒に対して一回巻き付けます。重なり順に注意してください。</figcaption>
+  <figcaption>棒に対して1回巻き付けます。重なり順に注意してください。</figcaption>
 </figure>
 
 <figure>

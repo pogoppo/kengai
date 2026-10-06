@@ -1,6 +1,6 @@
 ---
 title: '一重継ぎ結び (Sheet Bend)'
-description: '太さの異なる二本のロープを結ぶ基本的な結びです。'
+description: '太さの異なる2本のロープを結ぶ基本的な結びです。'
 tags: ['ロープワーク基礎']
 published: true
 thumbnail: '/images/articles/rope-work/sheet-bend/first.webp'
@@ -8,13 +8,13 @@ thumbnail: '/images/articles/rope-work/sheet-bend/first.webp'
 
 ![一重継ぎ結びのイメージ](/images/articles/rope-work/sheet-bend/first.webp)
 
-一重継ぎ結びは太さの異なる二本のロープ同士を結ぶ基本的な結びです。
+一重継ぎ結びは太さの異なる2本のロープ同士を結ぶ基本的な結びです。
 
 ## 結び方
 
 <figure>
   <img src="/images/articles/rope-work/sheet-bend/step1.webp" alt="一重継ぎ結びの手順1" data-aspect-ratio="2/1">
-  <figcaption>太いロープ(赤)で輪を作り、下から細いロープ(青)を通します。</figcaption>
+  <figcaption>太いロープ（赤）で輪を作り、下から細いロープ（青）を通します。</figcaption>
 </figure>
 
 <figure>
@@ -24,5 +24,5 @@ thumbnail: '/images/articles/rope-work/sheet-bend/first.webp'
 
 <figure>
   <img src="/images/articles/rope-work/sheet-bend/step3.webp" alt="一重継ぎ結びの手順3" data-aspect-ratio="2/1">
-  <figcaption>輪(赤)とロープ(青)の間に先端を通し、締めて完成です。</figcaption>
+  <figcaption>輪（赤）とロープ（青）の間に先端を通し、締めて完成です。</figcaption>
 </figure>

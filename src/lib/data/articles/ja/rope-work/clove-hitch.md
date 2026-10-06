@@ -15,7 +15,7 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/clove-hitch/step1.webp" alt="巻き結びの手順1" data-aspect-ratio="2/1">
-  <figcaption>棒に対して一回巻き付けます。重なり順に注意してください。</figcaption>
+  <figcaption>棒に対して1回巻き付けます。重なり順に注意してください。</figcaption>
 </figure>
 
 <figure>

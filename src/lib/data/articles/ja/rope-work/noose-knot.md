@@ -29,5 +29,5 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/noose-knot/step4.webp" alt="わな結びの手順4">
-  <figcaption>末端を引き締めて完成です。</figcaption>
+  <figcaption>先端を引き締めて完成です。</figcaption>
 </figure>

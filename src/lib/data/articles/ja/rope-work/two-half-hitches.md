@@ -18,13 +18,13 @@ published: true
   <figcaption>ポールやリングに対してロープの先端を被せます。</figcaption>
 </figure>
 
-ここからはメインラインに対して[巻き結び](/article/rope-work/clove-hitch)を行います。
+ここからは根元に対して[巻き結び](/article/rope-work/clove-hitch)を行います。
 
 <figure>
   <img src="/images/articles/rope-work/two-half-hitches/step2.webp" alt="ふた結びの手順2" data-aspect-ratio="3/2">
   <img src="/images/articles/rope-work/two-half-hitches/step3.webp" alt="ふた結びの手順3" data-aspect-ratio="3/2">
   <figcaption>
-	  メインラインに対して1回巻き付けます。重なり順に注意してください。
+	  根元に対して1回巻き付けます。重なり順に注意してください。
     <br/>ここで2回巻き付けると<a href="/article/rope-work/taut-line-hitch">自在結び</a>になります。
 	</figcaption>
 </figure>

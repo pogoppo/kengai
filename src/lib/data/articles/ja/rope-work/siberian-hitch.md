@@ -1,6 +1,6 @@
 ---
 title: 'シベリアン・ヒッチ (Siberian Hitch)'
-description: 'ポールやリングに結びやすく、末端を引くと簡単にほどける引き解け結びです。'
+description: 'ポールやリングに結びやすく、先端を引くと簡単にほどける引き解け結びです。'
 tags: ['キャンプ']
 thumbnail: '/images/articles/rope-work/siberian-hitch/first.webp'
 published: true

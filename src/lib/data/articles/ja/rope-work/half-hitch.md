@@ -13,7 +13,7 @@ published: true
 <figure>
   <img src="/images/articles/rope-work/half-hitch/step1.webp" alt="ひと結びの手順1" data-aspect-ratio="2/1">
   <img src="/images/articles/rope-work/half-hitch/step2.webp" alt="ひと結びの手順2" data-aspect-ratio="2/1">
-  <figcaption>ポール等を通しつつ、輪を作ります。</figcaption>
+  <figcaption>ポールなどを通しつつ、輪を作ります。</figcaption>
 </figure>
 
 <figure>

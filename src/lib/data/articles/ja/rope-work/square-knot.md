@@ -1,6 +1,6 @@
 ---
 title: '本結び (Square Knot)'
-description: '「固結び」や「真結び」とも呼ばれる、二本のロープを結ぶ基本的な結びです。'
+description: '「固結び」や「真結び」とも呼ばれる、2本のロープを結ぶ基本的な結びです。'
 tags: ['ロープワーク基礎', 'キャンプ']
 thumbnail: '/images/articles/rope-work/square-knot/first.webp'
 published: true
@@ -29,7 +29,7 @@ published: true
   <figcaption>もう片方の先端を輪の中に通し、結び目を締めて完成です。</figcaption>
 </figure>
 
-## 間違った結び方(縦結び)
+## 間違った結び方（縦結び）
 
 <figure data-variant="warning">
   <img src="/images/articles/rope-work/square-knot/ng.webp" alt="本結びの間違った結び方" data-aspect-ratio="2/1">

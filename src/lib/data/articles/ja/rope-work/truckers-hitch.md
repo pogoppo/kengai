@@ -8,13 +8,13 @@ published: true
 
 ![南京結びのイメージ](/images/articles/rope-work/truckers-hitch/first.webp)
 
-倍力の仕組みによって、理論上は約3倍の力でテンションをかけることができるため、荷物の固定等に有効な結びです。
+倍力の仕組みによって、理論上は約3倍の力でテンションをかけることができるため、荷物の固定などに有効な結びです。
 
 この結びには様々なアレンジがありますが、今回は[引き解け結び](/article/rope-work/slip-knot)を使った方法を紹介します。
 
 ## 結び方
 
-※ロープの片方（図だと上部）は固定されている物とします。
+※ロープの片方（図だと上部）は固定されているものとします。
 
 <figure>
   <img src="/images/articles/rope-work/truckers-hitch/step1.webp" alt="南京結びの手順1">
@@ -24,10 +24,10 @@ published: true
 <figure>
   <img src="/images/articles/rope-work/truckers-hitch/step2.webp" alt="南京結びの手順2">
   <img src="/images/articles/rope-work/truckers-hitch/step3.webp" alt="南京結びの手順3">
-  <figcaption>ロープの先端をポール等に回し、そのまま輪に通します。</figcaption>
+  <figcaption>ロープの先端をポールなどに回し、そのまま輪に通します。</figcaption>
 </figure>
 
 <figure>
   <img src="/images/articles/rope-work/truckers-hitch/step4.webp" alt="南京結びの手順4">
-  <figcaption>通したロープを引いてテンションをかけ、最後に<a href="/article/rope-work/clove-hitch">巻き結び</a>等で末端処理を行い完成です。</figcaption>
+  <figcaption>通したロープを引いてテンションをかけ、最後に<a href="/article/rope-work/clove-hitch">巻き結び</a>などで末端処理を行い完成です。</figcaption>
 </figure>

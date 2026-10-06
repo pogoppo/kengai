@@ -17,10 +17,10 @@ published: true
 
 <figure>
   <img src="/images/articles/rope-work/figure-eight/step2.webp" alt="八の字結びの手順2">
-  <figcaption>2回ひねり、二つの輪を作ります。今回は反時計回りにひねります。</figcaption>
+  <figcaption>2回ひねり、2つの輪を作ります。今回は反時計回りにひねります。</figcaption>
 </figure>
 
 <figure>
   <img src="/images/articles/rope-work/figure-eight/step3.webp" alt="八の字結びの手順3">
-  <figcaption>上部の輪にロープの端を上から通し、そのまま締めて完成です。</figcaption>
+  <figcaption>上部の輪にロープの先端を上から通し、そのまま締めて完成です。</figcaption>
 </figure>
