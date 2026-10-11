@@ -23,3 +23,7 @@ published: true
   <img src="/images/articles/rope-work/half-hitch/step3.webp" alt="ひと結びの手順3" data-aspect-ratio="2/1">
   <figcaption>輪の中にロープの先端を通し、根元を引き締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![ひと結びの完成形](/images/articles/rope-work/half-hitch/final.webp)

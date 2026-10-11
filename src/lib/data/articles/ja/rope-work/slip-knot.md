@@ -26,3 +26,7 @@ published: true
   <img src="/images/articles/rope-work/slip-knot/step3.webp" alt="引き解け結びの手順3">
   <figcaption>赤いマーカーの部分を輪の下から通し、根元を引き締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![引き解け結びの完成形](/images/articles/rope-work/slip-knot/final.webp)

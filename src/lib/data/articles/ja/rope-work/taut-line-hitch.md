@@ -29,6 +29,10 @@ published: true
   <figcaption>そのまま上を通りつつ、根元で<a href="/article/rope-work/half-hitch">ひと結び</a>を作り、締めて完成です。</figcaption>
 </figure>
 
+## 完成形
+
+![自在結びの完成形](/images/articles/rope-work/taut-line-hitch/final.webp)
+
 ## 日本の「自在結び」
 
 日本では最初に[ひと結び](/article/rope-work/half-hitch)を加えた結び方が一般的です。  

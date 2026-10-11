@@ -32,3 +32,7 @@ published: true
   <img src="/images/articles/rope-work/alpine-butterfly-loop/step4.webp" alt="中間者結びの手順4">
   <figcaption>先端を2つの輪の間に下から通し、結び目を締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![中間者結びの完成形](/images/articles/rope-work/alpine-butterfly-loop/final.webp)

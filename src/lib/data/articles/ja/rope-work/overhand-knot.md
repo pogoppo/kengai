@@ -24,3 +24,7 @@ published: true
   <img src="/images/articles/rope-work/overhand-knot/step2.webp" alt="止め結びの手順2" data-aspect-ratio="2/1">
   <figcaption>ロープの先端を輪に通し、締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![止め結びの完成形](/images/articles/rope-work/overhand-knot/final.webp)

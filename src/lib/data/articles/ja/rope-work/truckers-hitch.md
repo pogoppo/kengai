@@ -31,3 +31,7 @@ published: true
   <img src="/images/articles/rope-work/truckers-hitch/step4.webp" alt="南京結びの手順4">
   <figcaption>通したロープを引いてテンションをかけ、最後に<a href="/article/rope-work/clove-hitch">巻き結び</a>などで末端処理を行い完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![南京結びの完成形](/images/articles/rope-work/truckers-hitch/final.webp)

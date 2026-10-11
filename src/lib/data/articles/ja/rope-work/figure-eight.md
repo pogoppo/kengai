@@ -27,3 +27,7 @@ published: true
   <img src="/images/articles/rope-work/figure-eight/step3.webp" alt="八の字結びの手順3">
   <figcaption>上部の輪にロープの先端を上から通し、そのまま締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![八の字結びの完成形](/images/articles/rope-work/figure-eight/final.webp)

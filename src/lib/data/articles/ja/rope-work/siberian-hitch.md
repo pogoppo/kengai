@@ -40,3 +40,7 @@ published: true
   <img src="/images/articles/rope-work/siberian-hitch/step5.webp" alt="シベリアン・ヒッチの手順5" data-aspect-ratio="3/2">
   <figcaption>取り出した部分を輪に通し、締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![シベリアン・ヒッチの完成形](/images/articles/rope-work/siberian-hitch/final.webp)

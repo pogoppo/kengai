@@ -29,6 +29,10 @@ published: true
   <figcaption>もう片方の先端を輪の中に通し、結び目を締めて完成です。</figcaption>
 </figure>
 
+## 完成形
+
+![本結びの完成形](/images/articles/rope-work/square-knot/final.webp)
+
 ## 間違った結び方（縦結び）
 
 <figure data-variant="warning">

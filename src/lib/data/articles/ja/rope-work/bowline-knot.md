@@ -32,3 +32,7 @@ published: true
   <img src="/images/articles/rope-work/bowline-knot/step4.webp" alt="もやい結びの手順4">
   <figcaption>輪の上から通し、結び目を締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![もやい結びの完成形](/images/articles/rope-work/bowline-knot/final.webp)

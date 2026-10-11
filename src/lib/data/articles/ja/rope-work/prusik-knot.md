@@ -51,3 +51,7 @@ published: true
   <img src="/images/articles/rope-work/prusik-knot/step2-3.webp" alt="プルージック・ノットの手順（ストレート）3">
   <figcaption>鏡映しになるように背面から巻き付け、結び目を締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![プルージック・ノットの完成形](/images/articles/rope-work/prusik-knot/final.webp)

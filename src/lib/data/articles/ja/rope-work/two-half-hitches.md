@@ -33,3 +33,7 @@ published: true
   <img src="/images/articles/rope-work/two-half-hitches/step4.webp" alt="ふた結びの手順4" data-aspect-ratio="3/2">
   <figcaption>もう一度巻き付けます。巻き付ける際にロープの間を通し、そのまま締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![ふた結びの完成形](/images/articles/rope-work/two-half-hitches/final.webp)

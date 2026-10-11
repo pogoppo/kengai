@@ -26,3 +26,7 @@ thumbnail: '/images/articles/rope-work/sheet-bend/final.webp'
   <img src="/images/articles/rope-work/sheet-bend/step3.webp" alt="一重継ぎ結びの手順3" data-aspect-ratio="2/1">
   <figcaption>輪（赤）とロープ（青）の間に先端を通し、締めて完成です。</figcaption>
 </figure>
+
+## 完成形
+
+![一重継ぎ結びの完成形](/images/articles/rope-work/sheet-bend/final.webp)
