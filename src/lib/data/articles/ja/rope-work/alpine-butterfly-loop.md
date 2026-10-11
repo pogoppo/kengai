@@ -2,11 +2,11 @@
 title: '中間者結び (Alpine Butterfly)'
 description: 'ロープの中間に輪を作る結びです。'
 tags: ['ロープワーク基礎', '登山']
-thumbnail: '/images/articles/rope-work/alpine-butterfly-loop/first.webp'
+thumbnail: '/images/articles/rope-work/alpine-butterfly-loop/final.webp'
 published: true
 ---
 
-![中間者結びのイメージ](/images/articles/rope-work/alpine-butterfly-loop/first.webp)
+![中間者結びのイメージ](/images/articles/rope-work/alpine-butterfly-loop/final.webp)
 
 中間者結びはロープの先端を使わずに輪を作る結びです。  
 安全確保のためにフィックスロープを作る際や、小物を吊るす場合などに使われます。

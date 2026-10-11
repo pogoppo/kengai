@@ -2,11 +2,11 @@
 title: '固め結び (Constrictor Knot)'
 description: '巻き結びに似ていますが、より強固な結びです。'
 tags: ['キャンプ']
-thumbnail: '/images/articles/rope-work/constrictor-knot/first.webp'
+thumbnail: '/images/articles/rope-work/constrictor-knot/final.webp'
 published: true
 ---
 
-![固め結びのイメージ](/images/articles/rope-work/constrictor-knot/first.webp)
+![固め結びのイメージ](/images/articles/rope-work/constrictor-knot/final.webp)
 
 用途や見た目は[巻き結び](/article/rope-work/clove-hitch)と似ていますが、結び目がきつくほどけにくいです。
 

@@ -2,11 +2,11 @@
 title: '自在結び (Taut-line Hitch)'
 description: '結び目をスライドさせることで、張りの強さ（テンション）を自在に調整できます。'
 tags: ['ロープワーク基礎', 'キャンプ']
-thumbnail: '/images/articles/rope-work/taut-line-hitch/first.webp'
+thumbnail: '/images/articles/rope-work/taut-line-hitch/final.webp'
 published: true
 ---
 
-![自在結びのイメージ](/images/articles/rope-work/taut-line-hitch/first.webp)
+![自在結びのイメージ](/images/articles/rope-work/taut-line-hitch/final.webp)
 
 ロープの長さや張り具合を簡単に調整できる結びです。  
 [ふた結び](/article/rope-work/two-half-hitches)の応用です。

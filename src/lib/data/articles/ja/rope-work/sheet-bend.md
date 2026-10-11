@@ -3,10 +3,10 @@ title: '一重継ぎ結び (Sheet Bend)'
 description: '太さの異なる2本のロープを結ぶ基本的な結びです。'
 tags: ['ロープワーク基礎']
 published: true
-thumbnail: '/images/articles/rope-work/sheet-bend/first.webp'
+thumbnail: '/images/articles/rope-work/sheet-bend/final.webp'
 ---
 
-![一重継ぎ結びのイメージ](/images/articles/rope-work/sheet-bend/first.webp)
+![一重継ぎ結びのイメージ](/images/articles/rope-work/sheet-bend/final.webp)
 
 一重継ぎ結びは太さの異なる2本のロープ同士を結ぶ基本的な結びです。
 

@@ -2,11 +2,11 @@
 title: 'プルージック・ノット (Prusik Knot)'
 description: 'ポールなどに結ぶ際に結び目が滑らないようにする結びです。'
 tags: ['キャンプ', '登山']
-thumbnail: '/images/articles/rope-work/prusik-knot/first.webp'
+thumbnail: '/images/articles/rope-work/prusik-knot/final.webp'
 published: true
 ---
 
-![プルージック・ノットのイメージ](/images/articles/rope-work/prusik-knot/first.webp)
+![プルージック・ノットのイメージ](/images/articles/rope-work/prusik-knot/final.webp)
 
 摩擦が強いため、ロープやポールにしっかりと固定することができます。  
 ランタンなどを吊るすループを作るのにも適しています。

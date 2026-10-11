@@ -2,11 +2,11 @@
 title: '引き解け結び (Slip Knot)'
 description: '先端を引くと簡単にほどける結びです。'
 tags: ['ロープワーク基礎']
-thumbnail: '/images/articles/rope-work/slip-knot/first.webp'
+thumbnail: '/images/articles/rope-work/slip-knot/final.webp'
 published: true
 ---
 
-![引き解け結びのイメージ](/images/articles/rope-work/slip-knot/first.webp)
+![引き解け結びのイメージ](/images/articles/rope-work/slip-knot/final.webp)
 
 先端を引くと簡単にほどけるため、他の結びと組み合わせて末端処理で使われることが多いです。  
 最初の手順を変えると[わな結び](/article/rope-work/noose-knot)になります。
@@ -24,10 +24,5 @@ published: true
 <figure>
   <img src="/images/articles/rope-work/slip-knot/step2.webp" alt="引き解け結びの手順2" data-aspect-ratio="2/1">
   <img src="/images/articles/rope-work/slip-knot/step3.webp" alt="引き解け結びの手順3">
-  <figcaption>赤いマーカーの部分を輪の下から通します。</figcaption>
-</figure>
-
-<figure>
-  <img src="/images/articles/rope-work/slip-knot/step4.webp" alt="引き解け結びの手順4">
-  <figcaption>根元を引き締めて完成です。</figcaption>
+  <figcaption>赤いマーカーの部分を輪の下から通し、根元を引き締めて完成です。</figcaption>
 </figure>

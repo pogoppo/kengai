@@ -2,11 +2,11 @@
 title: 'もやい結び (Bowline Knot)'
 description: 'ロープの先端に輪を作る時に使われる汎用的な結びです。'
 tags: ['ロープワーク基礎', '登山']
-thumbnail: '/images/articles/rope-work/bowline-knot/first.webp'
+thumbnail: '/images/articles/rope-work/bowline-knot/final.webp'
 published: true
 ---
 
-![もやい結びのイメージ](/images/articles/rope-work/bowline-knot/first.webp)
+![もやい結びのイメージ](/images/articles/rope-work/bowline-knot/final.webp)
 
 もやい結びはロープの先端に輪を作る結びです。  
 強固でありながらも簡単にほどくことができるため、アウトドアで広く使われています。

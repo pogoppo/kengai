@@ -2,11 +2,11 @@
 title: '八の字結び (Figure-Eight Knot)'
 description: '強固な止め結びとして使われます。'
 tags: ['ロープワーク基礎', '登山']
-thumbnail: '/images/articles/rope-work/figure-eight/first.webp'
+thumbnail: '/images/articles/rope-work/figure-eight/final.webp'
 published: true
 ---
 
-![八の字結びのイメージ](/images/articles/rope-work/figure-eight/first.webp)
+![八の字結びのイメージ](/images/articles/rope-work/figure-eight/final.webp)
 
 八の字結びはロープの先端にこぶを作る止め結びです。  
 強く締まった後でもほどきやすいため、ロープの抜け止めとして広く使われます。
