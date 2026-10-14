@@ -1,14 +1,15 @@
 ---
 title: "南京結び (Trucker's Hitch)"
-description: '荷物の積載に有効な結び方です。「トラッカーズ・ヒッチ」や「万力結び」、「輸送結び」とも呼ばれます。'
-tags: ['キャンプ']
+description: 'テンションをかけやすいため、荷物の積載に有効な結び方です。'
+tags: ['キャンプ', 'トラッカーズ・ヒッチ', '万力結び', '輸送結び']
 thumbnail: '/images/articles/rope-work/truckers-hitch/final.webp'
 published: true
 ---
 
 ![南京結びのイメージ](/images/articles/rope-work/truckers-hitch/final.webp)
 
-倍力の仕組みによって、理論上は約3倍の力でテンションをかけることができるため、荷物の固定などに有効な結びです。
+倍力の仕組みによって、理論上は約3倍の力でテンションをかけることができるため、荷物の固定などに有効な結びです。  
+「トラッカーズ・ヒッチ」や「万力結び」、「輸送結び」とも呼ばれます。
 
 この結びには様々なアレンジがありますが、ここでは[引き解け結び](/article/rope-work/slip-knot)を使った方法を紹介します。
 

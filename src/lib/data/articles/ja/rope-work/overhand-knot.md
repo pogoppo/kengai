@@ -1,6 +1,6 @@
 ---
 title: '止め結び (Overhand Knot)'
-description: 'ロープの先端にこぶを作る、最も基本的な止め結びです。'
+description: 'こぶを作る、最も基本的な結びです。'
 tags: ['ロープワーク基礎']
 thumbnail: '/images/articles/rope-work/overhand-knot/final.webp'
 published: true
@@ -8,7 +8,7 @@ published: true
 
 ![止め結びのイメージ](/images/articles/rope-work/overhand-knot/final.webp)
 
-最も基本的な止め結びです。  
+止め結びは最も基本的な結びです。  
 単体では信頼性が低く、他の結びの末端処理などに使われます。
 
 何かに結び付ける際には「[ひと結び](/article/rope-work/half-hitch)」と呼びます。

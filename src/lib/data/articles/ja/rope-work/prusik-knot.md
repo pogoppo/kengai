@@ -1,6 +1,6 @@
 ---
 title: 'プルージック・ノット (Prusik Knot)'
-description: 'ポールなどに結ぶ際に結び目が滑らないようにする結びです。'
+description: '結び目が滑らない結びです。'
 tags: ['キャンプ', '登山']
 thumbnail: '/images/articles/rope-work/prusik-knot/final.webp'
 published: true

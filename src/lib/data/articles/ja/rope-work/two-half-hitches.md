@@ -1,6 +1,6 @@
 ---
 title: 'ふた結び (Two Half Hitches)'
-description: 'ポールやリングに繋ぐシンプルな結びです。'
+description: 'ポールやリングに繋ぐ際に便利な結びです。'
 tags: ['ロープワーク基礎', 'キャンプ']
 thumbnail: '/images/articles/rope-work/two-half-hitches/final.webp'
 published: true
@@ -8,7 +8,7 @@ published: true
 
 ![ふた結びのイメージ](/images/articles/rope-work/two-half-hitches/final.webp)
 
-ポールやリングに繋ぐ際に便利な結びです。  
+ロープとポール等を繋ぐ際に使える、それなりに強固な結びです。  
 [巻き結び](/article/rope-work/clove-hitch)の応用です。
 
 ## 結び方

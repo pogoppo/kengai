@@ -1,6 +1,6 @@
 ---
 title: 'シベリアン・ヒッチ (Siberian Hitch)'
-description: 'ポールやリングに結びやすく、先端を引くと簡単にほどける引き解け結びです。'
+description: '先端を引くと簡単にほどける、歴史ある引き解け結びです。'
 tags: ['キャンプ']
 thumbnail: '/images/articles/rope-work/siberian-hitch/final.webp'
 published: true
@@ -9,7 +9,7 @@ published: true
 ![シベリアン・ヒッチのイメージ](/images/articles/rope-work/siberian-hitch/final.webp)
 
 ポールやリングにすばやく結べる[引き解け結び](/article/rope-work/slip-knot)の一種です。  
-先端を引くだけでほどけるため、タープの設営など、張ったロープを後で外す場面で便利です。
+先端を引くだけでほどけるため、タープの設営など、ロープを後で外す場面で便利です。
 
 ## 結び方
 

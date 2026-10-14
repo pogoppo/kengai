@@ -1,6 +1,6 @@
 ---
 title: 'ひと結び (Half Hitch)'
-description: 'ポールやリングにロープを結び付ける、最も基本的な結びです。'
+description: 'ポールやリングに結び付ける基本的な結びです。'
 tags: ['ロープワーク基礎']
 thumbnail: '/images/articles/rope-work/half-hitch/final.webp'
 published: true

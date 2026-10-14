@@ -1,15 +1,15 @@
 ---
 title: '本結び (Square Knot)'
-description: '「固結び」や「真結び」とも呼ばれる、2本のロープを結ぶ基本的な結びです。'
-tags: ['ロープワーク基礎', 'キャンプ']
+description: '2本のロープを結ぶ基本的な結びです。'
+tags: ['ロープワーク基礎', 'キャンプ', '固結び', '真結び']
 thumbnail: '/images/articles/rope-work/square-knot/final.webp'
 published: true
 ---
 
 ![本結びのイメージ](/images/articles/rope-work/square-knot/final.webp)
 
-同じ太さの2本のロープやロープの先端同士を交差させて結ぶ基本的な結びです。  
-太さが違う場合は[一重継ぎ結び](/article/rope-work/sheet-bend)の方が適しています。
+「固結び」や「真結び」とも呼ばれる、ロープ同士を交差させて結ぶ基本的な結びです。  
+ロープの太さが違う場合は[一重継ぎ結び](/article/rope-work/sheet-bend)の方が適しています。
 
 ## 結び方
 

@@ -193,6 +193,7 @@
 			height: auto;
 			margin-inline: auto;
 			border-radius: 0.5rem;
+			box-shadow: 0px 0px 4px #ddd;
 			object-fit: cover;
 			&[data-aspect-ratio='2/1'] {
 				aspect-ratio: 2 / 1;
@@ -217,6 +218,7 @@
 			}
 			> :global(img) {
 				background-color: var(--color-bg-primary);
+				box-shadow: none;
 			}
 		}
 		:global(ul),

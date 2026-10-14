@@ -1,6 +1,6 @@
 ---
 title: '自在結び (Taut-line Hitch)'
-description: '結び目をスライドさせることで、張りの強さ（テンション）を自在に調整できます。'
+description: 'テンション（張りの強さ）を自在に調整できる結びです。'
 tags: ['ロープワーク基礎', 'キャンプ']
 thumbnail: '/images/articles/rope-work/taut-line-hitch/final.webp'
 published: true
