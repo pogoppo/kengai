@@ -1,0 +1,45 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: Asia/Tokyo
+    # .npmrc の min-release-age=3 と揃える
+    cooldown:
+      default-days: 3
+    groups:
+      svelte-vite:
+        patterns:
+          - '@sveltejs/*'
+          - 'svelte'
+          - 'svelte-check'
+          - 'vite'
+          - 'vite-plugin-*'
+          - 'typescript'
+      vitest:
+        patterns:
+          - 'vitest'
+          - '@vitest/*'
+          - 'vitest-browser-*'
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: Asia/Tokyo
+    cooldown:
+      default-days: 3
+    groups:
+      github-actions:
+        patterns:
+          - '*'
