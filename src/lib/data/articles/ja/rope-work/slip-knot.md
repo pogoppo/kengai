@@ -11,6 +11,8 @@ published: true
 先端を引くと簡単にほどけるため、他の結びと組み合わせて末端処理で使われることが多いです。  
 最初の手順を変えると[わな結び](/article/rope-work/noose-knot)になります。
 
+<link-card category="rope-work" slug="noose-knot"></link-card>
+
 ## 結び方
 
 <figure>

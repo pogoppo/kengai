@@ -13,6 +13,8 @@ published: true
 
 何かに結び付ける際には「[ひと結び](/article/rope-work/half-hitch)」と呼びます。
 
+<link-card category="rope-work" slug="half-hitch"></link-card>
+
 ## 結び方
 
 <figure>

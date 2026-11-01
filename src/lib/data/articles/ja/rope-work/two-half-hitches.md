@@ -11,6 +11,8 @@ published: true
 ロープとポール等を繋ぐ際に使える、それなりに強固な結びです。  
 [巻き結び](/article/rope-work/clove-hitch)の応用です。
 
+<link-card category="rope-work" slug="clove-hitch"></link-card>
+
 ## 結び方
 
 <figure>

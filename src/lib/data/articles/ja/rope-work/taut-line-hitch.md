@@ -11,6 +11,8 @@ published: true
 ロープの長さや張り具合を簡単に調整できる結びです。  
 [ふた結び](/article/rope-work/two-half-hitches)の応用です。
 
+<link-card category="rope-work" slug="two-half-hitches"></link-card>
+
 ## 結び方
 
 <figure>

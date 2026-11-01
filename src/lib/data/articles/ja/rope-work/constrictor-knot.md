@@ -10,6 +10,8 @@ published: true
 
 用途や見た目は[巻き結び](/article/rope-work/clove-hitch)と似ていますが、結び目がきつくほどけにくいです。
 
+<link-card category="rope-work" slug="clove-hitch"></link-card>
+
 ## 結び方
 
 <figure>

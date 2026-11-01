@@ -11,6 +11,8 @@ published: true
 根元を引くと輪が締まるため、物を縛って固定するのに向いています。  
 最初の手順を変えると[引き解け結び](/article/rope-work/slip-knot)になります。
 
+<link-card category="rope-work" slug="slip-knot"></link-card>
+
 ## 結び方
 
 <figure>
