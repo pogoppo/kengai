@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { onNavigate } from '$app/navigation';
 
 	import { setLocale } from '$lib/paraglide/runtime';
@@ -14,8 +15,13 @@
 	import '$lib/styles/global.css';
 
 	import Toast from '$lib/components/layouts/Toast.svelte';
+	import { defineWebComponents } from '$lib/components/web-components';
 
 	let { children } = $props();
+
+	if (browser) {
+		defineWebComponents();
+	}
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;

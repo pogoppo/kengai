@@ -4,6 +4,7 @@ description: '[記事タイトル1] この文章はダミーです。文字の�
 tags: ['タグ', 'タグ2']
 date: '2026-01-28'
 updated: '2026-02-04'
+thumbnail: '/images/examples/dummyimage-600x400.png'
 published: true
 ---
 
@@ -85,3 +86,9 @@ greet('World');
 ## 動画の埋め込み例
 
 <youtube-embed src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"></youtube-embed>
+
+## 記事リンクカードの例
+
+<link-card category="_mock" slug="example"></link-card>
+
+<link-card category="_mock" slug="example2"></link-card>

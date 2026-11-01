@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import { resolve } from '$app/paths';
 	import { m } from '$lib/paraglide/messages.js';
 	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
@@ -12,12 +11,6 @@
 	let articlePath = $derived(
 		`/article/${data.articleSummary.category}/${data.articleSummary.slug}`
 	);
-
-	if (browser && !customElements.get('youtube-embed')) {
-		import('$lib/components/web-components/youtube-embed').then(({ YoutubeEmbed }) => {
-			customElements.define('youtube-embed', YoutubeEmbed);
-		});
-	}
 </script>
 
 <PageMeta
@@ -156,7 +149,8 @@
 		> :global(pre),
 		> :global(figure),
 		> :global(table),
-		:global(youtube-embed) {
+		:global(youtube-embed),
+		:global(link-card) {
 			margin-block: 1rem;
 		}
 
@@ -226,7 +220,7 @@
 			display: flow-root;
 			padding-inline-start: 1.5rem;
 			> :global(li) {
-				margin-block: 0.5rem;
+				margin-block: 0.25rem;
 			}
 		}
 		:global(ul) {
@@ -279,15 +273,8 @@
 			}
 		}
 		:global(youtube-embed) {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			aspect-ratio: 16 / 9;
 			width: 100cqw;
-			height: auto;
 			margin-inline-start: calc((100% - 100cqw) / 2);
-			background-color: var(--color-bg-secondary);
-			color: color-mix(in srgb, var(--color-fg-primary) 50%, transparent 50%);
 		}
 	}
 </style>
