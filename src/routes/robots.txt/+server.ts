@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { absoluteUrl } from '$lib/utils/url';
+import { absoluteUrl } from '#lib/utils/url.js';
 
 export const prerender = true;
 

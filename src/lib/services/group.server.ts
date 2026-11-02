@@ -1,6 +1,6 @@
-import type { GroupWithArticles } from '$lib/types/group';
-import { groups } from '$lib/data/groups';
-import { articleRepository } from '$lib/repositories/article';
+import type { GroupWithArticles } from '#lib/types/group.js';
+import { groups } from '#lib/data/groups/index.js';
+import { articleRepository } from '#lib/repositories/article.js';
 
 export class GroupServiceError extends Error {
 	constructor(

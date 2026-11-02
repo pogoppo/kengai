@@ -3,8 +3,8 @@
 	import { cubicInOut } from 'svelte/easing';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faXmark } from '@fortawesome/free-solid-svg-icons';
-	import { m } from '$lib/paraglide/messages';
-	import { toastState } from '$lib/stores/toast.svelte';
+	import { m } from '#lib/paraglide/messages.js';
+	import { toastState } from '#lib/stores/toast.svelte.js';
 </script>
 
 <aside class="toast-group" aria-live="polite">

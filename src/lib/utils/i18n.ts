@@ -1,4 +1,4 @@
-import * as m from '$lib/paraglide/messages.js';
+import * as m from '#lib/paraglide/messages.js';
 
 /**
  * 全ての文字列（キー）を受け入れる、型安全でない翻訳関数

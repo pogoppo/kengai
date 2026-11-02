@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
-	import { createHeadroomScroll } from '$lib/utils/navigation';
+	import { createHeadroomScroll } from '#lib/utils/navigation.js';
 
 	interface FloatNavigationProps {
 		items: { action: () => void; label: string; icon: IconProp; highlight?: boolean }[];

@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
-	import { m } from '$lib/paraglide/messages.js';
+	import { m } from '#lib/paraglide/messages.js';
 	import type { PageData } from './$types';
-	import { unregister } from '$lib/utils/offline';
-	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
-	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
-	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
-	import AccordionList from '$lib/components/contents/AccordionList.svelte';
-	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
-	import { faqSchema } from '$lib/utils/structured-data';
+	import { unregister } from '#lib/utils/offline.js';
+	import Breadcrumbs from '#lib/components/layouts/Breadcrumbs.svelte';
+	import SectionBasicHeading from '#lib/components/layouts/SectionBasicHeading.svelte';
+	import SectionBasic from '#lib/components/layouts/SectionBasic.svelte';
+	import AccordionList from '#lib/components/contents/AccordionList.svelte';
+	import PageMeta from '#lib/components/layouts/PageMeta.svelte';
+	import { faqSchema } from '#lib/utils/structured-data.js';
 
 	interface Props {
 		data: PageData;

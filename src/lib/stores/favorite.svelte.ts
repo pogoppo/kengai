@@ -1,5 +1,5 @@
-import { browser } from '$app/environment';
-import type { ArticleSummary } from '$lib/types/article';
+import { browser } from '$app/env';
+import type { ArticleSummary } from '#lib/types/article.js';
 
 export const STORAGE_KEY = 'kengai-favorites';
 

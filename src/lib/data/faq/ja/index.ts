@@ -1,5 +1,5 @@
 import indexData from './index.json';
-import type { FaqSection } from '$lib/types/faq';
+import type { FaqSection } from '#lib/types/faq.js';
 
 function createFaqIndex() {
 	return (

@@ -1,16 +1,16 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { getGroupWithArticles, GroupServiceError } from './group.server';
-import type { ArticleSummary } from '$lib/types/article';
-import { articleRepository } from '$lib/repositories/article';
+import type { ArticleSummary } from '#lib/types/article.js';
+import { articleRepository } from '#lib/repositories/article.js';
 
 // モック
-vi.mock('$lib/repositories/article', () => ({
+vi.mock('#lib/repositories/article.js', () => ({
 	articleRepository: {
 		findBySlugs: vi.fn()
 	}
 }));
 
-vi.mock('$lib/data/groups/index.json', () => ({
+vi.mock('#lib/data/groups/index.json', () => ({
 	default: [
 		{
 			slug: 'test-group',

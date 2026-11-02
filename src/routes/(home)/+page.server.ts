@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
-import { groups } from '$lib/data/groups';
-import { articleRepository } from '$lib/repositories/article';
+import { groups } from '#lib/data/groups/index.js';
+import { articleRepository } from '#lib/repositories/article.js';
 
 const PRIORITIZED = ['_mock', 'tent', 'tarp', 'rope-work', 'moto-trouble'];
 

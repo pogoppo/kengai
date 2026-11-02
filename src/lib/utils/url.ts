@@ -1,4 +1,4 @@
-import { PUBLIC_SITE_URL } from '$env/static/public';
+import { PUBLIC_SITE_URL } from '$app/env/public';
 
 /**
  * 相対パスをサイトオリジン付きの絶対URLに変換する

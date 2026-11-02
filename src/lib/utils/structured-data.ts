@@ -1,9 +1,9 @@
-import { PUBLIC_SITE_URL } from '$env/static/public';
-import { m } from '$lib/paraglide/messages';
-import { absoluteUrl } from '$lib/utils/url';
-import { categoryLabel } from '$lib/utils/category';
-import type { ArticleSummary } from '$lib/types/article';
-import type { FaqSection } from '$lib/types/faq';
+import { PUBLIC_SITE_URL } from '$app/env/public';
+import { m } from '#lib/paraglide/messages.js';
+import { absoluteUrl } from '#lib/utils/url.js';
+import { categoryLabel } from '#lib/utils/category.js';
+import type { ArticleSummary } from '#lib/types/article.js';
+import type { FaqSection } from '#lib/types/faq.js';
 
 const DEFAULT_OG_IMAGE = '/images/app/og-default.webp';
 const SITE_LOGO = '/images/app/app-icon-512.webp';
@@ -69,7 +69,8 @@ export function breadcrumbSchema(items: BreadcrumbSchemaItem[]): StructuredData 
 			'@type': 'ListItem',
 			position: index + 1,
 			name: item.label,
-			...(item.href ? { item: absoluteUrl(item.href) } : {})
+			// ホームの href は `''` になるため undefined で判定する
+			...(item.href !== undefined ? { item: absoluteUrl(item.href) } : {})
 		}))
 	};
 }

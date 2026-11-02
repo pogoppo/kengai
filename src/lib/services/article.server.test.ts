@@ -1,11 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { getArticle, ArticleServiceError } from './article.server';
-import { articleRepository } from '$lib/repositories/article';
+import { articleRepository } from '#lib/repositories/article.js';
 import { readFile } from 'fs/promises';
 import { marked } from 'marked';
 
 // モックの定義
-vi.mock('$lib/repositories/article');
+vi.mock('#lib/repositories/article.js');
 vi.mock('fs/promises');
 vi.mock('marked');
 

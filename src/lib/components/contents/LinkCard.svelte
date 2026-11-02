@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import type { Pathname } from '$app/types';
+	import type { Path } from '$app/types';
 	interface LinkCardProps {
-		href: Pathname;
+		href: Path;
 		label: string;
 		description: string;
 		image?: string;

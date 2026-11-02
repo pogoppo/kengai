@@ -1,9 +1,11 @@
+import adapter from '@sveltejs/adapter-vercel';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import devtoolsJson from 'vite-plugin-devtools-json';
 import { defineConfig } from 'vitest/config';
 import { playwright } from '@vitest/browser-playwright';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { articleIndexPlugin } from './vite/plugins/article-index';
+import { articleIndexPlugin } from './vite/plugins/article-index.ts';
 
 export default defineConfig({
 	optimizeDeps: {
@@ -11,7 +13,13 @@ export default defineConfig({
 	},
 	plugins: [
 		articleIndexPlugin(),
-		sveltekit(),
+		sveltekit({
+			// Consult https://svelte.dev/docs/kit/integrations
+			// for more information about preprocessors
+			preprocess: [vitePreprocess()],
+			adapter: adapter(),
+			serviceWorker: { register: false }
+		}),
 		devtoolsJson(),
 		paraglideVitePlugin({ project: './project.inlang', outdir: './src/lib/paraglide' })
 	],

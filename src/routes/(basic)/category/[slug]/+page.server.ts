@@ -1,6 +1,6 @@
 import type { EntryGenerator, PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { articleRepository } from '$lib/repositories/article';
+import { articleRepository } from '#lib/repositories/article.js';
 
 export const entries: EntryGenerator = () => {
 	const categories = articleRepository.getAllCategories();

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import type { Pathname } from '$app/types';
+	import type { Path } from '$app/types';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 	interface ChipProps {
-		href: Pathname;
+		href: Path;
 		label: string;
 		icon?: IconProp;
 	}
@@ -15,9 +15,7 @@
 
 <a class="chip" href={resolve(href)}>
 	{#if icon}
-		<chip-icon>
-			<FontAwesomeIcon {icon} />
-		</chip-icon>
+		<chip-icon><FontAwesomeIcon {icon} /></chip-icon>
 	{/if}
 	<span class="label">{label}</span>
 </a>

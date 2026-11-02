@@ -2,15 +2,15 @@ import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page, userEvent } from 'vitest/browser';
 import ModalSearch from './ModalSearch.svelte';
-import { modalState } from '$lib/stores/modal.svelte';
+import { modalState } from '#lib/stores/modal.svelte.js';
 import { goto } from '$app/navigation';
-import { createSearchURL } from '$lib/utils/search';
+import { createSearchURL } from '#lib/utils/search.js';
 
 vi.mock('$app/navigation', () => ({
 	goto: vi.fn()
 }));
 
-vi.mock('$lib/paraglide/messages', () => ({
+vi.mock('#lib/paraglide/messages.js', () => ({
 	m: {
 		'component.modal.search.description': () => 'サイト内を検索します',
 		'search.placeholder': () => 'キーワードを入力',
@@ -18,11 +18,11 @@ vi.mock('$lib/paraglide/messages', () => ({
 	}
 }));
 
-vi.mock('$lib/utils/search', () => ({
+vi.mock('#lib/utils/search.js', () => ({
 	createSearchURL: vi.fn()
 }));
 
-vi.mock('$lib/stores/modal.svelte', () => ({
+vi.mock('#lib/stores/modal.svelte.js', () => ({
 	modalState: {
 		close: vi.fn()
 	}

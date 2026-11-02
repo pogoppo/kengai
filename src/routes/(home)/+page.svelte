@@ -1,24 +1,24 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
-	import { m } from '$lib/paraglide/messages.js';
-	import { categoryIcon, categoryLabel } from '$lib/utils/category';
-	import { createSearchURL } from '$lib/utils/search';
-	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
-	import SearchBar from '$lib/components/contents/SearchBar.svelte';
-	import LinkCard from '$lib/components/contents/LinkCard.svelte';
-	import Chip from '$lib/components/contents/Chip.svelte';
-	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
-	import { websiteSchema } from '$lib/utils/structured-data';
-	import mogFrontBasic from '$lib/assets/mog-front-basic.webp';
+	import { m } from '#lib/paraglide/messages.js';
+	import { categoryIcon, categoryLabel } from '#lib/utils/category.js';
+	import { createSearchURL } from '#lib/utils/search.js';
+	import SectionBasic from '#lib/components/layouts/SectionBasic.svelte';
+	import SearchBar from '#lib/components/contents/SearchBar.svelte';
+	import LinkCard from '#lib/components/contents/LinkCard.svelte';
+	import Chip from '#lib/components/contents/Chip.svelte';
+	import PageMeta from '#lib/components/layouts/PageMeta.svelte';
+	import { websiteSchema } from '#lib/utils/structured-data.js';
+	import mogFrontBasic from '#lib/assets/mog-front-basic.webp';
 
 	let { data } = $props();
 
 	function handleSearch(query: string) {
 		const url = createSearchURL(query);
 		if (!url.searchParams.get('q')) return;
-		const pathname = `/search${url.search}`;
-		goto(resolve(pathname as '/search'));
+		const pathname = `search${url.search}`;
+		goto(resolve(pathname as 'search'));
 	}
 </script>
 
@@ -48,7 +48,7 @@
 			{#each data.categories as category (category)}
 				<li>
 					<Chip
-						href={`/category/${category}`}
+						href={`category/${category}`}
 						label={categoryLabel(category)}
 						icon={categoryIcon(category)}
 					/>
@@ -65,7 +65,7 @@
 						label={group.label}
 						description={group.description}
 						image={group.image}
-						href={`/group/${group.slug}`}
+						href={`group/${group.slug}`}
 					/>
 				</li>
 			{/each}

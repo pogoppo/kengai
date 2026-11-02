@@ -2,14 +2,14 @@
 	import { resolve } from '$app/paths';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
-	import { m } from '$lib/paraglide/messages.js';
-	import { categoryLabel, categoryIcon } from '$lib/utils/category';
-	import ArticleList from '$lib/components/contents/ArticleList.svelte';
-	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
-	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
-	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
-	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
-	import { collectionPageSchema } from '$lib/utils/structured-data';
+	import { m } from '#lib/paraglide/messages.js';
+	import { categoryLabel, categoryIcon } from '#lib/utils/category.js';
+	import ArticleList from '#lib/components/contents/ArticleList.svelte';
+	import Breadcrumbs from '#lib/components/layouts/Breadcrumbs.svelte';
+	import SectionBasic from '#lib/components/layouts/SectionBasic.svelte';
+	import SectionBasicHeading from '#lib/components/layouts/SectionBasicHeading.svelte';
+	import PageMeta from '#lib/components/layouts/PageMeta.svelte';
+	import { collectionPageSchema } from '#lib/utils/structured-data.js';
 
 	let { data } = $props();
 
@@ -44,10 +44,11 @@
 	{#each data.groupData.sections as section (section.category)}
 		<SectionBasic continuously={true}>
 			<header class="group-section-header">
-				<SectionBasicHeading level={2} icon={categoryIcon(section.category)}>
-					{categoryLabel(section.category)}
-				</SectionBasicHeading>
-				<a href={resolve(`/category/${section.category}`)} class="group-section-more">
+				<SectionBasicHeading level={2} icon={categoryIcon(section.category)}
+					>{categoryLabel(section.category)}</SectionBasicHeading
+				>
+
+				<a href={resolve(`category/${section.category}`)} class="group-section-more">
 					{m['group.section.more']()}
 					<FontAwesomeIcon icon={faCircleChevronRight} />
 				</a>

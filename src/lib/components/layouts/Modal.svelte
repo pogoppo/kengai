@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faXmark } from '@fortawesome/free-solid-svg-icons';
-	import { m } from '$lib/paraglide/messages';
+	import { m } from '#lib/paraglide/messages.js';
 
 	let { open = $bindable(false), children = null } = $props();
 	let dialog: HTMLDialogElement | null = null;

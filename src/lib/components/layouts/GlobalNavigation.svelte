@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { createRawSnippet, mount, unmount } from 'svelte';
 	import { page } from '$app/state';
-	import type { Pathname } from '$app/types';
-	import { m } from '$lib/paraglide/messages';
+	import type { Path } from '$app/types';
+	import { m } from '#lib/paraglide/messages.js';
 	import {
 		faHome,
 		faStar,
@@ -10,13 +10,13 @@
 		faChevronUp,
 		faMagnifyingGlass
 	} from '@fortawesome/free-solid-svg-icons';
-	import { backToTop } from '$lib/utils/navigation';
-	import { pathnameToArticleSlug } from '$lib/utils/article';
-	import { modalState } from '$lib/stores/modal.svelte';
-	import { favoriteState } from '$lib/stores/favorite.svelte';
-	import { toastState } from '$lib/stores/toast.svelte';
-	import NavigationBar from '$lib/components/contents/NavigationBar.svelte';
-	import FloatNavigation from '$lib/components/contents/FloatNavigation.svelte';
+	import { backToTop } from '#lib/utils/navigation.js';
+	import { pathnameToArticleSlug } from '#lib/utils/article.js';
+	import { modalState } from '#lib/stores/modal.svelte.js';
+	import { favoriteState } from '#lib/stores/favorite.svelte.js';
+	import { toastState } from '#lib/stores/toast.svelte.js';
+	import NavigationBar from '#lib/components/contents/NavigationBar.svelte';
+	import FloatNavigation from '#lib/components/contents/FloatNavigation.svelte';
 	import ModalSearch from '../modals/ModalSearch.svelte';
 
 	interface GlobalNavigationProps {
@@ -26,19 +26,19 @@
 
 	let mainNavigation = $derived([
 		{
-			href: '/' as Pathname,
+			href: '' as Path,
 			label: m['component.main-navigation.home.label'](),
 			icon: faHome,
 			active: page.url.pathname === '/'
 		},
 		{
-			href: '/favorite' as Pathname,
+			href: 'favorite' as Path,
 			label: m['component.main-navigation.favorite.label'](),
 			icon: faStar,
 			active: page.url.pathname === '/favorite'
 		},
 		{
-			href: '/faq' as Pathname,
+			href: 'faq' as Path,
 			label: m['component.main-navigation.faq.label'](),
 			icon: faCircleQuestion,
 			active: page.url.pathname === '/faq'

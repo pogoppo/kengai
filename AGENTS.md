@@ -11,7 +11,7 @@ This is a **SvelteKit** application using **Svelte 5** with internationalization
 - **Paraglide JS** handles i18n with Japanese (`ja`) as the base locale
 - Message files: [messages/ja.json](messages/ja.json)
 - Configuration: [project.inlang/settings.json](project.inlang/settings.json)
-- Generated runtime at `$lib/paraglide/` (auto-generated, don't edit manually)
+- Generated runtime at `#lib/paraglide/` (auto-generated, don't edit manually)
 - Use `localizeHref()` for locale-aware routing ([src/routes/+layout.svelte](src/routes/+layout.svelte#L12))
 - [src/hooks.server.ts](src/hooks.server.ts) implements `paraglideMiddleware` for server-side i18n handling
 - [src/hooks.ts](src/hooks.ts) implements URL delocalizing via `reroute` hook
@@ -86,7 +86,7 @@ When working with Svelte code:
 - Vitest requires assertions (`expect.requireAssertions: true`)
 - Generated paraglide files are in `src/lib/paraglide/` - reference but don't modify
 - Type definitions in [src/app.d.ts](src/app.d.ts) extend SvelteKit types
-- Path aliases handled by SvelteKit config, `$lib` maps to `src/lib`
+- Path aliases handled by SvelteKit config, `#lib` maps to `src/lib`
 - Uses `vite-plugin-devtools-json` for development tooling
 
 ## Using the Svelte MCP Server

@@ -2,8 +2,8 @@ import { describe, test, expect, beforeEach, vi } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page } from 'vitest/browser';
 import GlobalHeader from './GlobalHeader.svelte';
-import { VISITED_STORAGE_KEY } from '$lib/stores/visited.svelte';
-import { m } from '$lib/paraglide/messages';
+import { VISITED_STORAGE_KEY } from '#lib/stores/visited.svelte.js';
+import { m } from '#lib/paraglide/messages.js';
 
 describe('GlobalHeader', () => {
 	beforeEach(() => {

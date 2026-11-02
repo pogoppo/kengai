@@ -1,7 +1,7 @@
 import type { RequestHandler } from './$types';
-import { groups } from '$lib/data/groups';
-import { articleRepository } from '$lib/repositories/article';
-import { absoluteUrl } from '$lib/utils/url';
+import { groups } from '#lib/data/groups/index.js';
+import { articleRepository } from '#lib/repositories/article.js';
+import { absoluteUrl } from '#lib/utils/url.js';
 
 export const prerender = true;
 

@@ -3,9 +3,9 @@ import { tick } from 'svelte';
 import { render } from 'vitest-browser-svelte';
 import { page } from 'vitest/browser';
 import Toast from './Toast.svelte';
-import { toastState } from '$lib/stores/toast.svelte';
+import { toastState } from '#lib/stores/toast.svelte.js';
 
-vi.mock('$lib/paraglide/messages', () => ({
+vi.mock('#lib/paraglide/messages.js', () => ({
 	m: {
 		'component.toast.close': () => '閉じる'
 	}

@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { ArticleRepository } from './article';
-import type { ArticleSummary } from '$lib/types/article';
+import type { ArticleSummary } from '#lib/types/article.js';
 
 describe('ArticleRepository', () => {
 	let repository: ArticleRepository;

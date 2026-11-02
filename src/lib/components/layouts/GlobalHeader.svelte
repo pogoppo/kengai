@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
-	import { m } from '$lib/paraglide/messages.js';
-	import logo from '$lib/assets/app-logo.svg';
-	import { visitedState } from '$lib/stores/visited.svelte';
+	import { m } from '#lib/paraglide/messages.js';
+	import logo from '#lib/assets/app-logo.svg';
+	import { visitedState } from '#lib/stores/visited.svelte.js';
 	import OfflineInfo from './OfflineInfo.svelte';
 	import Popover from './Popover.svelte';
 	let { isHome = false } = $props();
@@ -31,7 +31,7 @@
 
 <header class="global-header">
 	<svelte:element this={isHome ? 'h1' : 'div'} class="header-logo">
-		<a href={resolve('/')}>
+		<a href={resolve('')}>
 			<img src={logo} alt={m['app.name']()} />
 		</a>
 	</svelte:element>

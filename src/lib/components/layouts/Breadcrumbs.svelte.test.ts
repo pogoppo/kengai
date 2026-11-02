@@ -3,17 +3,22 @@ import { render } from 'vitest-browser-svelte';
 import { page } from 'vitest/browser';
 import Breadcrumbs from './Breadcrumbs.svelte';
 
-vi.mock('$lib/paraglide/messages', () => ({
+vi.mock('#lib/paraglide/messages.js', () => ({
 	m: {
 		'app.name': () => 'AppName',
 		'component.breadcrumbs.aria-label': () => 'Breadcrumbs Label'
 	}
 }));
 
+// ブラウザモードでは `$app/env/public` の開発用ランタイムが初期化されないため
+vi.mock('$app/env/public', () => ({
+	PUBLIC_SITE_URL: 'http://localhost:5173'
+}));
+
 describe('Breadcrumbs', () => {
 	test('ホームリンクとパンくずリスト項目が表示される', async () => {
 		render(Breadcrumbs, {
-			items: [{ label: 'Category', href: '/category/_mock' }, { label: 'Current Page' }]
+			items: [{ label: 'Category', href: 'category/_mock' }, { label: 'Current Page' }]
 		});
 
 		const nav = page.getByRole('navigation', { name: 'Breadcrumbs Label' });

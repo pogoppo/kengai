@@ -1,6 +1,6 @@
-import { unsafeMessages } from '$lib/utils/i18n';
+import { unsafeMessages } from '#lib/utils/i18n.js';
 import indexData from './index.json';
-import type { Group } from '$lib/types/group';
+import type { Group } from '#lib/types/group.js';
 
 function groupLabel(slug: string): string {
 	return unsafeMessages(`group.${slug}.label`);

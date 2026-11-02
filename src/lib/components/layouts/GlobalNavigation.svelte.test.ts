@@ -2,9 +2,9 @@ import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page as user } from 'vitest/browser';
 import GlobalNavigation from './GlobalNavigation.svelte';
-import { toastState } from '$lib/stores/toast.svelte';
+import { toastState } from '#lib/stores/toast.svelte.js';
 
-vi.mock('$lib/paraglide/messages', () => ({
+vi.mock('#lib/paraglide/messages.js', () => ({
 	m: {
 		'component.global-navigation.aria-label': () => 'グローバルナビゲーション',
 		'component.main-navigation.home.label': () => 'ホーム',
@@ -34,7 +34,7 @@ vi.mock('$app/state', () => ({
 	}
 }));
 
-vi.mock('$lib/stores/favorite.svelte', () => ({
+vi.mock('#lib/stores/favorite.svelte.js', () => ({
 	favoriteState: {
 		check: mocks.favoriteCheck,
 		toggle: mocks.favoriteToggle

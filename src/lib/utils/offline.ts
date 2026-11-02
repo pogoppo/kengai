@@ -1,12 +1,8 @@
-import { dev } from '$app/environment';
-
 export const REGISTRATION_FILE = '/service-worker.js';
 
 export const register = async () => {
 	if ('serviceWorker' in navigator) {
-		await navigator.serviceWorker.register(REGISTRATION_FILE, {
-			type: dev ? 'module' : 'classic'
-		});
+		await navigator.serviceWorker.register(REGISTRATION_FILE, { type: 'module' });
 	}
 };
 

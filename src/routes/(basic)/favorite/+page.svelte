@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { faStar, faTrashCan } from '@fortawesome/free-solid-svg-icons';
-	import { m } from '$lib/paraglide/messages.js';
-	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
-	import ArticleList from '$lib/components/contents/ArticleList.svelte';
-	import ButtonBasic from '$lib/components/contents/ButtonBasic.svelte';
-	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
-	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
-	import DashedBorderBox from '$lib/components/contents/DashedBorderBox.svelte';
-	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
-	import { favoriteState } from '$lib/stores/favorite.svelte';
-	import { toastState } from '$lib/stores/toast.svelte';
-	import { articleRepository } from '$lib/repositories/article';
+	import { m } from '#lib/paraglide/messages.js';
+	import Breadcrumbs from '#lib/components/layouts/Breadcrumbs.svelte';
+	import ArticleList from '#lib/components/contents/ArticleList.svelte';
+	import ButtonBasic from '#lib/components/contents/ButtonBasic.svelte';
+	import SectionBasic from '#lib/components/layouts/SectionBasic.svelte';
+	import SectionBasicHeading from '#lib/components/layouts/SectionBasicHeading.svelte';
+	import DashedBorderBox from '#lib/components/contents/DashedBorderBox.svelte';
+	import PageMeta from '#lib/components/layouts/PageMeta.svelte';
+	import { favoriteState } from '#lib/stores/favorite.svelte.js';
+	import { toastState } from '#lib/stores/toast.svelte.js';
+	import { articleRepository } from '#lib/repositories/article.js';
 
 	// ハイドレーション不整合を防ぐ
 	let mounted = $state(false);

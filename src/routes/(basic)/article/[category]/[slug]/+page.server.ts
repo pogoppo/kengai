@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { articleRepository } from '$lib/repositories/article';
-import { getArticle, ArticleServiceError } from '$lib/services/article.server';
+import { articleRepository } from '#lib/repositories/article.js';
+import { getArticle, ArticleServiceError } from '#lib/services/article.server.js';
 import type { PageServerLoad, EntryGenerator } from './$types';
 
 export const entries: EntryGenerator = () => {

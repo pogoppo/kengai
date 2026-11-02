@@ -2,9 +2,9 @@
 	import { onMount } from 'svelte';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCheck, faExclamationTriangle, faGear } from '@fortawesome/free-solid-svg-icons';
-	import { m } from '$lib/paraglide/messages';
-	import { register, REGISTRATION_FILE } from '$lib/utils/offline';
-	import ButtonBasic from '$lib/components/contents/ButtonBasic.svelte';
+	import { m } from '#lib/paraglide/messages.js';
+	import { register, REGISTRATION_FILE } from '#lib/utils/offline.js';
+	import ButtonBasic from '#lib/components/contents/ButtonBasic.svelte';
 
 	type ServiceWorkerState =
 		| 'prepare' // ちらつき防止用の初期状態

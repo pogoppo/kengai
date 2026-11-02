@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { m } from '$lib/paraglide/messages.js';
+	import { m } from '#lib/paraglide/messages.js';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
-	import GlobalHeader from '$lib/components/layouts/GlobalHeader.svelte';
-	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
-	import mog404 from '$lib/assets/mog-404.webp';
+	import GlobalHeader from '#lib/components/layouts/GlobalHeader.svelte';
+	import PageMeta from '#lib/components/layouts/PageMeta.svelte';
+	import mog404 from '#lib/assets/mog-404.webp';
 </script>
 
 <PageMeta title={m['error.page.title']()} description={m['error.page.description']()} noindex />
@@ -25,7 +25,7 @@
 	</div>
 	<p class="error-description">{m['error.page.description']()}</p>
 	<p class="error-back-to-home">
-		<a href={resolve('/')}>
+		<a href={resolve('')}>
 			{m['common.back-to-home']()}<FontAwesomeIcon icon={faCircleChevronRight} />
 		</a>
 	</p>

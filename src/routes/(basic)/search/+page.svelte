@@ -3,16 +3,16 @@
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
-	import { m } from '$lib/paraglide/messages.js';
-	import { articleRepository } from '$lib/repositories/article';
-	import { createSearchURL } from '$lib/utils/search';
-	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
-	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
-	import SearchBar from '$lib/components/contents/SearchBar.svelte';
-	import ArticleList from '$lib/components/contents/ArticleList.svelte';
-	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
-	import DashedBorderBox from '$lib/components/contents/DashedBorderBox.svelte';
-	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
+	import { m } from '#lib/paraglide/messages.js';
+	import { articleRepository } from '#lib/repositories/article.js';
+	import { createSearchURL } from '#lib/utils/search.js';
+	import Breadcrumbs from '#lib/components/layouts/Breadcrumbs.svelte';
+	import SectionBasic from '#lib/components/layouts/SectionBasic.svelte';
+	import SearchBar from '#lib/components/contents/SearchBar.svelte';
+	import ArticleList from '#lib/components/contents/ArticleList.svelte';
+	import SectionBasicHeading from '#lib/components/layouts/SectionBasicHeading.svelte';
+	import DashedBorderBox from '#lib/components/contents/DashedBorderBox.svelte';
+	import PageMeta from '#lib/components/layouts/PageMeta.svelte';
 
 	// ハイドレーション不整合を防ぐ
 	let mounted = $state(false);
@@ -26,8 +26,8 @@
 	function handleSearch(query: string) {
 		const url = createSearchURL(query);
 		if (!url.searchParams.get('q')) return;
-		const pathname = `/search${url.search}`;
-		goto(resolve(pathname as '/search'));
+		const pathname = `search${url.search}`;
+		goto(resolve(pathname as 'search'));
 	}
 </script>
 

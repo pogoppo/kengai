@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { modalState } from '$lib/stores/modal.svelte';
-	import GlobalHeader from '$lib/components/layouts/GlobalHeader.svelte';
-	import GlobalNavigation from '$lib/components/layouts/GlobalNavigation.svelte';
-	import Modal from '$lib/components/layouts/Modal.svelte';
+	import { modalState } from '#lib/stores/modal.svelte.js';
+	import GlobalHeader from '#lib/components/layouts/GlobalHeader.svelte';
+	import GlobalNavigation from '#lib/components/layouts/GlobalNavigation.svelte';
+	import Modal from '#lib/components/layouts/Modal.svelte';
 
 	let { children } = $props();
 </script>

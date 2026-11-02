@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { m } from '$lib/paraglide/messages';
-	import { createSearchURL } from '$lib/utils/search';
-	import { modalState } from '$lib/stores/modal.svelte';
-	import SearchBar from '$lib/components/contents/SearchBar.svelte';
+	import { m } from '#lib/paraglide/messages.js';
+	import { createSearchURL } from '#lib/utils/search.js';
+	import { modalState } from '#lib/stores/modal.svelte.js';
+	import SearchBar from '#lib/components/contents/SearchBar.svelte';
 	import { resolve } from '$app/paths';
-	import mogModalSearch from '$lib/assets/mog-modal-search.webp';
+	import mogModalSearch from '#lib/assets/mog-modal-search.webp';
 
 	function handleSearch(query: string) {
 		const url = createSearchURL(query);
 		if (!url.searchParams.get('q')) return;
-		const pathname = `/search${url.search}`;
-		goto(resolve(pathname as '/search'));
+		const pathname = `search${url.search}`;
+		goto(resolve(pathname as 'search'));
 		modalState.close();
 	}
 </script>

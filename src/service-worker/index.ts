@@ -1,22 +1,21 @@
-/// <reference lib="webworker" />
-/// <reference types="@sveltejs/kit" />
-
-import { build, files, prerendered, version } from '$service-worker';
-
-declare const self: ServiceWorkerGlobalScope;
+import { self } from '$app/service-worker';
+import { version } from '$app/env';
+import { immutable, assets, prerendered } from '$app/manifest';
 
 // キャッシュのキー
 const CACHE_NAME = `kengai-v${version}`;
+// `$app/manifest` のパスはベースパスからの相対なので、スコープ基準の絶対URLに変換
+// （トップページは `''` のため、単純な相対パスだとService Worker自身のURLになってしまう）
+const toUrl = ({ path }: { path: string }) => new URL(path, self.registration.scope).href;
 // キャッシュ対象
 const ASSETS = [
-	...build, // JS, CSSなどのビルドされたアセット
-	...files, // `static` ディレクトリ内のファイル
-	...prerendered // 事前レンダリングされたページ
+	...immutable.map(toUrl), // JS, CSSなどのビルドされたアセット
+	...assets.map(toUrl), // `static` ディレクトリ内のファイル
+	...prerendered.map(toUrl) // 事前レンダリングされたページ
 ];
 
 /////////////////////////////////////////////////////////////////////
 // インストール時の処理
-// 備考: Svelte Kitでは自動登録のこのファイルでのみ`$service-worker`が扱える
 /////////////////////////////////////////////////////////////////////
 
 // キャッシュにASSETSのファイルを追加

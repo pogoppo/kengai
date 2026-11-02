@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { m } from '$lib/paraglide/messages';
-	import { absoluteUrl } from '$lib/utils/url';
-	import { serializeJsonLd } from '$lib/utils/json-ld';
-	import type { StructuredData } from '$lib/utils/structured-data';
+	import { m } from '#lib/paraglide/messages.js';
+	import { absoluteUrl } from '#lib/utils/url.js';
+	import { serializeJsonLd } from '#lib/utils/json-ld.js';
+	import type { StructuredData } from '#lib/utils/structured-data.js';
 
 	const DEFAULT_OG_IMAGE = '/images/app/og-default.webp';
 	const SITE_LOCALE = 'ja_JP';

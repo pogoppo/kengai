@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import type { Pathname } from '$app/types';
+	import type { Path } from '$app/types';
 	import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 
 	interface NavigationBarProps {
-		items: { href: Pathname; label: string; icon: IconProp; active: boolean }[];
+		items: { href: Path; label: string; icon: IconProp; active: boolean }[];
 	}
 	let { items }: NavigationBarProps = $props();
 </script>

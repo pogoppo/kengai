@@ -11,7 +11,7 @@ describe('LinkCard', () => {
 			label: 'Card Label',
 			description: 'Card Description',
 			image: imgDataUrl,
-			href: '/'
+			href: ''
 		});
 
 		const link = page.getByRole('link', { name: 'Card Label' });
@@ -27,7 +27,7 @@ describe('LinkCard', () => {
 			label: 'Card Label',
 			description: 'Card Description',
 			image: imgDataUrl,
-			href: '/'
+			href: ''
 		});
 
 		const img = page.getByAltText('Card Label');

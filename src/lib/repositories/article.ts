@@ -1,6 +1,6 @@
 import Fuse from 'fuse.js';
-import { articles } from '$lib/data/articles/ja';
-import type { ArticleSummary } from '$lib/types/article';
+import { articles } from '#lib/data/articles/ja/index.js';
+import type { ArticleSummary } from '#lib/types/article.js';
 
 export class ArticleRepository {
 	// Fuse.jsインスタンス（遅延初期化）

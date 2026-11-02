@@ -8,8 +8,8 @@ describe('NavigationBar', () => {
 	test('ナビゲーション項目が正しく表示される', async () => {
 		render(NavigationBar, {
 			items: [
-				{ href: '/', label: 'ホーム', icon: faHome, active: true },
-				{ href: '/search', label: '検索', icon: faSearch, active: false }
+				{ href: '', label: 'ホーム', icon: faHome, active: true },
+				{ href: 'search', label: '検索', icon: faSearch, active: false }
 			]
 		});
 
@@ -23,8 +23,8 @@ describe('NavigationBar', () => {
 	test('リンクが正しい遷移先を持っている', async () => {
 		render(NavigationBar, {
 			items: [
-				{ href: '/', label: 'ホーム', icon: faHome, active: true },
-				{ href: '/search', label: '検索', icon: faSearch, active: false }
+				{ href: '', label: 'ホーム', icon: faHome, active: true },
+				{ href: 'search', label: '検索', icon: faSearch, active: false }
 			]
 		});
 
@@ -38,8 +38,8 @@ describe('NavigationBar', () => {
 	test('アクティブな項目に正しい属性が付与される', async () => {
 		render(NavigationBar, {
 			items: [
-				{ href: '/', label: 'ホーム', icon: faHome, active: true },
-				{ href: '/search', label: '検索', icon: faSearch, active: false }
+				{ href: '', label: 'ホーム', icon: faHome, active: true },
+				{ href: 'search', label: '検索', icon: faSearch, active: false }
 			]
 		});
 

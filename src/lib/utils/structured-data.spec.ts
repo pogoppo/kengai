@@ -6,8 +6,8 @@ import {
 	faqSchema,
 	stripHtml
 } from './structured-data';
-import { PUBLIC_SITE_URL } from '$env/static/public';
-import type { ArticleSummary } from '$lib/types/article';
+import { PUBLIC_SITE_URL } from '$app/env/public';
+import type { ArticleSummary } from '#lib/types/article.js';
 
 const SITE_URL = PUBLIC_SITE_URL.replace(/\/+$/, '');
 
@@ -42,13 +42,32 @@ describe('breadcrumbSchema', () => {
 		]);
 
 		expect(schema.itemListElement).toEqual([
-			{ '@type': 'ListItem', position: 1, name: 'KENGAI', item: `${SITE_URL}/` },
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'KENGAI',
+				item: `${SITE_URL}/`
+			},
+
 			{
 				'@type': 'ListItem',
 				position: 2,
 				name: 'ロープワーク',
 				item: `${SITE_URL}/category/rope-work`
 			}
+		]);
+	});
+
+	it('先頭スラッシュなしのパス・空文字のホームも絶対化される', () => {
+		const schema = breadcrumbSchema([
+			{ label: 'KENGAI', href: '' },
+			{ label: 'ロープワーク', href: 'category/rope-work' }
+		]);
+		const items = schema.itemListElement as Record<string, unknown>[];
+
+		expect(items.map((item) => item.item)).toEqual([
+			`${SITE_URL}/`,
+			`${SITE_URL}/category/rope-work`
 		]);
 	});
 

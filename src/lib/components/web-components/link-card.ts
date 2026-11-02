@@ -1,5 +1,5 @@
-import { articleRepository } from '$lib/repositories/article';
-import type { ArticleSummary } from '$lib/types/article';
+import { articleRepository } from '#lib/repositories/article.js';
+import type { ArticleSummary } from '#lib/types/article.js';
 
 const style = `
 	:host {

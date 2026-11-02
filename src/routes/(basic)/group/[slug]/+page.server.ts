@@ -1,7 +1,7 @@
 import type { EntryGenerator, PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { groups } from '$lib/data/groups';
-import { getGroupWithArticles, GroupServiceError } from '$lib/services/group.server';
+import { groups } from '#lib/data/groups/index.js';
+import { getGroupWithArticles, GroupServiceError } from '#lib/services/group.server.js';
 
 export const entries: EntryGenerator = () => {
 	return groups.map((group) => ({ slug: group.slug }));

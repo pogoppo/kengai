@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { onNavigate } from '$app/navigation';
 
-	import { setLocale } from '$lib/paraglide/runtime';
+	import { setLocale } from '#lib/paraglide/runtime.js';
 	setLocale('ja');
 
 	import 'kiso.css';
@@ -11,11 +11,11 @@
 	import '@fortawesome/fontawesome-svg-core/styles.css';
 	config.autoAddCss = false;
 
-	import '$lib/styles/variables.css';
-	import '$lib/styles/global.css';
+	import '#lib/styles/variables.css';
+	import '#lib/styles/global.css';
 
-	import Toast from '$lib/components/layouts/Toast.svelte';
-	import { defineWebComponents } from '$lib/components/web-components';
+	import Toast from '#lib/components/layouts/Toast.svelte';
+	import { defineWebComponents } from '#lib/components/web-components/index.js';
 
 	let { children } = $props();
 

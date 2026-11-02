@@ -1,22 +1,22 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-	import type { Pathname } from '$app/types';
-	import { m } from '$lib/paraglide/messages';
+	import type { Path } from '$app/types';
+	import { m } from '#lib/paraglide/messages.js';
 	import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
-	import { breadcrumbSchema } from '$lib/utils/structured-data';
-	import { serializeJsonLd } from '$lib/utils/json-ld';
+	import { breadcrumbSchema } from '#lib/utils/structured-data.js';
+	import { serializeJsonLd } from '#lib/utils/json-ld.js';
 
 	interface BreadcrumbsItem {
 		label: string;
-		href?: Pathname;
+		href?: Path;
 	}
 
 	let { items }: { items: BreadcrumbsItem[] } = $props();
 
 	let breadcrumbsItems = $derived([
-		{ label: m['app.name'](), href: '/' } as BreadcrumbsItem,
+		{ label: m['app.name'](), href: '' } as BreadcrumbsItem,
 		...items
 	]);
 
@@ -43,7 +43,7 @@
 						<FontAwesomeIcon icon={faChevronRight} />
 					</separator-icon>
 				{/if}
-				{#if item.href}
+				{#if item.href !== undefined}
 					<a href={resolve(item.href)} class="breadcrumbs-link">{item.label}</a>
 				{:else}
 					<span class="breadcrumbs-current">{item.label}</span>

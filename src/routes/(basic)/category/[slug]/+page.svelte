@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages.js';
-	import { categoryLabel, categoryIcon } from '$lib/utils/category';
-	import ArticleList from '$lib/components/contents/ArticleList.svelte';
-	import SectionBasic from '$lib/components/layouts/SectionBasic.svelte';
-	import SectionBasicHeading from '$lib/components/layouts/SectionBasicHeading.svelte';
-	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
-	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
-	import { collectionPageSchema } from '$lib/utils/structured-data';
+	import { m } from '#lib/paraglide/messages.js';
+	import { categoryLabel, categoryIcon } from '#lib/utils/category.js';
+	import ArticleList from '#lib/components/contents/ArticleList.svelte';
+	import SectionBasic from '#lib/components/layouts/SectionBasic.svelte';
+	import SectionBasicHeading from '#lib/components/layouts/SectionBasicHeading.svelte';
+	import Breadcrumbs from '#lib/components/layouts/Breadcrumbs.svelte';
+	import PageMeta from '#lib/components/layouts/PageMeta.svelte';
+	import { collectionPageSchema } from '#lib/utils/structured-data.js';
 
 	let { data } = $props();
 

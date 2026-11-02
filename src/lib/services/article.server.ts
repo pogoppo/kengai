@@ -1,9 +1,9 @@
-import { articleRepository } from '$lib/repositories/article';
+import { articleRepository } from '#lib/repositories/article.js';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import type { ArticleSummary } from '$lib/types/article';
+import type { ArticleSummary } from '#lib/types/article.js';
 
 export class ArticleServiceError extends Error {
 	constructor(

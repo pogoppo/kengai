@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { m } from '$lib/paraglide/messages.js';
-	import Breadcrumbs from '$lib/components/layouts/Breadcrumbs.svelte';
-	import PageMeta from '$lib/components/layouts/PageMeta.svelte';
-	import { articleSchema } from '$lib/utils/structured-data';
-	import { categoryLabel } from '$lib/utils/category.js';
+	import { m } from '#lib/paraglide/messages.js';
+	import Breadcrumbs from '#lib/components/layouts/Breadcrumbs.svelte';
+	import PageMeta from '#lib/components/layouts/PageMeta.svelte';
+	import { articleSchema } from '#lib/utils/structured-data.js';
+	import { categoryLabel } from '#lib/utils/category.js';
 
 	let { data } = $props();
 
@@ -31,7 +31,7 @@
 <Breadcrumbs
 	items={[
 		{
-			href: `/category/${data.articleSummary.category}`,
+			href: `category/${data.articleSummary.category}`,
 			label: categoryLabel(data.articleSummary.category)
 		},
 		{ label: data.articleSummary.title }
@@ -42,16 +42,16 @@
 	<article class="article">
 		<header class="article-header">
 			<div class="article-category">
-				<a href={resolve(`/category/${data.articleSummary.category}`)}>
-					{categoryLabel(data.articleSummary.category)}
-				</a>
+				<a href={resolve(`category/${data.articleSummary.category}`)}
+					>{categoryLabel(data.articleSummary.category)}</a
+				>
 			</div>
 			<h1 class="article-title">{data.articleSummary.title}</h1>
 			<p class="article-description">{data.articleSummary.description}</p>
 			<ul class="article-tags">
 				{#each data.articleSummary.tags as tag (tag)}
 					<li>
-						<a href={resolve(`/search?q=${encodeURIComponent(`#${tag}`)}` as `/search`)}>#{tag}</a>
+						<a href={resolve(`search?q=${encodeURIComponent(`#${tag}`)}` as `search`)}>#{tag}</a>
 					</li>
 				{/each}
 			</ul>

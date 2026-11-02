@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { SvelteSet } from 'svelte/reactivity';
-	import { m } from '$lib/paraglide/messages';
-	import type { ArticleSummary } from '$lib/types/article';
+	import { m } from '#lib/paraglide/messages.js';
+	import type { ArticleSummary } from '#lib/types/article.js';
 	import CheckboxBasic from './CheckboxBasic.svelte';
 	import DashedBorderBox from './DashedBorderBox.svelte';
 
@@ -46,9 +46,9 @@
 		{#each articles as article (article.slug)}
 			<li>
 				<article>
-					<a class="article-item" href={resolve(`/article/${article.category}/${article.slug}`)}>
-						{@render articleInfo(article)}
-					</a>
+					<a class="article-item" href={resolve(`article/${article.category}/${article.slug}`)}
+						>{@render articleInfo(article)}</a
+					>
 				</article>
 			</li>
 		{/each}
