@@ -11,6 +11,11 @@ updates:
     # .npmrc の min-release-age=3 と揃える
     cooldown:
       default-days: 3
+    # TypeScript のメジャーは手動で上げる
+    ignore:
+      - dependency-name: 'typescript'
+        update-types:
+          - 'version-update:semver-major'
     groups:
       svelte-vite:
         patterns:
@@ -19,7 +24,6 @@ updates:
           - 'svelte-check'
           - 'vite'
           - 'vite-plugin-*'
-          - 'typescript'
       vitest:
         patterns:
           - 'vitest'
