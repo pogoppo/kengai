@@ -17,7 +17,7 @@ vi.mock('$app/env/public', () => ({
 
 describe('Breadcrumbs', () => {
 	test('ホームリンクとパンくずリスト項目が表示される', async () => {
-		render(Breadcrumbs, {
+		await render(Breadcrumbs, {
 			items: [{ label: 'Category', href: 'category/_mock' }, { label: 'Current Page' }]
 		});
 
@@ -40,7 +40,7 @@ describe('Breadcrumbs', () => {
 	});
 
 	test('区切りアイコンが表示される', async () => {
-		render(Breadcrumbs, { items: [{ label: 'Current Page' }] });
+		await render(Breadcrumbs, { items: [{ label: 'Current Page' }] });
 
 		const nav = page.getByRole('navigation', { name: 'Breadcrumbs Label' });
 		await expect.element(nav).toBeInTheDocument();

@@ -23,7 +23,7 @@ describe('AccordionList', () => {
 	];
 
 	test('アコーディオンリストが正しくレンダリングされる', async () => {
-		render(AccordionList, { items });
+		await render(AccordionList, { items });
 
 		const list = page.getByRole('list');
 		await expect.element(list).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe('AccordionList', () => {
 	});
 
 	test('各アイテムのサマリーとコンテンツが表示される', async () => {
-		render(AccordionList, { items });
+		await render(AccordionList, { items });
 
 		await expect.element(page.getByText('Summary 1')).toBeInTheDocument();
 		await expect.element(page.getByText('Summary 2')).toBeInTheDocument();
@@ -48,7 +48,7 @@ describe('AccordionList', () => {
 	});
 
 	test('デフォルトでは全てのdetailsが閉じている', async () => {
-		render(AccordionList, { items });
+		await render(AccordionList, { items });
 
 		const details = page.getByRole('group');
 		const allDetails = details.all();
@@ -59,7 +59,7 @@ describe('AccordionList', () => {
 	});
 
 	test('サマリーをクリックするとdetailsが開閉する', async () => {
-		render(AccordionList, { items });
+		await render(AccordionList, { items });
 
 		const firstSummary = page.getByText('Summary 1');
 		const firstDetails = firstSummary.element().parentElement;
@@ -77,7 +77,7 @@ describe('AccordionList', () => {
 	});
 
 	test('HTMLコンテンツが正しくレンダリングされる', async () => {
-		render(AccordionList, { items });
+		await render(AccordionList, { items });
 
 		const strongContent = page.getByText('Content 2');
 		await expect.element(strongContent).toBeInTheDocument();
@@ -86,7 +86,7 @@ describe('AccordionList', () => {
 	});
 
 	test('空のリストを渡してもエラーにならない', async () => {
-		render(AccordionList, { items: [] });
+		await render(AccordionList, { items: [] });
 
 		const list = page.getByRole('list');
 		await expect.element(list).toBeInTheDocument();

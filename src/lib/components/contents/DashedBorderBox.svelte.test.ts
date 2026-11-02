@@ -9,7 +9,7 @@ describe('DashedBorderBox', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<div>Test Content</div>'
 		}));
-		render(DashedBorderBox, { children });
+		await render(DashedBorderBox, { children });
 
 		const box = page.getByText('Test Content');
 		await expect.element(box).toBeInTheDocument();

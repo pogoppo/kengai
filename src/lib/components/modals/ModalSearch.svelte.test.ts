@@ -34,7 +34,7 @@ describe('ModalSearch', () => {
 	});
 
 	test('正しくレンダリングされること', async () => {
-		render(ModalSearch);
+		await render(ModalSearch);
 		// 検索バーが表示されているか
 		const input = page.getByPlaceholder('キーワードを入力');
 		await expect.element(input).toBeInTheDocument();
@@ -47,7 +47,7 @@ describe('ModalSearch', () => {
 		mockUrl.search = '?q=test';
 		vi.mocked(createSearchURL).mockReturnValue(mockUrl);
 
-		render(ModalSearch);
+		await render(ModalSearch);
 
 		const input = page.getByPlaceholder('キーワードを入力');
 		await input.fill('test');
@@ -69,7 +69,7 @@ describe('ModalSearch', () => {
 		mockUrl.pathname = '/search'; // qパラメータなし
 		vi.mocked(createSearchURL).mockReturnValue(mockUrl);
 
-		render(ModalSearch);
+		await render(ModalSearch);
 
 		const input = page.getByPlaceholder('キーワードを入力');
 		await input.fill('   ');

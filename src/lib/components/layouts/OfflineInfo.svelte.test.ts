@@ -69,7 +69,7 @@ describe('OfflineInfo', () => {
 			}
 		});
 
-		render(OfflineInfo);
+		await render(OfflineInfo);
 
 		const installButton = page.getByRole('button', { name: /オフライン利用を開始/ });
 		await expect.element(installButton).toBeInTheDocument();
@@ -83,7 +83,7 @@ describe('OfflineInfo', () => {
 			}
 		});
 
-		render(OfflineInfo);
+		await render(OfflineInfo);
 
 		const message = page.getByText('オンラインでの設定が必要');
 		await expect.element(message).toBeInTheDocument();
@@ -104,7 +104,7 @@ describe('OfflineInfo', () => {
 			}
 		});
 
-		render(OfflineInfo);
+		await render(OfflineInfo);
 
 		const message = page.getByText('設定中');
 		await expect.element(message).toBeInTheDocument();
@@ -125,7 +125,7 @@ describe('OfflineInfo', () => {
 			}
 		});
 
-		render(OfflineInfo);
+		await render(OfflineInfo);
 
 		const message = page.getByText('更新が利用可能');
 		await expect.element(message).toBeInTheDocument();
@@ -146,7 +146,7 @@ describe('OfflineInfo', () => {
 			}
 		});
 
-		render(OfflineInfo);
+		await render(OfflineInfo);
 
 		const message = page.getByText('オフライン利用が有効');
 		await expect.element(message).toBeInTheDocument();
@@ -167,7 +167,7 @@ describe('OfflineInfo', () => {
 			}
 		});
 
-		render(OfflineInfo);
+		await render(OfflineInfo);
 
 		const message = page.getByText('オフラインで利用中');
 		await expect.element(message).toBeInTheDocument();
@@ -181,7 +181,7 @@ describe('OfflineInfo', () => {
 			}
 		});
 
-		render(OfflineInfo);
+		await render(OfflineInfo);
 
 		expect(window.addEventListener).toHaveBeenCalledWith('online', expect.any(Function));
 		expect(window.addEventListener).toHaveBeenCalledWith('offline', expect.any(Function));
@@ -193,7 +193,7 @@ describe('OfflineInfo', () => {
 			// serviceWorkerプロパティを省略
 		});
 
-		const { container } = render(OfflineInfo);
+		const { container } = await render(OfflineInfo);
 
 		// asideタグは存在するが中身が空
 		const aside = container.querySelector('.offline-info');

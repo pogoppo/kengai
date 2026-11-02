@@ -7,14 +7,14 @@ const imgDataUrl = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
 
 describe('LinkCard', () => {
 	test('正しい内容とリンクでカードが表示される', async () => {
-		render(LinkCard, {
+		await render(LinkCard, {
 			label: 'Card Label',
 			description: 'Card Description',
 			image: imgDataUrl,
 			href: ''
 		});
 
-		const link = page.getByRole('link', { name: 'Card Label' });
+		const link = page.getByRole('link', { name: 'Card Label', exact: false });
 		await expect.element(link).toBeInTheDocument();
 		await expect.element(link).toHaveAttribute('href', '/');
 
@@ -23,7 +23,7 @@ describe('LinkCard', () => {
 	});
 
 	test('画像が正しい属性で表示される', async () => {
-		render(LinkCard, {
+		await render(LinkCard, {
 			label: 'Card Label',
 			description: 'Card Description',
 			image: imgDataUrl,

@@ -14,8 +14,6 @@ export default defineConfig({
 	plugins: [
 		articleIndexPlugin(),
 		sveltekit({
-			// Consult https://svelte.dev/docs/kit/integrations
-			// for more information about preprocessors
 			preprocess: [vitePreprocess()],
 			adapter: adapter(),
 			serviceWorker: { register: false }
@@ -29,8 +27,6 @@ export default defineConfig({
 
 		projects: [
 			{
-				extends: './vite.config.ts',
-
 				test: {
 					name: 'client',
 
@@ -46,8 +42,6 @@ export default defineConfig({
 			},
 
 			{
-				extends: './vite.config.ts',
-
 				test: {
 					name: 'server',
 					environment: 'node',

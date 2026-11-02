@@ -9,7 +9,7 @@ describe('SectionBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<div>Test Content</div>'
 		}));
-		render(SectionBasic, { children });
+		await render(SectionBasic, { children });
 
 		const section = page.getByText('Test Content');
 		await expect.element(section).toBeInTheDocument();
@@ -19,7 +19,7 @@ describe('SectionBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<div>Content</div>'
 		}));
-		render(SectionBasic, { children });
+		await render(SectionBasic, { children });
 
 		const section = page.getByTestId('section-basic');
 		// toHaveStyleがCSS変数に対応していない
@@ -33,7 +33,7 @@ describe('SectionBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<div>Content</div>'
 		}));
-		render(SectionBasic, { color: 'red', children });
+		await render(SectionBasic, { color: 'red', children });
 
 		const section = page.getByTestId('section-basic');
 		// toHaveStyleがCSS変数に対応していない
@@ -44,7 +44,7 @@ describe('SectionBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<div>Content</div>'
 		}));
-		render(SectionBasic, { continuously: true, children });
+		await render(SectionBasic, { continuously: true, children });
 
 		const section = page.getByTestId('section-basic');
 		await expect.element(section).toHaveAttribute('data-continuously', 'true');

@@ -11,7 +11,7 @@ describe('FloatNavigation', () => {
 	];
 
 	test('ナビゲーション項目が正しく表示される', async () => {
-		render(FloatNavigation, { items });
+		await render(FloatNavigation, { items });
 
 		const list = page.getByRole('list');
 		await expect.element(list).toBeInTheDocument();
@@ -28,7 +28,7 @@ describe('FloatNavigation', () => {
 	});
 
 	test('ボタンクリックでアクションが実行される', async () => {
-		render(FloatNavigation, { items });
+		await render(FloatNavigation, { items });
 
 		// クリックを受け付けるように
 		const list = page.getByRole('list').element();
@@ -49,7 +49,7 @@ describe('FloatNavigation', () => {
 			{ action: vi.fn(), label: 'Highlighted Button', icon: faCheck, highlight: true }
 		];
 
-		render(FloatNavigation, { items: itemsWithHighlight });
+		await render(FloatNavigation, { items: itemsWithHighlight });
 
 		const normalButton = page.getByRole('button', { name: 'Normal Button' });
 		await expect.element(normalButton).toHaveAttribute('data-highlight', 'false');
@@ -61,7 +61,7 @@ describe('FloatNavigation', () => {
 	test('highlightが未設定の場合はdata-highlightがfalseになる', async () => {
 		const itemsWithoutHighlight = [{ action: vi.fn(), label: 'Default Button', icon: faCheck }];
 
-		render(FloatNavigation, { items: itemsWithoutHighlight });
+		await render(FloatNavigation, { items: itemsWithoutHighlight });
 
 		const button = page.getByRole('button', { name: 'Default Button' });
 		await expect.element(button).toHaveAttribute('data-highlight', 'false');
@@ -75,7 +75,7 @@ describe('FloatNavigation', () => {
 			{ action: vi.fn(), label: 'Button 4', icon: faCheck, highlight: true }
 		];
 
-		render(FloatNavigation, { items: itemsWithMixedHighlight });
+		await render(FloatNavigation, { items: itemsWithMixedHighlight });
 
 		const button1 = page.getByRole('button', { name: 'Button 1' });
 		await expect.element(button1).toHaveAttribute('data-highlight', 'false');

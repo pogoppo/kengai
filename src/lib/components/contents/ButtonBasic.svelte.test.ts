@@ -10,7 +10,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>テストボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children
 		});
 
@@ -22,7 +22,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>リンクボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			as: 'a',
 			href: '/test-link'
@@ -37,7 +37,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>プライマリーボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			variant: 'primary'
 		});
@@ -50,7 +50,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>アクセントボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			variant: 'accent'
 		});
@@ -63,7 +63,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>危険ボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			variant: 'danger'
 		});
@@ -76,7 +76,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>アイコン付きボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			icon: faCoffee
 		});
@@ -92,7 +92,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>丸いボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			rounded: true
 		});
@@ -105,7 +105,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>角ばったボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			rounded: false
 		});
@@ -118,7 +118,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>無効なボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			disabled: true
 		});
@@ -131,7 +131,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>カスタム属性ボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			'data-testid': 'custom-button',
 			'aria-label': 'カスタムラベル'
@@ -148,7 +148,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>テストボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			class: 'custom-class'
 		});
@@ -166,7 +166,7 @@ describe('ButtonBasic', () => {
 		const children = createRawSnippet(() => ({
 			render: () => '<span>複合ボタン</span>'
 		}));
-		render(ButtonBasic, {
+		await render(ButtonBasic, {
 			children,
 			variant: 'accent',
 			icon: faCoffee,

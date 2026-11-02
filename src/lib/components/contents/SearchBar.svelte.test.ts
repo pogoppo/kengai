@@ -6,7 +6,7 @@ import SearchBar from './SearchBar.svelte';
 describe('SearchBar', () => {
 	test('プレースホルダーが表示される', async () => {
 		const onSearch = vi.fn();
-		render(SearchBar, { onSearch, placeholder: 'Search here...' });
+		await render(SearchBar, { onSearch, placeholder: 'Search here...' });
 
 		const input = page.getByPlaceholder('Search here...');
 		await expect.element(input).toBeInTheDocument();
@@ -14,7 +14,7 @@ describe('SearchBar', () => {
 
 	test('初期値が設定される', async () => {
 		const onSearch = vi.fn();
-		render(SearchBar, { onSearch, value: 'initial query' });
+		await render(SearchBar, { onSearch, value: 'initial query' });
 
 		const input = page.getByRole('searchbox');
 		await expect.element(input).toHaveValue('initial query');
@@ -22,7 +22,7 @@ describe('SearchBar', () => {
 
 	test('EnterキーでonSearchが呼ばれる', async () => {
 		const onSearch = vi.fn();
-		render(SearchBar, { onSearch });
+		await render(SearchBar, { onSearch });
 
 		const input = page.getByRole('searchbox');
 		await input.fill('search query');
@@ -33,7 +33,7 @@ describe('SearchBar', () => {
 
 	test('検索ボタンでonSearchが呼ばれる', async () => {
 		const onSearch = vi.fn();
-		render(SearchBar, { onSearch });
+		await render(SearchBar, { onSearch });
 
 		const input = page.getByRole('searchbox');
 		await input.fill('another query');
@@ -46,7 +46,7 @@ describe('SearchBar', () => {
 
 	test('focusedプロパティがtrueの場合、inputがフォーカスされる', async () => {
 		const onSearch = vi.fn();
-		render(SearchBar, { onSearch, focused: true });
+		await render(SearchBar, { onSearch, focused: true });
 
 		const input = page.getByRole('searchbox');
 		await expect.element(input).toHaveFocus();

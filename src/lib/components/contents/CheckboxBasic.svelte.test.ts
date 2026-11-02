@@ -5,7 +5,7 @@ import CheckboxBasic from './CheckboxBasic.svelte';
 
 describe('CheckboxBasic', () => {
 	test('デフォルトの状態でチェックボックスがレンダリングされる', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			ariaLabel: 'テストチェックボックス'
 		});
 
@@ -15,7 +15,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('checked="true"を指定するとチェック状態でレンダリングされる', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			checked: true,
 			ariaLabel: 'チェック済みチェックボックス'
 		});
@@ -25,7 +25,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('disabled="true"を指定すると無効状態でレンダリングされる', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			disabled: true,
 			ariaLabel: '無効なチェックボックス'
 		});
@@ -35,7 +35,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('name属性が正しく適用される', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			name: 'test-checkbox',
 			ariaLabel: 'name属性付きチェックボックス'
 		});
@@ -45,7 +45,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('value属性が正しく適用される', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			value: 'test-value',
 			ariaLabel: 'value属性付きチェックボックス'
 		});
@@ -55,7 +55,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('aria-label属性が正しく適用される', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			ariaLabel: 'カスタムアリアラベル'
 		});
 
@@ -64,7 +64,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('aria-labelledby属性が正しく適用される', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			ariaLabelledby: 'label-id'
 		});
 
@@ -73,7 +73,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('aria-describedby属性が正しく適用される', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			ariaDescribedby: 'description-id',
 			ariaLabel: 'description付きチェックボックス'
 		});
@@ -83,7 +83,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('クリックでチェック状態が切り替わる', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			ariaLabel: 'クリック可能なチェックボックス'
 		});
 
@@ -98,7 +98,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('スペースキーでチェック状態が切り替わる', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			ariaLabel: 'キーボード操作可能なチェックボックス'
 		});
 
@@ -116,7 +116,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('Enterキーでチェック状態が切り替わる', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			ariaLabel: 'Enter操作可能なチェックボックス'
 		});
 
@@ -132,7 +132,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('無効状態ではクリックできない', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			disabled: true,
 			ariaLabel: '無効なクリック不可チェックボックス'
 		});
@@ -145,7 +145,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('無効状態ではキーボード操作できない', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			disabled: true,
 			ariaLabel: '無効なキーボード操作不可チェックボックス'
 		});
@@ -163,7 +163,7 @@ describe('CheckboxBasic', () => {
 	test('onchange コールバックが呼び出される', async () => {
 		const onchangeMock = vi.fn();
 
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			onchange: onchangeMock,
 			ariaLabel: 'onchange付きチェックボックス'
 		});
@@ -175,7 +175,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('チェック状態に応じてdata-checked属性が変わる', async () => {
-		const { container } = render(CheckboxBasic, {
+		const { container } = await render(CheckboxBasic, {
 			ariaLabel: 'data-checked確認用チェックボックス'
 		});
 
@@ -188,7 +188,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('無効状態のときdata-disabled属性が設定される', async () => {
-		const { container } = render(CheckboxBasic, {
+		const { container } = await render(CheckboxBasic, {
 			disabled: true,
 			ariaLabel: 'data-disabled確認用チェックボックス'
 		});
@@ -198,7 +198,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('有効状態のときdata-disabled属性がfalseになる', async () => {
-		const { container } = render(CheckboxBasic, {
+		const { container } = await render(CheckboxBasic, {
 			disabled: false,
 			ariaLabel: 'data-disabled確認用チェックボックス'
 		});
@@ -208,7 +208,7 @@ describe('CheckboxBasic', () => {
 	});
 
 	test('複数のプロパティを組み合わせて使用できる', async () => {
-		render(CheckboxBasic, {
+		await render(CheckboxBasic, {
 			checked: true,
 			name: 'combined-checkbox',
 			value: 'combined-value',

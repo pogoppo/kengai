@@ -30,7 +30,7 @@ describe('ArticleList', () => {
 
 	describe('デフォルトモード（リンク表示）', () => {
 		test('記事リストが正しく表示される', async () => {
-			render(ArticleList, { articles });
+			await render(ArticleList, { articles });
 
 			const list = page.getByRole('list');
 			await expect.element(list).toBeInTheDocument();
@@ -41,7 +41,7 @@ describe('ArticleList', () => {
 		});
 
 		test('記事リンクが正しい属性で表示される', async () => {
-			render(ArticleList, { articles });
+			await render(ArticleList, { articles });
 
 			const firstLink = page.getByRole('link', { name: /First Article/ });
 			await expect.element(firstLink).toBeInTheDocument();
@@ -56,22 +56,22 @@ describe('ArticleList', () => {
 		});
 
 		test('記事の説明文が表示される', async () => {
-			render(ArticleList, { articles });
+			await render(ArticleList, { articles });
 
-			await expect.element(page.getByText('Description 1')).toBeInTheDocument();
-			await expect.element(page.getByText('Description 2')).toBeInTheDocument();
-			await expect.element(page.getByText('Description 3')).toBeInTheDocument();
+			await expect.element(page.getByText('Description 1', { exact: false })).toBeInTheDocument();
+			await expect.element(page.getByText('Description 2', { exact: false })).toBeInTheDocument();
+			await expect.element(page.getByText('Description 3', { exact: false })).toBeInTheDocument();
 		});
 
 		test('記事のタグが表示される', async () => {
-			render(ArticleList, { articles });
+			await render(ArticleList, { articles });
 
 			await expect.element(page.getByText(/#tag1 #tag2/)).toBeInTheDocument();
 			await expect.element(page.getByText(/#tag3/)).toBeInTheDocument();
 		});
 
 		test('チェックボックスが表示されない', async () => {
-			render(ArticleList, { articles });
+			await render(ArticleList, { articles });
 
 			const checkboxes = page.getByRole('checkbox');
 			const count = checkboxes.length;
@@ -81,7 +81,7 @@ describe('ArticleList', () => {
 
 	describe('チェック可能モード（checkable=true）', () => {
 		test('チェックボックス付きリストが表示される', async () => {
-			render(ArticleList, { articles, checkable: true });
+			await render(ArticleList, { articles, checkable: true });
 
 			const checkboxes = page.getByRole('checkbox');
 			const count = checkboxes.length;
@@ -89,7 +89,7 @@ describe('ArticleList', () => {
 		});
 
 		test('リンクではなくラベルが表示される', async () => {
-			render(ArticleList, { articles, checkable: true });
+			await render(ArticleList, { articles, checkable: true });
 
 			const links = page.getByRole('link');
 			const linkCount = links.length;
@@ -101,7 +101,7 @@ describe('ArticleList', () => {
 		});
 
 		test('チェックボックスをクリックするとcheckedArticlesに追加される', async () => {
-			render(ArticleList, {
+			await render(ArticleList, {
 				articles,
 				checkable: true
 			});
@@ -120,7 +120,7 @@ describe('ArticleList', () => {
 		});
 
 		test('チェック済みの記事を再度クリックするとcheckedArticlesから削除される', async () => {
-			render(ArticleList, {
+			await render(ArticleList, {
 				articles,
 				checkable: true,
 				checkedArticles: new Set<string>(['article-1'])
@@ -140,7 +140,7 @@ describe('ArticleList', () => {
 		});
 
 		test('複数の記事をチェックできる', async () => {
-			render(ArticleList, {
+			await render(ArticleList, {
 				articles,
 				checkable: true
 			});
@@ -167,7 +167,7 @@ describe('ArticleList', () => {
 
 		test('checkedArticlesの初期値が反映される', async () => {
 			const checkedArticles = new Set<string>(['article-2', 'article-3']);
-			render(ArticleList, {
+			await render(ArticleList, {
 				articles,
 				checkable: true,
 				checkedArticles
@@ -184,9 +184,9 @@ describe('ArticleList', () => {
 		});
 
 		test('チェックボックスモードでも記事の説明文とタグが表示される', async () => {
-			render(ArticleList, { articles, checkable: true });
+			await render(ArticleList, { articles, checkable: true });
 
-			await expect.element(page.getByText('Description 1')).toBeInTheDocument();
+			await expect.element(page.getByText('Description 1', { exact: false })).toBeInTheDocument();
 			await expect.element(page.getByText(/#tag1 #tag2/)).toBeInTheDocument();
 			await expect.element(page.getByText(/#tag3/)).toBeInTheDocument();
 		});
@@ -194,12 +194,12 @@ describe('ArticleList', () => {
 
 	describe('空の記事リスト', () => {
 		test('記事がない場合はメッセージが表示される', async () => {
-			render(ArticleList, { articles: [] });
+			await render(ArticleList, { articles: [] });
 			await expect.element(page.getByText('記事が見つかりませんでした。')).toBeInTheDocument();
 		});
 
 		test('記事がない場合はリストが表示されない', async () => {
-			render(ArticleList, { articles: [] });
+			await render(ArticleList, { articles: [] });
 
 			const lists = page.getByRole('list');
 			const count = lists.length;
@@ -207,7 +207,7 @@ describe('ArticleList', () => {
 		});
 
 		test('checkable=trueでも記事がない場合はメッセージが表示される', async () => {
-			render(ArticleList, { articles: [], checkable: true });
+			await render(ArticleList, { articles: [], checkable: true });
 			await expect.element(page.getByText('記事が見つかりませんでした。')).toBeInTheDocument();
 		});
 	});
@@ -225,14 +225,14 @@ describe('ArticleList', () => {
 				}
 			];
 
-			const { container } = render(ArticleList, { articles: articlesWithThumbnail });
+			const { container } = await render(ArticleList, { articles: articlesWithThumbnail });
 
 			const image = container.querySelector('.article-thumbnail img');
 			expect(image?.getAttribute('src')).toBe('/images/articles/cat1/with-thumbnail/first.webp');
 		});
 
 		test('thumbnailが未指定の記事ではサムネイルの枠自体が描画されない', async () => {
-			const { container } = render(ArticleList, { articles });
+			const { container } = await render(ArticleList, { articles });
 
 			expect(container.querySelectorAll('.article-thumbnail').length).toBe(0);
 		});
@@ -249,7 +249,7 @@ describe('ArticleList', () => {
 				}
 			];
 
-			const { container } = render(ArticleList, {
+			const { container } = await render(ArticleList, {
 				articles: articlesWithThumbnail,
 				checkable: true
 			});
@@ -271,7 +271,7 @@ describe('ArticleList', () => {
 				}
 			];
 
-			const { container } = render(ArticleList, { articles: articlesWithoutTags });
+			const { container } = await render(ArticleList, { articles: articlesWithoutTags });
 
 			const tagText = container.querySelector('tag-text');
 			expect(tagText?.textContent?.trim()).toBe('');
@@ -288,7 +288,7 @@ describe('ArticleList', () => {
 				}
 			];
 
-			render(ArticleList, { articles: articlesWithSingleTag });
+			await render(ArticleList, { articles: articlesWithSingleTag });
 
 			await expect.element(page.getByText('#solo')).toBeInTheDocument();
 		});

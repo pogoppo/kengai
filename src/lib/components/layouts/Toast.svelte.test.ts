@@ -17,14 +17,14 @@ describe('Toast', () => {
 	});
 
 	test('トーストが無い場合は何も表示されない', async () => {
-		const { container } = render(Toast);
+		const { container } = await render(Toast);
 
 		const toasts = container.querySelectorAll('toast-item');
 		expect(toasts).toHaveLength(0);
 	});
 
 	test('showで追加したメッセージが表示される', async () => {
-		const { container } = render(Toast);
+		const { container } = await render(Toast);
 
 		toastState.show('保存しました');
 
@@ -34,7 +34,7 @@ describe('Toast', () => {
 	});
 
 	test('閉じるボタンをクリックするとトーストが削除される', async () => {
-		render(Toast);
+		await render(Toast);
 
 		toastState.show('保存しました');
 		const closeButton = page.getByRole('button', { name: '閉じる' });
@@ -46,7 +46,7 @@ describe('Toast', () => {
 	});
 
 	test('閉じる際はトランジション終了後にDOMから削除される', async () => {
-		const { container } = render(Toast);
+		const { container } = await render(Toast);
 
 		toastState.show('保存しました');
 		await expect.element(page.getByText('保存しました')).toBeInTheDocument();
@@ -64,7 +64,7 @@ describe('Toast', () => {
 	});
 
 	test('複数のトーストを表示できる', async () => {
-		const { container } = render(Toast);
+		const { container } = await render(Toast);
 
 		toastState.show('メッセージ1');
 		toastState.show('メッセージ2');

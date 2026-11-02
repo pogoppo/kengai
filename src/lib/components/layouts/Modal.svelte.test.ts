@@ -11,7 +11,7 @@ vi.mock('#lib/paraglide/messages.js', () => ({
 
 describe('Modal', () => {
 	test('デフォルトではダイアログは表示されない', async () => {
-		render(Modal, { open: false });
+		await render(Modal, { open: false });
 
 		const dialog = document.querySelector('dialog');
 		expect(dialog).not.toBeNull();
@@ -19,7 +19,7 @@ describe('Modal', () => {
 	});
 
 	test('openプロパティがtrueの場合、ダイアログが表示される', async () => {
-		render(Modal, { open: true });
+		await render(Modal, { open: true });
 
 		const closeButton = page.getByRole('button', { name: '閉じる' });
 		await expect.element(closeButton).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('Modal', () => {
 	});
 
 	test('閉じるボタンをクリックするとダイアログが閉じる', async () => {
-		render(Modal, { open: true });
+		await render(Modal, { open: true });
 
 		const closeButton = page.getByRole('button', { name: '閉じる' });
 		await closeButton.click();

@@ -11,7 +11,7 @@ describe('SectionBasicHeading', () => {
 			render: () => '<span>テスト見出し</span>'
 		}));
 
-		render(SectionBasicHeading, {
+		await render(SectionBasicHeading, {
 			level: 2,
 			children
 		});
@@ -26,7 +26,7 @@ describe('SectionBasicHeading', () => {
 			render: () => '<span>アイコン付き見出し</span>'
 		}));
 
-		render(SectionBasicHeading, {
+		await render(SectionBasicHeading, {
 			level: 3,
 			icon: faCoffee,
 			children
@@ -42,7 +42,7 @@ describe('SectionBasicHeading', () => {
 			render: () => '<span>H1見出し</span>'
 		}));
 
-		render(SectionBasicHeading, {
+		await render(SectionBasicHeading, {
 			level: 1,
 			children
 		});
@@ -56,7 +56,7 @@ describe('SectionBasicHeading', () => {
 			render: () => '<span>H6見出し</span>'
 		}));
 
-		render(SectionBasicHeading, {
+		await render(SectionBasicHeading, {
 			level: 6,
 			icon: faCoffee,
 			children

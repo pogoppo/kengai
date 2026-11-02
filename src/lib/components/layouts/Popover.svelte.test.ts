@@ -10,19 +10,19 @@ const children = createRawSnippet(() => ({
 
 describe('Popover', () => {
 	test('子要素は常に表示される', async () => {
-		render(Popover, { children, message: '説明テキスト' });
+		await render(Popover, { children, message: '説明テキスト' });
 
 		await expect.element(page.getByRole('button', { name: 'トリガー' })).toBeInTheDocument();
 	});
 
 	test('openがfalseの場合は吹き出しが表示されない', async () => {
-		const { container } = render(Popover, { children, message: '説明テキスト' });
+		const { container } = await render(Popover, { children, message: '説明テキスト' });
 
 		expect(container.querySelector('popover-box')).toBeNull();
 	});
 
 	test('openがtrueの場合はmessageが吹き出しに表示される', async () => {
-		render(Popover, { children, message: '説明テキスト', open: true });
+		await render(Popover, { children, message: '説明テキスト', open: true });
 
 		const tooltip = page.getByRole('tooltip');
 		await expect.element(tooltip).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('Popover', () => {
 	});
 
 	test('閉じる際はトランジション終了後にDOMから削除される', async () => {
-		const { container, rerender } = render(Popover, {
+		const { container, rerender } = await render(Popover, {
 			children,
 			message: '説明テキスト',
 			open: true
@@ -50,7 +50,7 @@ describe('Popover', () => {
 	});
 
 	test('吹き出しは子要素のアンカー名を参照して配置される', async () => {
-		const { container } = render(Popover, { children, message: '説明テキスト', open: true });
+		const { container } = await render(Popover, { children, message: '説明テキスト', open: true });
 
 		const wrapper = container.querySelector('popover-wrapper') as HTMLElement;
 		const anchorName = wrapper.style.getPropertyValue('--popover-anchor-name').trim();

@@ -11,7 +11,7 @@ describe('GlobalHeader', () => {
 	});
 
 	test('ロゴが表示され、トップページへのリンクが設定されている', async () => {
-		render(GlobalHeader);
+		await render(GlobalHeader);
 
 		const header = page.getByRole('banner');
 		await expect.element(header).toBeInTheDocument();
@@ -25,7 +25,7 @@ describe('GlobalHeader', () => {
 	});
 
 	test('isHomeプロパティがtrueの場合、ロゴはh1タグで囲まれる', async () => {
-		render(GlobalHeader, { isHome: true });
+		await render(GlobalHeader, { isHome: true });
 
 		const header = page.getByRole('banner');
 		await expect.element(header).toBeInTheDocument();
@@ -37,7 +37,7 @@ describe('GlobalHeader', () => {
 	});
 
 	test('isHomeプロパティがfalse（デフォルト）の場合、ロゴはh1タグで囲まれない', async () => {
-		render(GlobalHeader, { isHome: false });
+		await render(GlobalHeader, { isHome: false });
 
 		const header = page.getByRole('banner');
 		await expect.element(header).toBeInTheDocument();
@@ -50,7 +50,7 @@ describe('GlobalHeader', () => {
 	});
 
 	test('初回アクセスではオフライン利用の案内が表示される', async () => {
-		const { container } = render(GlobalHeader);
+		const { container } = await render(GlobalHeader);
 
 		// 表示までの遅延があるため要素が現れるまで待つ
 		await vi.waitFor(
@@ -68,7 +68,7 @@ describe('GlobalHeader', () => {
 
 	test('2回目以降のアクセスでは案内が表示されない', async () => {
 		localStorage.setItem(VISITED_STORAGE_KEY, 'true');
-		const { container } = render(GlobalHeader);
+		const { container } = await render(GlobalHeader);
 
 		// 表示までの遅延を過ぎても表示されないこと
 		await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -77,7 +77,7 @@ describe('GlobalHeader', () => {
 	});
 
 	test('表示時間が経過すると案内が閉じる', async () => {
-		const { container } = render(GlobalHeader);
+		const { container } = await render(GlobalHeader);
 		await vi.waitFor(
 			() => {
 				expect(container.querySelector('popover-box')).not.toBeNull();

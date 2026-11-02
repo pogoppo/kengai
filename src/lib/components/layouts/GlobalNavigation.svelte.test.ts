@@ -51,7 +51,7 @@ describe('GlobalNavigation', () => {
 
 	test('メインナビゲーションが表示され、現在のページがアクティブになっている', async () => {
 		mocks.pathname = '/favorite';
-		render(GlobalNavigation);
+		await render(GlobalNavigation);
 
 		const nav = user.getByRole('navigation', { name: 'グローバルナビゲーション' });
 		await expect.element(nav).toBeInTheDocument();
@@ -72,7 +72,7 @@ describe('GlobalNavigation', () => {
 
 	test('通常ページではサブナビゲーションに「検索」と「トップへ戻る」のみが表示される', async () => {
 		mocks.pathname = '/category/_mock'; // 記事ページ以外
-		render(GlobalNavigation);
+		await render(GlobalNavigation);
 
 		const searchBtn = user.getByRole('button', { name: '検索' });
 		await expect.element(searchBtn).toBeInTheDocument();
@@ -85,7 +85,7 @@ describe('GlobalNavigation', () => {
 	});
 
 	test('`isArticlePage = true`ではサブナビゲーションに「お気に入り追加」が表示される', async () => {
-		render(GlobalNavigation, { isArticlePage: true });
+		await render(GlobalNavigation, { isArticlePage: true });
 
 		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
 		await expect.element(addFavBtn).toBeInTheDocument();
@@ -99,7 +99,7 @@ describe('GlobalNavigation', () => {
 
 	test('お気に入り追加ボタンをクリックするとfavoriteState.toggle()が呼ばれる', async () => {
 		mocks.pathname = '/article/_mock/example';
-		render(GlobalNavigation, { isArticlePage: true });
+		await render(GlobalNavigation, { isArticlePage: true });
 
 		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
 		await addFavBtn.click({ force: true });
@@ -110,7 +110,7 @@ describe('GlobalNavigation', () => {
 
 	test('お気に入りに追加するとToastが表示される', async () => {
 		mocks.pathname = '/article/_mock/example';
-		render(GlobalNavigation, { isArticlePage: true });
+		await render(GlobalNavigation, { isArticlePage: true });
 
 		// クリック後は登録済みになる想定
 		mocks.favoriteCheck.mockReturnValue(true);
@@ -125,7 +125,7 @@ describe('GlobalNavigation', () => {
 	test('お気に入りから削除するとToastが表示される', async () => {
 		mocks.pathname = '/article/_mock/example';
 		mocks.favoriteCheck.mockReturnValue(true);
-		render(GlobalNavigation, { isArticlePage: true });
+		await render(GlobalNavigation, { isArticlePage: true });
 
 		// クリック後は未登録になる想定
 		mocks.favoriteCheck.mockReturnValue(false);
@@ -141,7 +141,7 @@ describe('GlobalNavigation', () => {
 		mocks.pathname = '/article/_mock/example';
 		mocks.favoriteCheck.mockReturnValue(true);
 
-		render(GlobalNavigation, { isArticlePage: true });
+		await render(GlobalNavigation, { isArticlePage: true });
 
 		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
 		await expect.element(addFavBtn).toBeInTheDocument();
@@ -152,7 +152,7 @@ describe('GlobalNavigation', () => {
 		mocks.pathname = '/article/_mock/example';
 		mocks.favoriteCheck.mockReturnValue(false);
 
-		render(GlobalNavigation, { isArticlePage: true });
+		await render(GlobalNavigation, { isArticlePage: true });
 
 		const addFavBtn = user.getByRole('button', { name: 'お気に入り追加' });
 		await expect.element(addFavBtn).toBeInTheDocument();
