@@ -35,7 +35,7 @@ Run tests with:
 
 ### File Extensions & Preprocessors
 
-- Uses `vitePreprocess()` preprocessor ([svelte.config.js](svelte.config.js))
+- Uses `vitePreprocess()` preprocessor
 - Article content is managed in Markdown files with frontmatter, processed via `gray-matter`
 
 ### Deployment
