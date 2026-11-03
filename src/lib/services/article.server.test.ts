@@ -29,7 +29,7 @@ describe('getArticle', () => {
 
 	it('記事が存在しファイルが有効な場合、記事データとHTMLコンテンツを返すこと', async () => {
 		// Arrange
-		vi.mocked(articleRepository.findBySlug).mockReturnValue(mockArticle);
+		vi.mocked(articleRepository.find).mockReturnValue(mockArticle);
 		vi.mocked(readFile).mockResolvedValue(`---
 title: Test
 ---
@@ -40,7 +40,7 @@ title: Test
 		const result = await getArticle(mockCategory, mockSlug);
 
 		// Assert
-		expect(articleRepository.findBySlug).toHaveBeenCalledWith(mockSlug);
+		expect(articleRepository.find).toHaveBeenCalledWith(mockCategory, mockSlug);
 		expect(readFile).toHaveBeenCalled(); // パスの検証は複雑になるため省略または別途検証
 		expect(marked).toHaveBeenCalledWith('# Hello World');
 		expect(result).toEqual({
@@ -51,7 +51,7 @@ title: Test
 
 	it('リポジトリに記事が存在しない場合、NOT_FOUNDエラーを投げること', async () => {
 		// Arrange
-		vi.mocked(articleRepository.findBySlug).mockReturnValue(undefined);
+		vi.mocked(articleRepository.find).mockReturnValue(undefined);
 
 		// Act & Assert
 		await expect(getArticle(mockCategory, mockSlug)).rejects.toThrow(
@@ -61,7 +61,7 @@ title: Test
 
 	it('ファイルの読み込みに失敗した場合、INTERNAL_ERRORを投げること', async () => {
 		// Arrange
-		vi.mocked(articleRepository.findBySlug).mockReturnValue(mockArticle);
+		vi.mocked(articleRepository.find).mockReturnValue(mockArticle);
 		vi.mocked(readFile).mockRejectedValue(new Error('File system error'));
 
 		// Act & Assert

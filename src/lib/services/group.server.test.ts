@@ -6,7 +6,7 @@ import { articleRepository } from '#lib/repositories/article.js';
 // モック
 vi.mock('#lib/repositories/article.js', () => ({
 	articleRepository: {
-		findBySlugs: vi.fn()
+		findByKeys: vi.fn()
 	}
 }));
 
@@ -35,7 +35,7 @@ describe('getGroupWithArticles', () => {
 			{ slug: 'art1', title: 'Article 1', description: 'Desc 1', category: 'test-cat', tags: [] },
 			{ slug: 'art2', title: 'Article 2', description: 'Desc 2', category: 'test-cat', tags: [] }
 		];
-		vi.mocked(articleRepository.findBySlugs).mockReturnValue(mockArticles);
+		vi.mocked(articleRepository.findByKeys).mockReturnValue(mockArticles);
 
 		// Act
 		const result = getGroupWithArticles('test-group');
@@ -43,7 +43,7 @@ describe('getGroupWithArticles', () => {
 		// Assert
 		expect(result.slug).toBe('test-group');
 		expect(result.sections[0].articles).toEqual(mockArticles);
-		expect(articleRepository.findBySlugs).toHaveBeenCalledWith(['art1', 'art2']);
+		expect(articleRepository.findByKeys).toHaveBeenCalledWith(['test-cat/art1', 'test-cat/art2']);
 	});
 
 	it('グループが存在しない場合、NOT_FOUNDエラーを投げること', () => {

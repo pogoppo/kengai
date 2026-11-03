@@ -41,30 +41,42 @@ describe('ArticleRepository', () => {
 		});
 	});
 
-	describe('findBySlug', () => {
-		it('スラッグが一致する場合、記事を返すこと', () => {
-			const result = repository.findBySlug('article-1');
+	describe('find', () => {
+		it('カテゴリとスラッグが一致する場合、記事を返すこと', () => {
+			const result = repository.find('tech', 'article-1');
 			expect(result).toEqual(mockArticles[0]);
 		});
 
 		it('スラッグが一致しない場合、undefinedを返すこと', () => {
-			const result = repository.findBySlug('non-existent');
+			const result = repository.find('tech', 'non-existent');
 			expect(result).toBeUndefined();
+		});
+
+		it('スラッグが一致してもカテゴリが異なる場合、undefinedを返すこと', () => {
+			const result = repository.find('life', 'article-1');
+			expect(result).toBeUndefined();
+		});
+
+		it('カテゴリが異なれば同じスラッグの記事を区別できること', () => {
+			const sameSlugArticle: ArticleSummary = { ...mockArticles[2], slug: 'article-1' };
+			const repo = new ArticleRepository([mockArticles[0], sameSlugArticle]);
+			expect(repo.find('tech', 'article-1')).toEqual(mockArticles[0]);
+			expect(repo.find('life', 'article-1')).toEqual(sameSlugArticle);
 		});
 	});
 
-	describe('findBySlugs', () => {
-		it('スラッグのリストに一致する記事を返すこと', () => {
-			const slugs = ['article-1', 'article-3'];
-			const result = repository.findBySlugs(slugs);
+	describe('findByKeys', () => {
+		it('記事キーのリストに一致する記事を返すこと', () => {
+			const keys = ['tech/article-1', 'life/article-3'];
+			const result = repository.findByKeys(keys);
 			expect(result).toHaveLength(2);
 			expect(result).toContainEqual(mockArticles[0]);
 			expect(result).toContainEqual(mockArticles[2]);
 		});
 
-		it('存在しないスラッグを無視すること', () => {
-			const slugs = ['article-1', 'non-existent'];
-			const result = repository.findBySlugs(slugs);
+		it('存在しない記事キーを無視すること', () => {
+			const keys = ['tech/article-1', 'tech/non-existent', 'article-3'];
+			const result = repository.findByKeys(keys);
 			expect(result).toHaveLength(1);
 			expect(result[0]).toEqual(mockArticles[0]);
 		});
@@ -83,19 +95,6 @@ describe('ArticleRepository', () => {
 		});
 	});
 
-	describe('findByTag', () => {
-		it('指定されたタグを持つ記事を返すこと', () => {
-			const result = repository.findByTag('web');
-			expect(result).toHaveLength(2);
-			expect(result.map((a) => a.slug)).toEqual(['article-1', 'article-2']);
-		});
-
-		it('存在しないタグの場合、空の配列を返すこと', () => {
-			const result = repository.findByTag('non-existent');
-			expect(result).toEqual([]);
-		});
-	});
-
 	describe('getAllCategories', () => {
 		it('すべてのユニークなカテゴリを返すこと', () => {
 			const result = repository.getAllCategories();
@@ -105,38 +104,23 @@ describe('ArticleRepository', () => {
 		});
 	});
 
-	describe('getAllTags', () => {
-		it('すべてのユニークなタグを返すこと', () => {
-			const result = repository.getAllTags();
-			expect(result).toHaveLength(5);
-			expect(result).toContain('javascript');
-			expect(result).toContain('typescript');
-			expect(result).toContain('web');
-			expect(result).toContain('outdoor');
-			expect(result).toContain('camping');
+	describe('filter', () => {
+		it('条件が空の場合、すべての記事を返すこと', () => {
+			const result = repository.filter({ query: '' });
+			expect(result).toHaveLength(3);
 		});
-	});
 
-	describe('search', () => {
-		it('クエリが空の場合、すべての記事を返すこと', () => {
-			const result = repository.search('');
+		it('空白のみのクエリの場合、すべての記事を返すこと', () => {
+			const result = repository.filter({ query: '　 ' });
 			expect(result).toHaveLength(3);
 		});
 
 		it('タイトルであいまい検索を行うこと', () => {
-			const result = repository.search('Tech');
+			const result = repository.filter({ query: 'Tech' });
 			expect(result.length).toBeGreaterThanOrEqual(2);
 			expect(result).toEqual(expect.arrayContaining([mockArticles[0], mockArticles[1]]));
 		});
 
-		it('説明文であいまい検索を行うこと', () => {
-			const result = repository.search('outdoor');
-			expect(result).toHaveLength(1);
-			expect(result[0]).toEqual(mockArticles[2]);
-		});
-	});
-
-	describe('filter', () => {
 		it('クエリでフィルタリングすること', () => {
 			const result = repository.filter({ query: 'outdoor' });
 			expect(result).toHaveLength(1);

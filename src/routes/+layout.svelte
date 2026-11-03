@@ -2,9 +2,6 @@
 	import { browser } from '$app/env';
 	import { onNavigate } from '$app/navigation';
 
-	import { setLocale } from '#lib/paraglide/runtime.js';
-	setLocale('ja');
-
 	import 'kiso.css';
 
 	import { config } from '@fortawesome/fontawesome-svg-core';

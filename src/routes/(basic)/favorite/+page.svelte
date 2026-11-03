@@ -20,7 +20,7 @@
 	});
 
 	let favoriteEntries = $derived(mounted ? favoriteState.entries() : []);
-	let articles = $derived(articleRepository.findBySlugs(favoriteEntries));
+	let articles = $derived(articleRepository.findByKeys(favoriteEntries));
 	let isEditMode = $state(false);
 	let checkedArticles = $state(new Set<string>());
 
@@ -34,8 +34,8 @@
 			return;
 		}
 
-		for (const slug of checkedArticles) {
-			favoriteState.delete(slug);
+		for (const key of checkedArticles) {
+			favoriteState.delete(key);
 		}
 		favoriteEntries = favoriteState.entries();
 		checkedArticles = new Set();

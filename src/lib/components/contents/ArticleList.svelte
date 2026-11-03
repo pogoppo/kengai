@@ -3,6 +3,7 @@
 	import { SvelteSet } from 'svelte/reactivity';
 	import { m } from '#lib/paraglide/messages.js';
 	import type { ArticleSummary } from '#lib/types/article.js';
+	import { toArticleKey } from '#lib/utils/article.js';
 	import CheckboxBasic from './CheckboxBasic.svelte';
 	import DashedBorderBox from './DashedBorderBox.svelte';
 
@@ -17,12 +18,12 @@
 		checkedArticles = $bindable(new Set<string>())
 	}: ArticleListProps = $props();
 
-	function toggleArticleCheck(slug: string) {
+	function toggleArticleCheck(key: string) {
 		const newSet = new SvelteSet(checkedArticles);
-		if (newSet.has(slug)) {
-			newSet.delete(slug);
+		if (newSet.has(key)) {
+			newSet.delete(key);
 		} else {
-			newSet.add(slug);
+			newSet.add(key);
 		}
 		checkedArticles = newSet;
 	}
@@ -43,7 +44,7 @@
 
 {#snippet articleList()}
 	<ul class="article-list">
-		{#each articles as article (article.slug)}
+		{#each articles as article (toArticleKey(article))}
 			<li>
 				<article>
 					<a class="article-item" href={resolve(`article/${article.category}/${article.slug}`)}
@@ -57,14 +58,15 @@
 
 {#snippet checkableArticleList()}
 	<ul class="article-list">
-		{#each articles as article (article.slug)}
+		{#each articles as article (toArticleKey(article))}
+			{@const key = toArticleKey(article)}
 			<li>
 				<article>
 					<label class="article-item">
 						<article-checkbox>
 							<CheckboxBasic
-								checked={checkedArticles.has(article.slug)}
-								onchange={() => toggleArticleCheck(article.slug)}
+								checked={checkedArticles.has(key)}
+								onchange={() => toggleArticleCheck(key)}
 							/>
 						</article-checkbox>
 						{@render articleInfo(article)}

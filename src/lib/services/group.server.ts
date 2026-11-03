@@ -1,6 +1,7 @@
 import type { GroupWithArticles } from '#lib/types/group.js';
 import { groups } from '#lib/data/groups/index.js';
 import { articleRepository } from '#lib/repositories/article.js';
+import { toArticleKey } from '#lib/utils/article.js';
 
 export class GroupServiceError extends Error {
 	constructor(
@@ -21,10 +22,12 @@ export const getGroupWithArticles = (slug: string): GroupWithArticles => {
 
 	// 記事一覧のslugを実際の記事データに変換
 	const sectionsWithArticles = groupData.sections.map((section) => {
-		const slugs = section.articles.map((articleRef) => articleRef.slug);
+		const keys = section.articles.map(({ slug }) =>
+			toArticleKey({ category: section.category, slug })
+		);
 		return {
 			category: section.category,
-			articles: articleRepository.findBySlugs(slugs)
+			articles: articleRepository.findByKeys(keys)
 		};
 	});
 

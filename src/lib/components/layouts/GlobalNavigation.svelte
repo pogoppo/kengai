@@ -11,7 +11,7 @@
 		faMagnifyingGlass
 	} from '@fortawesome/free-solid-svg-icons';
 	import { backToTop } from '#lib/utils/navigation.js';
-	import { pathnameToArticleSlug } from '#lib/utils/article.js';
+	import { pathnameToArticleKey } from '#lib/utils/article.js';
 	import { modalState } from '#lib/stores/modal.svelte.js';
 	import { favoriteState } from '#lib/stores/favorite.svelte.js';
 	import { toastState } from '#lib/stores/toast.svelte.js';
@@ -47,8 +47,8 @@
 
 	let isFavorite = $derived.by(() => {
 		if (!isArticlePage) return false;
-		const slug = pathnameToArticleSlug(page.url.pathname);
-		return favoriteState.check(slug);
+		const key = pathnameToArticleKey(page.url.pathname);
+		return favoriteState.check(key);
 	});
 	let subNavigation = $derived.by(() => {
 		const items = [
@@ -66,9 +66,9 @@
 			}
 		];
 		if (isArticlePage) {
-			const slug = pathnameToArticleSlug(page.url.pathname);
+			const key = pathnameToArticleKey(page.url.pathname);
 			items.unshift({
-				action: () => actionAddFavorite(slug),
+				action: () => actionAddFavorite(key),
 				label: m['component.sub-navigation.add-favorite.label'](),
 				icon: faStar,
 				highlight: isFavorite
@@ -77,9 +77,9 @@
 		return items;
 	});
 
-	function actionAddFavorite(slug: string) {
-		favoriteState.toggle(slug);
-		isFavorite = favoriteState.check(slug);
+	function actionAddFavorite(key: string) {
+		favoriteState.toggle(key);
+		isFavorite = favoriteState.check(key);
 		toastState.show(isFavorite ? m['favorite.toast.added']() : m['favorite.toast.removed']());
 	}
 

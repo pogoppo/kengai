@@ -21,7 +21,7 @@ export const getArticle = async (
 	slug: string
 ): Promise<{ articleSummary: ArticleSummary; content: string }> => {
 	// 記事メタデータを取得
-	const articleSummary = articleRepository.findBySlug(slug);
+	const articleSummary = articleRepository.find(category, slug);
 
 	if (!articleSummary) {
 		throw new ArticleServiceError('NOT_FOUND', 'Article not found');

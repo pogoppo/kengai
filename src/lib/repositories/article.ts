@@ -1,6 +1,7 @@
 import Fuse from 'fuse.js';
 import { articles } from '#lib/data/articles/ja/index.js';
 import type { ArticleSummary } from '#lib/types/article.js';
+import { toArticleKey } from '#lib/utils/article.js';
 
 export class ArticleRepository {
 	// Fuse.jsインスタンス（遅延初期化）
@@ -25,15 +26,14 @@ export class ArticleRepository {
 	}
 
 	private articles: ArticleSummary[];
-	private slugIndex: Map<string, ArticleSummary>;
+	private keyIndex: Map<string, ArticleSummary>;
 	private categoryIndex: Map<string, ArticleSummary[]>;
-	private tagIndex: Map<string, ArticleSummary[]>;
 
 	constructor(articles: ArticleSummary[]) {
 		this.articles = articles;
 
-		// slugインデックスを構築
-		this.slugIndex = new Map(articles.map((article) => [article.slug, article]));
+		// 記事キー（category/slug）インデックスを構築
+		this.keyIndex = new Map(articles.map((article) => [toArticleKey(article), article]));
 
 		// categoryインデックスを構築
 		this.categoryIndex = new Map();
@@ -42,17 +42,6 @@ export class ArticleRepository {
 				this.categoryIndex.set(article.category, []);
 			}
 			this.categoryIndex.get(article.category)!.push(article);
-		}
-
-		// tagインデックスを構築
-		this.tagIndex = new Map();
-		for (const article of articles) {
-			for (const tag of article.tags) {
-				if (!this.tagIndex.has(tag)) {
-					this.tagIndex.set(tag, []);
-				}
-				this.tagIndex.get(tag)!.push(article);
-			}
 		}
 	}
 
@@ -64,18 +53,18 @@ export class ArticleRepository {
 	}
 
 	/**
-	 * slugで記事を取得
+	 * カテゴリとslugで記事を取得
 	 */
-	findBySlug(slug: string): ArticleSummary | undefined {
-		return this.slugIndex.get(slug);
+	find(category: string, slug: string): ArticleSummary | undefined {
+		return this.keyIndex.get(toArticleKey({ category, slug }));
 	}
 
 	/**
-	 * 複数のslugで記事を取得
+	 * 複数の記事キー（category/slug）で記事を取得
 	 */
-	findBySlugs(slugs: string[]): ArticleSummary[] {
-		return slugs
-			.map((slug) => this.slugIndex.get(slug))
+	findByKeys(keys: string[]): ArticleSummary[] {
+		return keys
+			.map((key) => this.keyIndex.get(key))
 			.filter((article): article is ArticleSummary => article !== undefined);
 	}
 
@@ -87,13 +76,6 @@ export class ArticleRepository {
 	}
 
 	/**
-	 * タグで記事を絞り込む
-	 */
-	findByTag(tag: string): ArticleSummary[] {
-		return this.tagIndex.get(tag) || [];
-	}
-
-	/**
 	 * 全カテゴリのリストを取得
 	 */
 	getAllCategories(): string[] {
@@ -101,16 +83,9 @@ export class ArticleRepository {
 	}
 
 	/**
-	 * 全タグのリストを取得
-	 */
-	getAllTags(): string[] {
-		return [...this.tagIndex.keys()];
-	}
-
-	/**
 	 * キーワードであいまい検索
 	 */
-	search(query: string): ArticleSummary[] {
+	private search(query: string): ArticleSummary[] {
 		if (!query.trim()) return this.articles;
 		// 全角スペースを半角に変換して、AND検索が効くようにする
 		// eslint-disable-next-line no-irregular-whitespace

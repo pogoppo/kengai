@@ -53,8 +53,7 @@ self.addEventListener('activate', (event) => {
 async function findCache(request: Request): Promise<Response | null> {
 	// キャッシュの存在を確認
 	// `caches.open()`すると存在しない場合に新規作成されてしまうため
-	const cacheExists = (await caches.keys()).includes(CACHE_NAME);
-	if (!cacheExists) {
+	if (!(await caches.has(CACHE_NAME))) {
 		return null;
 	}
 

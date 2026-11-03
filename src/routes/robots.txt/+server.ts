@@ -22,9 +22,6 @@ export const GET: RequestHandler = () => {
 	];
 
 	return new Response(lines.join('\n'), {
-		headers: {
-			'Content-Type': 'text/plain; charset=utf-8',
-			'Cache-Control': 'max-age=0, s-maxage=3600'
-		}
+		headers: { 'Content-Type': 'text/plain; charset=utf-8' }
 	});
 };

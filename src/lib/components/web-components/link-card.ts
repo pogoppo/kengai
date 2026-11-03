@@ -1,5 +1,4 @@
 import { articleRepository } from '#lib/repositories/article.js';
-import type { ArticleSummary } from '#lib/types/article.js';
 
 const style = `
 	:host {
@@ -64,11 +63,6 @@ const escapeHtml = (value: string): string =>
 		.replace(/"/g, '&quot;')
 		.replace(/'/g, '&#39;');
 
-const findArticle = (category: string, slug: string): ArticleSummary | undefined => {
-	const article = articleRepository.findBySlug(slug);
-	return article?.category === category ? article : undefined;
-};
-
 export class LinkCard extends HTMLElement {
 	// category・slug属性で指定された記事へのリンクをカードとして表示する
 	static observedAttributes = ['category', 'slug'];
@@ -91,7 +85,7 @@ export class LinkCard extends HTMLElement {
 
 		const category = this.getAttribute('category') ?? '';
 		const slug = this.getAttribute('slug') ?? '';
-		const article = findArticle(category, slug);
+		const article = articleRepository.find(category, slug);
 
 		if (!article) {
 			console.warn(`link-card: article not found (category="${category}", slug="${slug}")`);

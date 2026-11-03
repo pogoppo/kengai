@@ -105,7 +105,7 @@ describe('GlobalNavigation', () => {
 		await addFavBtn.click({ force: true });
 
 		expect(mocks.favoriteToggle).toHaveBeenCalledTimes(1);
-		expect(mocks.favoriteToggle).toHaveBeenCalledWith('example');
+		expect(mocks.favoriteToggle).toHaveBeenCalledWith('_mock/example');
 	});
 
 	test('お気に入りに追加するとToastが表示される', async () => {

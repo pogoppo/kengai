@@ -8,13 +8,12 @@ This is a **SvelteKit** application using **Svelte 5** with internationalization
 
 ### Internationalization (i18n)
 
-- **Paraglide JS** handles i18n with Japanese (`ja`) as the base locale
-- Message files: [messages/ja.json](messages/ja.json)
+- **Paraglide JS** handles i18n with Japanese (`ja`) as the only locale (strategy: cookie → globalVariable → baseLocale; no URL-based locale prefixes)
+- Message files: [src/i18n/ja.json](src/i18n/ja.json)
 - Configuration: [project.inlang/settings.json](project.inlang/settings.json)
 - Generated runtime at `#lib/paraglide/` (auto-generated, don't edit manually)
-- Use `localizeHref()` for locale-aware routing ([src/routes/+layout.svelte](src/routes/+layout.svelte#L12))
-- [src/hooks.server.ts](src/hooks.server.ts) implements `paraglideMiddleware` for server-side i18n handling
-- [src/hooks.ts](src/hooks.ts) implements URL delocalizing via `reroute` hook
+- The whole site is prerendered with a single locale, so there is no server-side i18n middleware; `<html lang="ja">` is set directly in [src/app.html](src/app.html)
+- If more locales are added, add `paraglideMiddleware` in `src/hooks.server.ts` (and `%paraglide.lang%` in `app.html`); for URL-based locales (e.g. `/en/...`) also add a `reroute` hook in `src/hooks.ts` using `deLocalizeUrl()` and use `localizeHref()` for links
 
 ### Testing Strategy
 

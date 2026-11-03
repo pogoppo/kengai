@@ -115,7 +115,7 @@ describe('ArticleList', () => {
 			await userEvent.click(firstCheckbox, { force: true });
 
 			// クリック後にチェックされる
-			// `checked={checkedArticles.has(article.slug)}`なので暫定対応
+			// `checked={checkedArticles.has(key)}`なので暫定対応
 			await expect.element(firstCheckbox).toBeChecked();
 		});
 
@@ -123,7 +123,7 @@ describe('ArticleList', () => {
 			await render(ArticleList, {
 				articles,
 				checkable: true,
-				checkedArticles: new Set<string>(['article-1'])
+				checkedArticles: new Set<string>(['cat1/article-1'])
 			});
 
 			const checkboxes = page.getByRole('checkbox');
@@ -135,7 +135,7 @@ describe('ArticleList', () => {
 			await userEvent.click(firstCheckbox, { force: true });
 
 			// クリック後にチェックが外れる
-			// `checked={checkedArticles.has(article.slug)}`なので暫定対応
+			// `checked={checkedArticles.has(key)}`なので暫定対応
 			await expect.element(firstCheckbox).not.toBeChecked();
 		});
 
@@ -166,7 +166,7 @@ describe('ArticleList', () => {
 		});
 
 		test('checkedArticlesの初期値が反映される', async () => {
-			const checkedArticles = new Set<string>(['article-2', 'article-3']);
+			const checkedArticles = new Set<string>(['cat2/article-2', 'cat1/article-3']);
 			await render(ArticleList, {
 				articles,
 				checkable: true,
